@@ -8,17 +8,22 @@
 
 import UIKit
 
-class secondViewCellViewController: UIViewController {
-    
-    
+class secondViewCellViewController: UIViewController{
+
     @IBOutlet weak var backButton: UIButton!
+
+    @IBOutlet weak var myText: UITextField!
     
+    //選択された行番号が受け渡されるプロパティ
+    var passedIndex = -1 //渡されていないことを判別するために-1を代入
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print("渡された行番号：\(passedIndex)")
     }
 
+   
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -41,7 +41,6 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button" backgroundImage="slug.jpg"/>
                                                     <connections>
-                                                        <action selector="tapBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1UM-BM-7II"/>
                                                         <segue destination="J4c-Ms-vXX" kind="show" identifier="nextSegue" id="hHi-aL-lY2"/>
                                                     </connections>
                                                 </button>
@@ -89,6 +88,13 @@
                                     <segue destination="Ssg-eL-j26" kind="unwind" unwindAction="goBack:" id="10A-ug-jyw"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qm7-ro-TPh">
+                                <rect key="frame" x="77" y="159" width="221" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="IIk-Mm-I1M"/>
@@ -96,6 +102,7 @@
                     <navigationItem key="navigationItem" id="HEv-bQ-Arv"/>
                     <connections>
                         <outlet property="backButton" destination="0F9-3q-DCY" id="tXE-ya-EfH"/>
+                        <outlet property="myText" destination="Qm7-ro-TPh" id="cDC-af-ap9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FxZ-3J-KwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
