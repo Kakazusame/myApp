@@ -26,6 +26,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         return category.count
     }
     
+    //セルを作るときの関数
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //cellオブジェクトの作成
         let cell:CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
@@ -35,9 +36,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
                                        green: CGFloat(drand48()),
                                        blue: CGFloat(drand48()),
                                        alpha: 1.0)
-        
-        //選択された行番号をメンバ変数に保存
-        selectedIndex = indexPath.row
         
         cell.myLabel?.text = category[indexPath.row]
         
@@ -50,19 +48,24 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         performSegue(withIdentifier: "nextSegue", sender: nil)
     }
     
-    //ボタンをタップしたとき
-//    @IBAction func tapBtn(_ sender: UIButton) {
-//        print("\(hayato[IndexPath.row])")
-//        performSegue(withIdentifier: "nextSegue", sender: nil)
-//    }
-  
-    //セグエを使って画面遷移してる時発動 prepareは決まっている名前
+    //セルをタップした時に発動
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        print("\(category[indexPath.row])")
+        //選択された行番号をメンバ変数に保存
+        selectedIndex = indexPath.row
+        
+        //セグエの名前を指定して、画面繊維処理を発動
+        performSegue(withIdentifier: "nextSegue", sender: nil)
+    }
+
+    //セグエを使って画面遷移してる時発動
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
 
-        let dvc: secondViewCellViewController = segue.destination as! secondViewCellViewController
+        //移動先の画面のインスタンスを取得
+        var svc: secondViewCellViewController = segue.destination as! secondViewCellViewController
+        
         //移動先の画面のプロパティに選択された行番号を代入（これで、DetailViewControllerに選択された行番号が渡せる）
-
-        dvc.passedIndex = selectedIndex
+        svc.passedIndex = selectedIndex
     }
     
 

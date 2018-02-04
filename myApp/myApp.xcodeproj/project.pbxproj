@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E07D4F52024152C00B6D423 /* category.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E07D4F42024152C00B6D423 /* category.xib */; };
 		5E0F5C95202158280060B113 /* slug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E0F5C94202158280060B113 /* slug.jpg */; };
 		5E1158E52020068E0063640E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1158E42020068E0063640E /* AppDelegate.swift */; };
 		5E1158E72020068E0063640E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1158E62020068E0063640E /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E07D4F42024152C00B6D423 /* category.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = category.xib; sourceTree = "<group>"; };
 		5E0F5C94202158280060B113 /* slug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slug.jpg; sourceTree = "<group>"; };
 		5E1158E12020068E0063640E /* myApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1158E42020068E0063640E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				5E1158F02020068E0063640E /* Info.plist */,
 				5ECA5CC52021C5920096C010 /* CustomCell.swift */,
 				5ECA5CD220221A6A0096C010 /* Greeting.json */,
+				5E07D4F42024152C00B6D423 /* category.xib */,
 			);
 			path = myApp;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 				5ECA5CD320221A6A0096C010 /* Greeting.json in Resources */,
 				5E0F5C95202158280060B113 /* slug.jpg in Resources */,
 				5E1158EA2020068E0063640E /* Main.storyboard in Resources */,
+				5E07D4F52024152C00B6D423 /* category.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
