@@ -29,41 +29,32 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     //セルを作るときの関数
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         //cellオブジェクトの作成
-        let cell:CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! CustomCell
         
         //セルの背景色をランダムに設定する。
         cell.backgroundColor = UIColor(red: CGFloat(drand48()),
                                        green: CGFloat(drand48()),
                                        blue: CGFloat(drand48()),
                                        alpha: 1.0)
-        
+        //ラベルに文字表示
         cell.myLabel?.text = category[indexPath.row]
         
         //作成したcellオブジェクトを戻り値として返す
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: "nextSegue", sender: nil)
-    }
-    
     //セルをタップした時に発動
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        print("\(category[indexPath.row])")
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //選択された行番号をメンバ変数に保存
         selectedIndex = indexPath.row
-        
+        print("\(category[indexPath.row])")
         //セグエの名前を指定して、画面繊維処理を発動
         performSegue(withIdentifier: "nextSegue", sender: nil)
     }
-
     //セグエを使って画面遷移してる時発動
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-
         //移動先の画面のインスタンスを取得
-        var svc: secondViewCellViewController = segue.destination as! secondViewCellViewController
-        
+        let svc: secondViewCellViewController = segue.destination as! secondViewCellViewController
         //移動先の画面のプロパティに選択された行番号を代入（これで、DetailViewControllerに選択された行番号が渡せる）
         svc.passedIndex = selectedIndex
     }
