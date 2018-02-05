@@ -54,9 +54,9 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     //セグエを使って画面遷移してる時発動
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         //移動先の画面のインスタンスを取得
-        let svc: secondViewCellViewController = segue.destination as! secondViewCellViewController
+        let qvc: questionViewController = segue.destination as! questionViewController
         //移動先の画面のプロパティに選択された行番号を代入（これで、DetailViewControllerに選択された行番号が渡せる）
-        svc.passedIndex = selectedIndex
+        qvc.passedIndex = selectedIndex
     }
     
 

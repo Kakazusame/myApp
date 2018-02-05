@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="57" y="133"/>
         </scene>
-        <!--Second View Cell View Controller-->
+        <!--Question View Controller-->
         <scene sceneID="g87-wu-OJd">
             <objects>
-                <viewController id="J4c-Ms-vXX" customClass="secondViewCellViewController" customModule="myApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="J4c-Ms-vXX" customClass="questionViewController" customModule="myApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jbl-h9-MHf" customClass="Question" customModule="myApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,83 +80,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="121" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="back"/>
-                                <connections>
-                                    <segue destination="Ssg-eL-j26" kind="unwind" unwindAction="goBack:" id="ZhA-Dj-XsR"/>
-                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyQ-sG-yMZ">
-                                <rect key="frame" x="134" y="71" width="106" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FkY-HX-snY">
-                                <rect key="frame" x="56" y="434" width="263" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="answerActionTwo:" destination="J4c-Ms-vXX" eventType="touchUpInside" id="wxV-Tp-Lkw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akO-3u-LfY">
-                                <rect key="frame" x="56" y="498" width="263" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="answerActionThree:" destination="J4c-Ms-vXX" eventType="touchUpInside" id="3oT-ew-SSx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMg-TF-zME">
-                                <rect key="frame" x="56" y="562" width="263" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="answerActionFour:" destination="J4c-Ms-vXX" eventType="touchUpInside" id="J6i-sg-1KX"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRO-9G-e6H">
-                                <rect key="frame" x="127" y="128" width="121" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7m-xh-Mkp">
-                                <rect key="frame" x="52" y="370" width="263" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="answerActionOne:" destination="J4c-Ms-vXX" eventType="touchUpInside" id="OTz-3d-7fM"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rSQ-yo-JlV">
-                                <rect key="frame" x="69" y="242" width="236" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="IIk-Mm-I1M"/>
                     </view>
                     <navigationItem key="navigationItem" id="HEv-bQ-Arv"/>
-                    <connections>
-                        <outlet property="answerButtonFour" destination="bMg-TF-zME" id="02Q-HC-NkH"/>
-                        <outlet property="answerButtonOne" destination="R7m-xh-Mkp" id="TIc-Bd-sGV"/>
-                        <outlet property="answerButtonThree" destination="akO-3u-LfY" id="EgT-JD-ppS"/>
-                        <outlet property="answerButtonTwo" destination="FkY-HX-snY" id="Pw2-Vh-rZL"/>
-                        <outlet property="backButton" destination="0F9-3q-DCY" id="tXE-ya-EfH"/>
-                        <outlet property="countLabel" destination="ZyQ-sG-yMZ" id="VeP-cx-J9F"/>
-                        <outlet property="problemText" destination="rSQ-yo-JlV" id="x3K-S1-WXh"/>
-                        <outlet property="timerLabel" destination="qRO-9G-e6H" id="vRi-wq-fLs"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FxZ-3J-KwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Ssg-eL-j26" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="965.60000000000002" y="132.68365817091455"/>
+            <point key="canvasLocation" x="961" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UJz-6Z-5ZW">
