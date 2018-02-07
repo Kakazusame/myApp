@@ -21,7 +21,8 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     
     //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておくメンバ変数
     var testList:[NSDictionary] = []
-    
+    //問題数
+    var quiznum = 1
     //問題数をカウント
     var count = 0
     
@@ -45,7 +46,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     func  RandomQuestions(){
         
         var RandomNumber:Int = Int(arc4random() % 4)
-        RandomNumber += 1
         
         //問題数の表示
         count += 1
@@ -106,10 +106,10 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             print(incorrectRandomNumber, 3)
             print(incorrectRandomNumber, 4)
             print(detailInfo["answer"] as! String)
-            selectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
+            selectBtn[i]?.setTitle(detailInfo["answer"] as? String, for: UIControlState())
             
             //オブジェクトを削除、1回使用した選択肢を削除する
-            //QList.remove(at: detailInfo)
+            QList.remove(object: detailInfo)
             
         }
 
@@ -130,14 +130,50 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         }else{
         }
     }
-
-
-
+    
+    //問題数を初期化する
+    func resetproblemCount(){
+        quiznum = 1
     }
     
     ///////ここまで画面//////////
-
     
+    //全ボタンを無効にする
+    func allAnswerBtnDisabled() {
+        answerButtonOne.isEnabled = false
+        answerButtonTwo.isEnabled = false
+        answerButtonThree.isEnabled = false
+        answerButtonFour.isEnabled = false
+    }
+    //全ボタンを有効にする
+    func allAnswerBtnEnabled() {
+        answerButtonOne.isEnabled = true
+        answerButtonTwo.isEnabled = true
+        answerButtonThree.isEnabled = true
+        answerButtonFour.isEnabled = true
+    }
+    
+    //次の問題を表示を行うメソッド
+//    func createNextQuestion() {
+//
+//        //取得した問題を取得する
+//        let targetProblem: NSArray = self.problemArray[self.counter] as! NSArray
+//
+//        //ラベルに表示されている値を変更する
+//        //配列 → 0番目：問題文, 1番目：正解の番号, 2番目：1番目の選択肢, 3番目：2番目の選択肢, 4番目：3番目の選択肢, 5番目：4番目の選択肢
+//        problemCountLabel.text = "第" + String(self.counter + 1) + "問"
+//        problemTextView.text = targetProblem[0] as! String
+//
+//        //ボタンに選択肢を表示する
+//        answerButtonOne.setTitle("1." + String(describing: targetProblem[2]), for: UIControlState())
+//        answerButtonTwo.setTitle("2." + String(describing: targetProblem[3]), for: UIControlState())
+//        answerButtonThree.setTitle("3." + String(describing: targetProblem[4]), for: UIControlState())
+//        answerButtonFour.setTitle("4." + String(describing: targetProblem[5]), for: UIControlState())
+//    }
+
+}
+
+
 
     /*
     // MARK: - Navigation
@@ -148,5 +184,18 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         // Pass the selected object to the new view controller.
     }
     */
+
+//重複を回避するためのエクステンション
+extension Array where Element: Equatable {
+    
+    // すべてのオブジェクトを削除
+    mutating func remove(object: Element) {
+        if let index = index(of: object){
+            self.remove(at: index)
+            self.remove(object: object)
+        }
+    }
+    
+}
 
 
