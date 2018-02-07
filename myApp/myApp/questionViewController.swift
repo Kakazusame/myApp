@@ -9,6 +9,7 @@
 import UIKit
 
 
+
 class questionViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate{
     
 
@@ -25,9 +26,15 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     var quiznum = 1
     //問題数をカウント
     var count = 0
-    
     //正解ボタン
     var CorrectAnswer = String()
+    
+    
+    // Timerクラスのインスタンス
+    var timer = Timer()
+    // Startボタンを押した時刻
+    var startTime:Double = 0.0
+    
     
     //選択された行番号が受け渡されるプロパティ
     var passedIndex = -1
@@ -45,7 +52,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
 
     func  RandomQuestions(){
         
-        var RandomNumber:Int = Int(arc4random() % 4)
+        var RandomNumber:Int = Int(arc4random() % 5)
         
         //問題数の表示
         count += 1
@@ -109,7 +116,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             selectBtn[i]?.setTitle(detailInfo["answer"] as? String, for: UIControlState())
             
             //オブジェクトを削除、1回使用した選択肢を削除する
-            QList.remove(object: detailInfo)
+            //QList.remove(object: detailInfo)
             
         }
 
@@ -138,14 +145,14 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     
     ///////ここまで画面//////////
     
-    //全ボタンを無効にする
+    //全ボタンを非活性にする
     func allAnswerBtnDisabled() {
         answerButtonOne.isEnabled = false
         answerButtonTwo.isEnabled = false
         answerButtonThree.isEnabled = false
         answerButtonFour.isEnabled = false
     }
-    //全ボタンを有効にする
+    //全ボタンを活性にする
     func allAnswerBtnEnabled() {
         answerButtonOne.isEnabled = true
         answerButtonTwo.isEnabled = true
@@ -153,23 +160,42 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         answerButtonFour.isEnabled = true
     }
     
-    //次の問題を表示を行うメソッド
-//    func createNextQuestion() {
-//
-//        //取得した問題を取得する
-//        let targetProblem: NSArray = self.problemArray[self.counter] as! NSArray
-//
-//        //ラベルに表示されている値を変更する
-//        //配列 → 0番目：問題文, 1番目：正解の番号, 2番目：1番目の選択肢, 3番目：2番目の選択肢, 4番目：3番目の選択肢, 5番目：4番目の選択肢
-//        problemCountLabel.text = "第" + String(self.counter + 1) + "問"
-//        problemTextView.text = targetProblem[0] as! String
-//
-//        //ボタンに選択肢を表示する
-//        answerButtonOne.setTitle("1." + String(describing: targetProblem[2]), for: UIControlState())
-//        answerButtonTwo.setTitle("2." + String(describing: targetProblem[3]), for: UIControlState())
-//        answerButtonThree.setTitle("3." + String(describing: targetProblem[4]), for: UIControlState())
-//        answerButtonFour.setTitle("4." + String(describing: targetProblem[5]), for: UIControlState())
-//    }
+    ///////ここからタイマー///////
+    
+    @IBAction func pushBtn(_ sender: UIButton) {
+        // 開始した時刻を記録
+        startTime = Date().timeIntervalSince1970
+        // 0.01秒ごとにupdateLabel()を呼び出す
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateLabel), userInfo: nil, repeats: true)
+        // タイマーが完了するまでボタンを非活性にする
+        allAnswerBtnDisabled()
+    }
+
+    @objc func updateLabel() {
+        // 経過した時間を、現在の時刻-開始時刻で算出(秒)
+        let elapsedTime = Date().timeIntervalSince1970 - startTime
+        // 小数点以下を切り捨てる
+        let flooredErapsedTime = Int(floor(elapsedTime))
+        // 残り時間
+        let leftTime = 3 - flooredErapsedTime
+        // 残り0秒になった時の処理
+        if leftTime == 0 {
+            // タイマーを止める
+            timer.invalidate()
+            // アラートを表示する
+            let alert = UIAlertController(title: "完了", message: "5秒経ちました。", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+            // ボタンを押下できるようにする
+            allAnswerBtnDisabled()
+
+        }
+    }
+    
+    
+
+    ///////ここまでタイマー///////
 
 }
 
