@@ -28,12 +28,16 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     var count = 0
     //正解ボタン
     var CorrectAnswer = String()
+    //正解数
+    var correctQuestionNumber: Int = 0
     
     
     // Timerクラスのインスタンス
     var timer = Timer()
     // Startボタンを押した時刻
     var startTime:Double = 0.0
+    
+
     
     
     //選択された行番号が受け渡されるプロパティ
@@ -52,7 +56,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
 
     func  RandomQuestions(){
         
-        var RandomNumber:Int = Int(arc4random() % 5)
+        var RandomNumber:Int = Int(arc4random() % 4)
         
         //問題数の表示
         count += 1
@@ -182,13 +186,25 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         if leftTime == 0 {
             // タイマーを止める
             timer.invalidate()
-            // アラートを表示する
-            let alert = UIAlertController(title: "完了", message: "5秒経ちました。", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)
-            // ボタンを押下できるようにする
-            allAnswerBtnDisabled()
+            //10問終わったらscore画面へ遷移
+            if quiznum == 10{
+                quiznum += 1
+                
+                print("正解数：\(correctQuestionNumber)")
+                self.performSegue(withIdentifier: "toResultView", sender: nil)
+                
+                //ゲーム画面→結果表示画面のViewControllerにプロパティの値を渡す
+                func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                    let newVC = segue.destination as! ResultViewController
+                    newVC.correctQuestionNumber = self.correctQuestionNumber
+                }
+            }else{
+                //10問目までのアクション
+                quiznum += 1
+                RandomQuestions()
+                // ボタンを押下できるようにする
+                allAnswerBtnEnabled()
+            }
 
         }
     }
