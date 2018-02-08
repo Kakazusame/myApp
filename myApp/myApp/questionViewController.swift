@@ -31,6 +31,8 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     var CorrectAnswer = String()
     //正解数
     var correctQuestionNumber: Int = 0
+    //何番目のボタンを押したのかを代入するメンバ変数
+    var pushBtn:String! //ストリング型のメンバ変数
     
     
     // Timerクラスのインスタンス
@@ -117,7 +119,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
 //            print(incorrectRandomNumber, 2)
 //            print(incorrectRandomNumber, 3)
 //            print(incorrectRandomNumber, 4)
-           // print(detailInfo["answer"] as! String)
+//            print(detailInfo["answer"] as! String)
             selectBtn[i]?.setTitle(detailInfo["answer"] as? String, for: UIControlState())
             
             //オブジェクトを削除、1回使用した選択肢を削除する
@@ -129,6 +131,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         var correctNumber:Int = Int(arc4random() % 4)
         correctNumber += 1
         CorrectAnswer = String(correctNumber)
+        //print(CorrectAnswer)
         
         if CorrectAnswer == "1" {
             answerButtonOne.setTitle(detailInfo["answer"] as? String, for: UIControlState())
@@ -153,10 +156,24 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     @IBAction func pushBtn(_ sender: UIButton) {
         // 開始した時刻を記録
         startTime = Date().timeIntervalSince1970
+        
+        //タップされたボタンの番号を取得
+        let b:UIButton = sender
+        //print(b.tag)
+        var btn: String = String(b.tag)
+        pushBtn = btn
+        
+        switch CorrectAnswer{
+            case pushBtn:
+                resultImage.image = #imageLiteral(resourceName: "yes.png")
+            default:
+                resultImage.image = #imageLiteral(resourceName: "no.png")
+        }
         // 0.01秒ごとにupdateLabel()を呼び出す
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateLabel), userInfo: nil, repeats: true)
         // タイマーが完了するまでボタンを非活性にする
         allAnswerBtnDisabled()
+        
     }
 
     @objc func updateLabel() {
@@ -193,8 +210,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 //画像を非表示にする
                 Hide()
             }
-            
-//            switch CorrectAnswer ==
         }
     }
     

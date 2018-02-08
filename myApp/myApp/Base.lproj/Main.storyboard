@@ -217,6 +217,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="CyF-rc-y1D"/>
         <segue reference="elc-gw-fko"/>
     </inferredMetricsTieBreakers>
 </document>
