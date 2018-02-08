@@ -90,6 +90,15 @@
                                     <action selector="pushBtn:" destination="J4c-Ms-vXX" eventType="touchUpInside" id="V6o-GT-1Cy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwx-vT-u4v">
+                                <rect key="frame" x="77" y="455" width="230" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pushBtn:" destination="J4c-Ms-vXX" eventType="touchUpInside" id="RPm-7B-7kc"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXe-o6-0Du">
                                 <rect key="frame" x="77" y="513" width="230" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -116,15 +125,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwx-vT-u4v">
-                                <rect key="frame" x="77" y="455" width="230" height="50"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kn4-Pc-WGy">
+                                <rect key="frame" x="49" y="102" width="286" height="267"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="pushBtn:" destination="J4c-Ms-vXX" eventType="touchUpInside" id="RPm-7B-7kc"/>
-                                </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="IIk-Mm-I1M"/>
@@ -136,12 +140,13 @@
                         <outlet property="answerButtonThree" destination="UXe-o6-0Du" id="l9j-CM-mBG"/>
                         <outlet property="answerButtonTwo" destination="Vwx-vT-u4v" id="9WG-0Q-oHp"/>
                         <outlet property="questionLabel" destination="09a-lW-0mx" id="MoD-AD-Ino"/>
+                        <outlet property="resultImage" destination="Kn4-Pc-WGy" id="7j8-HS-hFK"/>
                         <segue destination="vuK-fa-Iva" kind="modal" identifier="toResultView" id="CyF-rc-y1D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FxZ-3J-KwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946" y="133"/>
+            <point key="canvasLocation" x="944.79999999999995" y="132.68365817091455"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="fXw-N9-Lc1">
@@ -192,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOv-Au-I7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="-643"/>
+            <point key="canvasLocation" x="1895" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UJz-6Z-5ZW">
@@ -212,7 +217,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CyF-rc-y1D"/>
         <segue reference="elc-gw-fko"/>
     </inferredMetricsTieBreakers>
 </document>

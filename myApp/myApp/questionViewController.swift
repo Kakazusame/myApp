@@ -20,6 +20,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var answerButtonThree: UIButton!
     @IBOutlet weak var answerButtonFour: UIButton!
     
+    @IBOutlet weak var resultImage: UIImageView!
     //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておくメンバ変数
     var testList:[NSDictionary] = []
     //問題数
@@ -112,11 +113,11 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             let incorrectRandomNumber = Int(arc4random()) % QList.count
             
             let detailInfo = QList[incorrectRandomNumber]
-            print(incorrectRandomNumber, 1)
-            print(incorrectRandomNumber, 2)
-            print(incorrectRandomNumber, 3)
-            print(incorrectRandomNumber, 4)
-            print(detailInfo["answer"] as! String)
+//            print(incorrectRandomNumber, 1)
+//            print(incorrectRandomNumber, 2)
+//            print(incorrectRandomNumber, 3)
+//            print(incorrectRandomNumber, 4)
+           // print(detailInfo["answer"] as! String)
             selectBtn[i]?.setTitle(detailInfo["answer"] as? String, for: UIControlState())
             
             //オブジェクトを削除、1回使用した選択肢を削除する
@@ -124,7 +125,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             
         }
 
-        
         //正解とボタンを一致させる
         var correctNumber:Int = Int(arc4random() % 4)
         correctNumber += 1
@@ -149,22 +149,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     
     ///////ここまで画面//////////
     
-    //全ボタンを非活性にする
-    func allAnswerBtnDisabled() {
-        answerButtonOne.isEnabled = false
-        answerButtonTwo.isEnabled = false
-        answerButtonThree.isEnabled = false
-        answerButtonFour.isEnabled = false
-    }
-    //全ボタンを活性にする
-    func allAnswerBtnEnabled() {
-        answerButtonOne.isEnabled = true
-        answerButtonTwo.isEnabled = true
-        answerButtonThree.isEnabled = true
-        answerButtonFour.isEnabled = true
-    }
-    
-    ///////ここからタイマー///////
     
     @IBAction func pushBtn(_ sender: UIButton) {
         // 開始した時刻を記録
@@ -181,13 +165,15 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         // 小数点以下を切り捨てる
         let flooredErapsedTime = Int(floor(elapsedTime))
         // 残り時間
-        let leftTime = 3 - flooredErapsedTime
+        let leftTime = 2 - flooredErapsedTime
+        UnHide()
+        
         // 残り0秒になった時の処理
         if leftTime == 0 {
             // タイマーを止める
             timer.invalidate()
             //10問終わったらscore画面へ遷移
-            if quiznum == 10{
+            if quiznum == 4{
                 quiznum += 1
                 
                 print("正解数：\(correctQuestionNumber)")
@@ -199,19 +185,47 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     newVC.correctQuestionNumber = self.correctQuestionNumber
                 }
             }else{
-                //10問目までのアクション
+                //問題数までのアクション
                 quiznum += 1
                 RandomQuestions()
-                // ボタンを押下できるようにする
+                // ボタンを押せるようにする
                 allAnswerBtnEnabled()
+                //画像を非表示にする
+                Hide()
             }
-
+            
+//            switch CorrectAnswer ==
         }
     }
     
     
-
+    ///////ここからタイマー///////
+    
+    
     ///////ここまでタイマー///////
+    
+    //非表示にする関数
+    func Hide(){
+        resultImage.isHidden = true
+    }
+    func UnHide(){
+        resultImage.isHidden = false
+    }
+    
+    //全ボタンを非活性にする
+    func allAnswerBtnDisabled() {
+        answerButtonOne.isEnabled = false
+        answerButtonTwo.isEnabled = false
+        answerButtonThree.isEnabled = false
+        answerButtonFour.isEnabled = false
+    }
+    //全ボタンを活性にする
+    func allAnswerBtnEnabled() {
+        answerButtonOne.isEnabled = true
+        answerButtonTwo.isEnabled = true
+        answerButtonThree.isEnabled = true
+        answerButtonFour.isEnabled = true
+    }
 
 }
 
