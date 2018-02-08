@@ -10,16 +10,17 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
-    @IBOutlet weak var percentageLabel: UILabel!
+    
+    @IBOutlet weak var resultLabel: UILabel!
     
     //questionViewControllerより引き渡される値を格納する
     var correctQuestionNumber: Int!
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(correctQuestionNumber)
     //正答率を表示
-        //percentageLabel.text = NSString;; stringWithFormat:@"%d %%", _correctPercentage];
+        resultLabel.text = String(correctQuestionNumber)
     }
     
 

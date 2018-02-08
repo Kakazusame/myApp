@@ -69,19 +69,16 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         // プロパティリストからデータを取得（Dictionary型）
         let dic = NSDictionary(contentsOfFile: filePath!)
         
-        
         for (key,quiz) in dic! {
             //必要なものリスト
             let testdic:NSDictionary = quiz as! NSDictionary
             let testinfo:NSDictionary = ["question":key,"answer":testdic["answer"]!]
-            
             //リストを追加
             testList.append(testinfo)
         }
         
         //今画面に表示したいデータの取得
         let detailInfo = testList[RandomNumber] as! NSDictionary
-        
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
         print(detailInfo["question"] as! String)
         print(detailInfo["answer"] as! String)
@@ -96,7 +93,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         //4択を表示（不正解）
         //正解の取得
         var correctSlang = testList[RandomNumber]
-        
         //正解を4択から除外
         testList.remove(at: RandomNumber)
         
@@ -166,8 +162,11 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         switch CorrectAnswer{
             case pushBtn:
                 resultImage.image = #imageLiteral(resourceName: "yes.png")
+                resultImage.alpha = 0.7
+                correctQuestionNumber += 1
             default:
                 resultImage.image = #imageLiteral(resourceName: "no.png")
+                resultImage.alpha = 0.7
         }
         // 0.01秒ごとにupdateLabel()を呼び出す
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateLabel), userInfo: nil, repeats: true)
@@ -189,17 +188,21 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         if leftTime == 0 {
             // タイマーを止める
             timer.invalidate()
-            //10問終わったらscore画面へ遷移
+            //正解数を差し込み
+            print("正解数：\(correctQuestionNumber)")
+           
+            //4問終わったらscore画面へ遷移
             if quiznum == 4{
                 quiznum += 1
-                
-                print("正解数：\(correctQuestionNumber)")
+               
+                //次のコントローラーへ遷移する
                 self.performSegue(withIdentifier: "toResultView", sender: nil)
                 
                 //ゲーム画面→結果表示画面のViewControllerにプロパティの値を渡す
                 func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                     let newVC = segue.destination as! ResultViewController
                     newVC.correctQuestionNumber = self.correctQuestionNumber
+                    print(correctQuestionNumber)
                 }
             }else{
                 //問題数までのアクション
@@ -210,6 +213,19 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 //画像を非表示にする
                 Hide()
             }
+        }
+        
+    }
+    
+    //セグエを呼び出したときに呼ばれるメソッド
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //セグエ名で判定を行う
+        if segue.identifier == "toResultView" {
+            //遷移先のコントローラーの変数を用意する
+            let ResultViewController = segue.destination as! ResultViewController
+            //遷移先のコントローラーに渡したい変数を格納（型を合わせる）
+            ResultViewController.correctQuestionNumber = correctQuestionNumber as Int
+            print(correctQuestionNumber)
         }
     }
     
