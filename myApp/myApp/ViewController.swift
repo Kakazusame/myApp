@@ -57,6 +57,12 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         let qvc: questionViewController = segue.destination as! questionViewController
         //移動先の画面のプロパティに選択された行番号を代入（これで、DetailViewControllerに選択された行番号が渡せる）
         qvc.passedIndex = selectedIndex
+        
+        //移動先の画面のインスタンスを取得
+        let avc: answerViewController = segue.destination as! answerViewController
+        //移動先の画面のプロパティに選択された行番号を代入（これで、DetailViewControllerに選択された行番号が渡せる）
+//        avc.passedIndex = selectedIndex
+          avc.passedIndex = selectedIndex
     }
     
 

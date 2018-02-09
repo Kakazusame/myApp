@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E03F3AF202D4AFC00867FE8 /* CustomCell 11-15-20-828.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E03F3AE202D4AFC00867FE8 /* CustomCell 11-15-20-828.swift */; };
+		5E03F3B1202D4CF700867FE8 /* customWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E03F3B0202D4CF700867FE8 /* customWordCell.swift */; };
 		5E07D4F52024152C00B6D423 /* category.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E07D4F42024152C00B6D423 /* category.xib */; };
 		5E1158E52020068E0063640E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1158E42020068E0063640E /* AppDelegate.swift */; };
 		5E1158E72020068E0063640E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1158E62020068E0063640E /* ViewController.swift */; };
@@ -16,7 +18,6 @@
 		5E5E9F112027FA1900FFA153 /* questionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5E9F102027FA1900FFA153 /* questionViewController.swift */; };
 		5E5E9F1520280B9300FFA153 /* Test01List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5E9F1420280B9300FFA153 /* Test01List.plist */; };
 		5E5E9F1720280BEA00FFA153 /* Test02List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5E9F1620280BEA00FFA153 /* Test02List.plist */; };
-		5ECA5CC62021C5920096C010 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA5CC52021C5920096C010 /* CustomCell.swift */; };
 		5ECA5CD320221A6A0096C010 /* Greeting.json in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA5CD220221A6A0096C010 /* Greeting.json */; };
 		5ECDD4B92029DCB400FB5015 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDD4B82029DCB400FB5015 /* ResultViewController.swift */; };
 		5ED42157202A8FE800E4D1F3 /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED42154202A8FE700E4D1F3 /* no.png */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E03F3AE202D4AFC00867FE8 /* CustomCell 11-15-20-828.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomCell 11-15-20-828.swift"; sourceTree = "<group>"; };
+		5E03F3B0202D4CF700867FE8 /* customWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customWordCell.swift; sourceTree = "<group>"; };
 		5E07D4F42024152C00B6D423 /* category.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = category.xib; sourceTree = "<group>"; };
 		5E1158E12020068E0063640E /* myApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1158E42020068E0063640E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +40,6 @@
 		5E5E9F102027FA1900FFA153 /* questionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionViewController.swift; sourceTree = "<group>"; };
 		5E5E9F1420280B9300FFA153 /* Test01List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Test01List.plist; sourceTree = "<group>"; };
 		5E5E9F1620280BEA00FFA153 /* Test02List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Test02List.plist; sourceTree = "<group>"; };
-		5ECA5CC52021C5920096C010 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		5ECA5CD220221A6A0096C010 /* Greeting.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Greeting.json; sourceTree = "<group>"; };
 		5ECDD4B82029DCB400FB5015 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		5ED42154202A8FE700E4D1F3 /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no.png; sourceTree = "<group>"; };
@@ -82,15 +84,16 @@
 				5E5E9F102027FA1900FFA153 /* questionViewController.swift */,
 				5ECDD4B82029DCB400FB5015 /* ResultViewController.swift */,
 				5EF300A2202C9FB1009B1173 /* answerViewController.swift */,
+				5E03F3AE202D4AFC00867FE8 /* CustomCell 11-15-20-828.swift */,
 				5E1158E82020068E0063640E /* Main.storyboard */,
 				5E1158EB2020068E0063640E /* Assets.xcassets */,
 				5E1158ED2020068E0063640E /* LaunchScreen.storyboard */,
 				5E1158F02020068E0063640E /* Info.plist */,
-				5ECA5CC52021C5920096C010 /* CustomCell.swift */,
 				5ECA5CD220221A6A0096C010 /* Greeting.json */,
 				5E07D4F42024152C00B6D423 /* category.xib */,
 				5E5E9F1420280B9300FFA153 /* Test01List.plist */,
 				5E5E9F1620280BEA00FFA153 /* Test02List.plist */,
+				5E03F3B0202D4CF700867FE8 /* customWordCell.swift */,
 			);
 			path = myApp;
 			sourceTree = "<group>";
@@ -184,10 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E03F3AF202D4AFC00867FE8 /* CustomCell 11-15-20-828.swift in Sources */,
+				5E03F3B1202D4CF700867FE8 /* customWordCell.swift in Sources */,
 				5ECDD4B92029DCB400FB5015 /* ResultViewController.swift in Sources */,
 				5E1158E72020068E0063640E /* ViewController.swift in Sources */,
 				5EF300A3202C9FB1009B1173 /* answerViewController.swift in Sources */,
-				5ECA5CC62021C5920096C010 /* CustomCell.swift in Sources */,
 				5E1158E52020068E0063640E /* AppDelegate.swift in Sources */,
 				5E5E9F112027FA1900FFA153 /* questionViewController.swift in Sources */,
 			);
