@@ -22,6 +22,7 @@
 		5ED42157202A8FE800E4D1F3 /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED42154202A8FE700E4D1F3 /* no.png */; };
 		5ED42158202A8FE800E4D1F3 /* yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ED42155202A8FE700E4D1F3 /* yes.png */; };
 		5ED42159202A8FE800E4D1F3 /* slug.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ED42156202A8FE700E4D1F3 /* slug.jpg */; };
+		5EF300A3202C9FB1009B1173 /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF300A2202C9FB1009B1173 /* answerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		5ED42154202A8FE700E4D1F3 /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no.png; sourceTree = "<group>"; };
 		5ED42155202A8FE700E4D1F3 /* yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yes.png; sourceTree = "<group>"; };
 		5ED42156202A8FE700E4D1F3 /* slug.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slug.jpg; sourceTree = "<group>"; };
+		5EF300A2202C9FB1009B1173 /* answerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				5E1158E62020068E0063640E /* ViewController.swift */,
 				5E5E9F102027FA1900FFA153 /* questionViewController.swift */,
 				5ECDD4B82029DCB400FB5015 /* ResultViewController.swift */,
+				5EF300A2202C9FB1009B1173 /* answerViewController.swift */,
 				5E1158E82020068E0063640E /* Main.storyboard */,
 				5E1158EB2020068E0063640E /* Assets.xcassets */,
 				5E1158ED2020068E0063640E /* LaunchScreen.storyboard */,
@@ -183,6 +186,7 @@
 			files = (
 				5ECDD4B92029DCB400FB5015 /* ResultViewController.swift in Sources */,
 				5E1158E72020068E0063640E /* ViewController.swift in Sources */,
+				5EF300A3202C9FB1009B1173 /* answerViewController.swift in Sources */,
 				5ECA5CC62021C5920096C010 /* CustomCell.swift in Sources */,
 				5E1158E52020068E0063640E /* AppDelegate.swift in Sources */,
 				5E5E9F112027FA1900FFA153 /* questionViewController.swift in Sources */,

@@ -21,7 +21,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var answerButtonFour: UIButton!
     
     @IBOutlet weak var resultImage: UIImageView!
-    //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておくメンバ変数
+    //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておく配列
     var testList:[NSDictionary] = []
     //問題数
     var quiznum = 1
@@ -64,10 +64,18 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         //問題数の表示
         count += 1
         
+        var filePath = ""
         //ファイルパスを取得
-        let filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")
-        // プロパティリストからデータを取得（Dictionary型）
-        let dic = NSDictionary(contentsOfFile: filePath!)
+        if passedIndex == 0{
+            filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
+
+        }else if passedIndex == 1{
+            filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
+        }
+        
+        //let filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")
+        //プロパティリストからデータを取得（Dictionary型）
+        let dic = NSDictionary(contentsOfFile: filePath)
         
         for (key,quiz) in dic! {
             //必要なものリスト
