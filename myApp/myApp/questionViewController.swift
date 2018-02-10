@@ -40,8 +40,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     // Startボタンを押した時刻
     var startTime:Double = 0.0
     
-
-    
     
     //選択された行番号が受け渡されるプロパティ
     var passedIndex = -1

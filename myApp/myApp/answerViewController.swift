@@ -21,6 +21,13 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     //テーブルビューの選択不可
 
+    //グローバル変数での値受け取り
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        var appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        passedIndex = appDelegate.questionCategory!
+        print(appDelegate.questionCategory)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +44,15 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         //let filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")
         //プロパティリストからデータを取得（Dictionary型）
-        let dic = NSDictionary(contentsOfFile: filePath)
-        
-        for (key,quiz) in dic! {
-            //必要なものリスト
-            let testdic:NSDictionary = quiz as! NSDictionary
-            let testinfo:NSDictionary = ["question":key,"answer":testdic["answer"]!]
-            //リストを追加
-            wordsList.append(testinfo)
-        }
+//        let dic = NSDictionary(contentsOfFile: filePath)
+//
+//        for (key,quiz) in dic! {
+//            //必要なものリスト
+//            let testdic:NSDictionary = quiz as! NSDictionary
+//            let testinfo:NSDictionary = ["question":key,"answer":testdic["answer"]!]
+//            //リストを追加
+//            wordsList.append(testinfo)
+//        }
         
     }
     

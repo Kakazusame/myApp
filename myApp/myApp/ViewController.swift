@@ -8,12 +8,26 @@
 
 import UIKit
 
+//protocolを定義
+//値を渡すために使うメソッドを宣言します
+@objc protocol senderDelegate{
+    func wordsCategory(message:NSString)
+    @objc optional func receiveWordsCategory(message:NSString)
+}
+
 class ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
      @IBAction func goBack(_ segue:UIStoryboardSegue) {}
     
     //送る側の初期値
     var selectedIndex = -1
+    
+    //単語一覧に送る値
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        var appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.questionCategory = selectedIndex
+    }
     
     var category = ["あいさつ","デート","アプローチ","喧嘩","メール","トイレ"]
     
@@ -59,10 +73,10 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         qvc.passedIndex = selectedIndex
         
         //移動先の画面のインスタンスを取得
-        let avc: answerViewController = segue.destination as! answerViewController
+//        let avc: answerViewController = segue.destination as! answerViewController
         //移動先の画面のプロパティに選択された行番号を代入（これで、DetailViewControllerに選択された行番号が渡せる）
 //        avc.passedIndex = selectedIndex
-          avc.passedIndex = selectedIndex
+//          avc.passedIndex = selectedIndex
     }
     
 
