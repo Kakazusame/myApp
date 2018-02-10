@@ -66,12 +66,10 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         //ファイルパスを取得
         if passedIndex == 0{
             filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
-
         }else if passedIndex == 1{
             filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
         }
         
-        //let filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")
         //プロパティリストからデータを取得（Dictionary型）
         let dic = NSDictionary(contentsOfFile: filePath)
         

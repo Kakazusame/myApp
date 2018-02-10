@@ -26,34 +26,36 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         super.viewDidDisappear(animated)
         var appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         passedIndex = appDelegate.questionCategory!
-        print(appDelegate.questionCategory)
+        print("渡されたカテゴリー番号\(passedIndex)")
+        
+        //ファイルパスを取得
+        var filePath = ""
+        if passedIndex == 0{
+            filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
+            print("0番目の問題が読み込まれました")
+            
+        }else if passedIndex == 1{
+            filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
+            print("1番目の問題が読み込まれました")
+        }
+        
+        //プロパティリストからデータを取得（Dictionary型）
+        let dic = NSDictionary(contentsOfFile: filePath)
+        
+        for(key,data) in dic!{
+
+            
+            var listdic:NSDictionary = data as! NSDictionary
+            var listinfo:NSDictionary = ["question":key,"answer":listdic["answer"]!]
+            
+            wordsList.append(listinfo)
+        }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("渡された問題番号：\(passedIndex)")
-        
-        var filePath = ""
-        //ファイルパスを取得
-        if passedIndex == 0{
-            filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
-            
-        }else if passedIndex == 1{
-            filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
-        }
-        
-        //let filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")
-        //プロパティリストからデータを取得（Dictionary型）
-//        let dic = NSDictionary(contentsOfFile: filePath)
-//
-//        for (key,quiz) in dic! {
-//            //必要なものリスト
-//            let testdic:NSDictionary = quiz as! NSDictionary
-//            let testinfo:NSDictionary = ["question":key,"answer":testdic["answer"]!]
-//            //リストを追加
-//            wordsList.append(testinfo)
-//        }
-        
+
     }
     
     //行数のカウント
