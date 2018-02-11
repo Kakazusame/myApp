@@ -18,7 +18,7 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(correctQuestionNumber)
+        //print(correctQuestionNumber)
     //正答率を表示
         resultLabel.text = String(correctQuestionNumber)
     }

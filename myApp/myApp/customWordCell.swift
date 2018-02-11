@@ -13,8 +13,7 @@ class customWordCellTableViewCell: UITableViewCell {
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
-    @IBOutlet weak var answerImage: UIImageView!
-    
+    @IBOutlet weak var judgeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

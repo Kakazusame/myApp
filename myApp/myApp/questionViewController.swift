@@ -33,6 +33,8 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     var correctQuestionNumber: Int = 0
     //何番目のボタンを押したのかを代入するメンバ変数
     var pushBtn:String! //ストリング型のメンバ変数
+    //問題の解答を判断
+    var wordsJudgment:[String] = []
     
     
     // Timerクラスのインスタンス
@@ -162,16 +164,19 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         //print(b.tag)
         var btn: String = String(b.tag)
         pushBtn = btn
+
+            switch CorrectAnswer{
+                case pushBtn:
+                    resultImage.image = #imageLiteral(resourceName: "yes.png")
+                    resultImage.alpha = 0.7
+                    correctQuestionNumber += 1
+                    wordsJudgment.append("Good")
+                default:
+                    resultImage.image = #imageLiteral(resourceName: "no.png")
+                    resultImage.alpha = 0.7
+                    wordsJudgment.append("Bad")
+            }
         
-        switch CorrectAnswer{
-            case pushBtn:
-                resultImage.image = #imageLiteral(resourceName: "yes.png")
-                resultImage.alpha = 0.7
-                correctQuestionNumber += 1
-            default:
-                resultImage.image = #imageLiteral(resourceName: "no.png")
-                resultImage.alpha = 0.7
-        }
         // 0.01秒ごとにupdateLabel()を呼び出す
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateLabel), userInfo: nil, repeats: true)
         // タイマーが完了するまでボタンを非活性にする
@@ -192,8 +197,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         if leftTime == 0 {
             // タイマーを止める
             timer.invalidate()
-            //正解数を差し込み
-            print("正解数：\(correctQuestionNumber)")
            
             //4問終わったらscore画面へ遷移
             if quiznum == 4{
@@ -208,6 +211,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     newVC.correctQuestionNumber = self.correctQuestionNumber
                     print(correctQuestionNumber)
                 }
+                
             }else{
                 //問題数までのアクション
                 quiznum += 1
@@ -229,10 +233,16 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             let ResultViewController = segue.destination as! ResultViewController
             //遷移先のコントローラーに渡したい変数を格納（型を合わせる）
             ResultViewController.correctQuestionNumber = correctQuestionNumber as Int
-            print(correctQuestionNumber)
         }
     }
-    
+
+    //単語一覧に送る値
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        var appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.Judgment = wordsJudgment
+
+    }
     
     ///////ここからタイマー///////
     

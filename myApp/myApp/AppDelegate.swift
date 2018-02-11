@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //ここに変数用意
     var questionCategory:Int?
+    
+    var Judgment:Array<Any>?
 
 
     

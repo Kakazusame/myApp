@@ -19,6 +19,9 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
     //選択された行番号が受け渡されるプロパティ
     var passedIndex = -1
     
+    //値が受け渡されるプロパティ
+    var wordsJudgment:[String] = []
+    
     //テーブルビューの選択不可
 
     //グローバル変数での値受け取り
@@ -26,7 +29,8 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         super.viewDidDisappear(animated)
         var appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         passedIndex = appDelegate.questionCategory!
-        print("渡されたカテゴリー番号\(passedIndex)")
+        wordsJudgment = appDelegate.Judgment! as! [String]
+        print(wordsJudgment)
         
         //ファイルパスを取得
         var filePath = ""
@@ -44,20 +48,20 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         for(key,data) in dic!{
 
-            
             var listdic:NSDictionary = data as! NSDictionary
             var listinfo:NSDictionary = ["question":key,"answer":listdic["answer"]!]
             
             wordsList.append(listinfo)
         }
         
+        
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-    
+
     //行数のカウント
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return wordsList.count
@@ -70,16 +74,17 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         //表示したい文字・画像の設定
         var wordsinfo = wordsList[indexPath.row] as! NSDictionary
-        print(wordsinfo["question"] as! String)
-        print(wordsinfo["answer"] as! String)
         
         //文字の表示
         wordCell.questionLabel.text = wordsinfo["question"] as? String
         wordCell.answerLabel.text = wordsinfo["answer"] as? String
+        wordCell.judgeLabel.text = wordsJudgment[indexPath.row]
         
         //文字を設定したセルを返す
         return wordCell
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
