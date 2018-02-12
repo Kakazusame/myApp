@@ -70,6 +70,12 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
     //一行に表示する文字列の作成、表示
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        //セルの選択不可
+        self.listView.allowsSelection = false
+        
+        //セルの高さを変更
+        self.listView.rowHeight = 70
+        
         let wordCell = tableView.dequeueReusableCell(withIdentifier: "wordCell", for: indexPath) as! customWordCellTableViewCell
         
         //表示したい文字・画像の設定
