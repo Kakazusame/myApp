@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var questionCategory:Int?
     
     var Judgment:Array<Any>?
+    var Answer:Array<Any>?
 
 
     

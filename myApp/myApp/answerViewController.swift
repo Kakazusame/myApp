@@ -80,7 +80,7 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         //表示したい文字・画像の設定
         var wordsinfo = wordsList[indexPath.row] as! NSDictionary
-        
+        print(wordsList)
         //文字の表示
         wordCell.questionLabel.text = wordsinfo["question"] as? String
         wordCell.answerLabel.text = wordsinfo["answer"] as? String

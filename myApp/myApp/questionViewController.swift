@@ -35,6 +35,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     var pushBtn:String! //ストリング型のメンバ変数
     //問題の解答を判断
     var wordsJudgment:[String] = []
+
     
     
     // Timerクラスのインスタンス
@@ -89,6 +90,11 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         print(detailInfo["question"] as! String)
         print(detailInfo["answer"] as! String)
         
+        let wordsAnswer:NSDictionary = ["question":detailInfo["question"] as! String, "answer":detailInfo["answer"] as! String]
+        print(wordsAnswer)
+        //問題を毎回wordsAnswerに入れる（append）
+        //消える前に飛ばす処理
+        
         for(key,data) in dic!{
             var _:NSDictionary = data as! NSDictionary
         }
@@ -117,15 +123,10 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             let incorrectRandomNumber = Int(arc4random()) % QList.count
             
             let detailInfo = QList[incorrectRandomNumber]
-//            print(incorrectRandomNumber, 1)
-//            print(incorrectRandomNumber, 2)
-//            print(incorrectRandomNumber, 3)
-//            print(incorrectRandomNumber, 4)
-//            print(detailInfo["answer"] as! String)
             selectBtn[i]?.setTitle(detailInfo["answer"] as? String, for: UIControlState())
             
             //オブジェクトを削除、1回使用した選択肢を削除する
-            //QList.remove(object: detailInfo)
+            QList.remove(object: detailInfo)
             
         }
 
@@ -198,8 +199,8 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             // タイマーを止める
             timer.invalidate()
            
-            //4問終わったらscore画面へ遷移
-            if quiznum == 4{
+            //3問終わったらscore画面へ遷移
+            if quiznum == 15{
                 quiznum += 1
                
                 //次のコントローラーへ遷移する
@@ -236,13 +237,13 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         }
     }
 
-    //単語一覧に送る値
+    //単語一覧に送る値(消える前(別のコントローラーに移動する前)に実行する処理)
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+        super.viewWillDisappear(animated)
         var appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.Judgment = wordsJudgment
-
     }
+    
     
     ///////ここからタイマー///////
     
