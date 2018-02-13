@@ -13,16 +13,12 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
 
     @IBOutlet weak var listView: UITableView!
     
-    //プロパティリストから読み込んだデータを格納する配列
-    var wordsList:[NSDictionary] = []
-    
     //選択された行番号が受け渡されるプロパティ
     var passedIndex = -1
     
     //値が受け渡されるプロパティ
     var wordsJudgment:[String] = []
-    
-    //テーブルビューの選択不可
+    var resultArray:[NSDictionary] = []
 
     //グローバル変数での値受け取り
     override func viewWillAppear(_ animated: Bool) {
@@ -30,7 +26,10 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         var appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         passedIndex = appDelegate.questionCategory!
         wordsJudgment = appDelegate.Judgment! as! [String]
+        resultArray = appDelegate.Answer as! [NSDictionary]
         print(wordsJudgment)
+        print(resultArray)
+        
         
         //ファイルパスを取得
         var filePath = ""
@@ -43,19 +42,6 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
             print("1番目の問題が読み込まれました")
         }
         
-        //プロパティリストからデータを取得（Dictionary型）
-        let dic = NSDictionary(contentsOfFile: filePath)
-        
-        for(key,data) in dic!{
-
-            var listdic:NSDictionary = data as! NSDictionary
-            var listinfo:NSDictionary = ["question":key,"answer":listdic["answer"]!]
-            
-            wordsList.append(listinfo)
-        }
-        
-        
-        
     }
     
     override func viewDidLoad() {
@@ -64,7 +50,7 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
 
     //行数のカウント
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return wordsList.count
+        return resultArray.count
     }
     
     //一行に表示する文字列の作成、表示
@@ -79,8 +65,7 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         let wordCell = tableView.dequeueReusableCell(withIdentifier: "wordCell", for: indexPath) as! customWordCellTableViewCell
         
         //表示したい文字・画像の設定
-        var wordsinfo = wordsList[indexPath.row] as! NSDictionary
-        print(wordsList)
+        var wordsinfo = resultArray[indexPath.row] as! NSDictionary
         //文字の表示
         wordCell.questionLabel.text = wordsinfo["question"] as? String
         wordCell.answerLabel.text = wordsinfo["answer"] as? String

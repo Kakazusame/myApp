@@ -35,6 +35,8 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     var pushBtn:String! //ストリング型のメンバ変数
     //問題の解答を判断
     var wordsJudgment:[String] = []
+    //結果のArray
+    var resultArray:[NSDictionary] = []
 
     
     
@@ -79,7 +81,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         for (key,quiz) in dic! {
             //必要なものリスト
             let testdic:NSDictionary = quiz as! NSDictionary
-            let testinfo:NSDictionary = ["question":key,"answer":testdic["answer"]!]
+            let testinfo:NSDictionary = ["num":key,"answer":testdic["answer"],"question":testdic["question"]!]
             //リストを追加
             testList.append(testinfo)
         }
@@ -91,9 +93,9 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         print(detailInfo["answer"] as! String)
         
         let wordsAnswer:NSDictionary = ["question":detailInfo["question"] as! String, "answer":detailInfo["answer"] as! String]
-        print(wordsAnswer)
-        //問題を毎回wordsAnswerに入れる（append）
-        //消える前に飛ばす処理
+
+        //問題を毎回wordsAnswerに入れる
+        resultArray.append(wordsAnswer)
         
         for(key,data) in dic!{
             var _:NSDictionary = data as! NSDictionary
@@ -200,7 +202,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             timer.invalidate()
            
             //3問終わったらscore画面へ遷移
-            if quiznum == 15{
+            if quiznum == 3{
                 quiznum += 1
                
                 //次のコントローラーへ遷移する
@@ -211,6 +213,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     let newVC = segue.destination as! ResultViewController
                     newVC.correctQuestionNumber = self.correctQuestionNumber
                     print(correctQuestionNumber)
+                    
                 }
                 
             }else{
@@ -241,7 +244,12 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         var appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        //Good,Bad
         appDelegate.Judgment = wordsJudgment
+        
+        //問題解いた順
+        appDelegate.Answer = resultArray
     }
     
     
