@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 
 
 class questionViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate{
@@ -38,12 +38,16 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     //結果のArray
     var resultArray:[NSDictionary] = []
 
-    
-    
     // Timerクラスのインスタンス
     var timer = Timer()
     // Startボタンを押した時刻
     var startTime:Double = 0.0
+    
+    //正解音
+    var correctAudioPlayer: AVAudioPlayer! = nil
+    //不正解音
+    var mistakeAudioPlayer: AVAudioPlayer! = nil
+
     
     
     //選択された行番号が受け渡されるプロパティ
@@ -55,6 +59,10 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         print("渡された行番号：\(passedIndex)")
         //問題を表示
         RandomQuestions()
+        
+        //音を鳴らす
+        correctSound()
+        mistakeSound()
     }
     
     
@@ -174,10 +182,12 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     resultImage.alpha = 0.7
                     correctQuestionNumber += 1
                     wordsJudgment.append("Good")
+                    correctAudioPlayer.play()
                 default:
                     resultImage.image = #imageLiteral(resourceName: "no.png")
                     resultImage.alpha = 0.7
                     wordsJudgment.append("Bad")
+                    mistakeAudioPlayer.play()
             }
         
         // 0.01秒ごとにupdateLabel()を呼び出す
@@ -253,10 +263,39 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     }
     
     
-    ///////ここからタイマー///////
+    ///////ここから音///////
+   
+    //正解音の作成
+    func correctSound() {
+        // サウンドファイルのパスを生成
+        let soundFile = Bundle.main.path(forResource: "correct_answer3", ofType: "mp3")! as NSString
+        let soundClear = URL(fileURLWithPath: soundFile as String)
+        //AVAudioPlayerのインスタンス化
+        do {
+            correctAudioPlayer = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("AVAudioPlayerインスタンス作成失敗")
+        }
+        correctAudioPlayer.volume = 0.05
+        correctAudioPlayer.prepareToPlay()
+    }
     
+    //不正解音の作成
+    func mistakeSound() {
+        // サウンドファイルのパスを生成
+        let soundFile = Bundle.main.path(forResource: "mistake_answer", ofType: "mp3")! as NSString
+        let soundClear = URL(fileURLWithPath: soundFile as String)
+        //AVAudioPlayerのインスタンス化
+        do {
+            mistakeAudioPlayer = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("AVAudioPlayerインスタンス作成失敗")
+        }
+        mistakeAudioPlayer.volume = 0.2
+        mistakeAudioPlayer.prepareToPlay()
+    }
     
-    ///////ここまでタイマー///////
+    ///////ここまで音///////
     
     //非表示にする関数
     func Hide(){
