@@ -2,23 +2,45 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Grape</key>
+	<key>06</key>
 	<dict>
+		<key>question</key>
+		<string>Strawberry</string>
+		<key>answer</key>
+		<string>いちご</string>
+	</dict>
+	<key>05</key>
+	<dict>
+		<key>question</key>
+		<string>Peach</string>
+		<key>answer</key>
+		<string>もも</string>
+	</dict>
+	<key>04</key>
+	<dict>
+		<key>question</key>
+		<string>Grape</string>
 		<key>answer</key>
 		<string>ぶどう</string>
 	</dict>
-	<key>Banana</key>
+	<key>03</key>
 	<dict>
+		<key>question</key>
+		<string>Banana</string>
 		<key>answer</key>
 		<string>バナナ</string>
 	</dict>
-	<key>Orange</key>
+	<key>02</key>
 	<dict>
+		<key>question</key>
+		<string>Orange</string>
 		<key>answer</key>
 		<string>みかん</string>
 	</dict>
-	<key>Apple</key>
+	<key>01</key>
 	<dict>
+		<key>question</key>
+		<string>Apple</string>
 		<key>answer</key>
 		<string>りんご</string>
 	</dict>

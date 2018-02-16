@@ -7,20 +7,24 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ResultViewController: UIViewController {
 
-    
     @IBOutlet weak var resultLabel: UILabel!
+    
+     var audioPlayerClear : AVAudioPlayer! = nil //クリア時用
     
     //questionViewControllerより引き渡される値を格納する
     var correctQuestionNumber: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(correctQuestionNumber)
-    //正答率を表示
+        //正答率を表示
         resultLabel.text = String(correctQuestionNumber)
+        //音を鳴らす
+        resultSound()
+        self.audioPlayerClear.play()
     }
     
 
@@ -28,6 +32,23 @@ class ResultViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: サウンドファイル作成
+    func resultSound() {
+        //Clear音作る。
+        //音声ファイルのパスを作る。
+        let soundFilePathClear : NSString = Bundle.main.path(forResource: "result02", ofType: "mp3")! as NSString
+        let soundClear : NSURL = NSURL(fileURLWithPath: soundFilePathClear as String)
+        //AVAudioPlayerのインスタンス化
+        do{
+            audioPlayerClear = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("Failed AVAudioPlayer Instance")
+        }
+        //出来たインスタンスをバッファに保持する。
+        audioPlayerClear.prepareToPlay()
+    }
+
     
 
     /*

@@ -25,11 +25,12 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     //単語一覧に送る値
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+
         var appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.questionCategory = selectedIndex
     }
     
-    var category = ["あいさつ","デート","アプローチ","喧嘩","メール","トイレ"]
+    var category = ["ミス問題","デート","アプローチ","喧嘩","メール","トイレ"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

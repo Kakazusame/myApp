@@ -76,19 +76,6 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         return wordCell
     }
     
-    //////sound///////
-//    class ViewController: UIViewController {
-//        var player: AVAudioPlayer?
-//        
-//        func tapBtn() {
-//            if let sound = NSDataAsset(name: "sound") {
-//                player = try? AVAudioPlayer(data: sound.data)
-//                player?.play() // → これで音が鳴る
-//            }
-//        }
-//    }
-    ///sound_finish///
-    
     
 
     override func didReceiveMemoryWarning() {

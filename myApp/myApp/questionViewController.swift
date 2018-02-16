@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-
+import CoreData 
 
 class questionViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate{
     
@@ -37,7 +37,22 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     var wordsJudgment:[String] = []
     //結果のArray
     var resultArray:[NSDictionary] = []
-
+    //ミスした問題
+    var missQ = ""
+    //ミスした問題の答え
+    var missA = ""
+    //ミスした問題、答えを入れる配列
+    var missWords: [NSManagedObject] = []
+    //ミスした問題を取得する配列
+    var fetchedmissWords: [NSManagedObject] = []
+    
+    //管理オブジェクトコンテキスト
+    var managedContext:NSManagedObjectContext!
+    
+    //空の配列を作成
+    var contentQ:[String] = []
+    var contentA:[String] = []
+    
     // Timerクラスのインスタンス
     var timer = Timer()
     // Startボタンを押した時刻
@@ -63,6 +78,8 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         //音を鳴らす
         correctSound()
         mistakeSound()
+        
+        read()
     }
     
     
@@ -78,8 +95,10 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         var filePath = ""
         //ファイルパスを取得
         if passedIndex == 0{
-            filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
+            
         }else if passedIndex == 1{
+            filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
+        }else if passedIndex == 2{
             filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
         }
         
@@ -101,7 +120,10 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         print(detailInfo["answer"] as! String)
         
         let wordsAnswer:NSDictionary = ["question":detailInfo["question"] as! String, "answer":detailInfo["answer"] as! String]
-
+        
+        missQ = detailInfo["question"] as! String
+        missA = detailInfo["answer"] as! String
+        
         //問題を毎回wordsAnswerに入れる
         resultArray.append(wordsAnswer)
         
@@ -188,6 +210,27 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     resultImage.alpha = 0.7
                     wordsJudgment.append("Bad")
                     mistakeAudioPlayer.play()
+                
+                    //AppDelegateを使う準備をしておく
+                    let appD:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                    //エンティティを操作するためのオブジェクトを作成
+                    let viewContext = appD.persistentContainer.viewContext
+                    let MissWords = NSEntityDescription.entity(forEntityName: "MissWords", in: viewContext)
+                    //エンティティにレコード(行)を挿入するためのオブジェクトを作成
+                    let mistakeWord = NSManagedObject(entity: MissWords!, insertInto: viewContext)
+                    //レコードオブジェクトに値のセット
+                    mistakeWord.setValue(missQ, forKeyPath: "question")
+                    mistakeWord.setValue(missA, forKeyPath: "answer")
+                    //レコード(行)の即時保存
+                    do {
+                        try viewContext.save()
+                        missWords.append(mistakeWord)
+                        print(missWords)
+                    } catch let error as NSError {
+                        print("DBへの保存に失敗しました")
+                    }
+                    //CoreDataからデータを読み込む処理
+                    read()
             }
         
         // 0.01秒ごとにupdateLabel()を呼び出す
@@ -212,7 +255,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             timer.invalidate()
            
             //3問終わったらscore画面へ遷移
-            if quiznum == 3{
+            if quiznum == 5{
                 quiznum += 1
                
                 //次のコントローラーへ遷移する
@@ -257,7 +300,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         
         //Good,Bad
         appDelegate.Judgment = wordsJudgment
-        
         //問題解いた順
         appDelegate.Answer = resultArray
     }
@@ -276,7 +318,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        correctAudioPlayer.volume = 0.05
+        correctAudioPlayer.volume = 0.3
         correctAudioPlayer.prepareToPlay()
     }
     
@@ -291,7 +333,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        mistakeAudioPlayer.volume = 0.2
+        mistakeAudioPlayer.volume = 0.5
         mistakeAudioPlayer.prepareToPlay()
     }
     
@@ -320,8 +362,46 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         answerButtonFour.isEnabled = true
     }
 
-}
+    //////////CoreData/////////
 
+    //既に存在するデータの読み込み処理
+    func read(){
+
+        //配列の初期化
+        contentQ = []
+        contentA = []
+
+        //AppDelegateを使う準備をしておく
+        let appD:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+
+        //エンティティを操作するためのオブジェクトを作成
+        //操作するためのツールを作成
+        let viewContext = appD.persistentContainer.viewContext
+
+        //データを取得するエンティティの指定
+        //<>の中はモデルファイルで指定したエンティティ名
+        //ここで上のツールを動かしてる？
+        let query: NSFetchRequest<MissWords> = MissWords.fetchRequest()
+
+        do {
+            //データの一括取得
+            let fetchResults = try viewContext.fetch(query)
+            //取得したデータを、デバックエリアにループで表示
+            for result: AnyObject in fetchResults {
+                let question : String = result.value(forKey: "question") as! String
+                let answer : String = result.value(forKey: "answer") as! String
+                contentQ.append(question)
+                contentA.append(answer)
+                print("ミスした問題\(contentQ)その問題の答え\(contentA)")
+            }
+        } catch {
+            print("エラーがあります")
+        }
+    }
+
+    /////ここまでCoreData///////
+    
+}
 
 
     /*
