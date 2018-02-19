@@ -44,10 +44,11 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     //ミスした問題、答えを入れる配列
     var missWords: [NSManagedObject] = []
     //ミスした問題を取得する配列
-    var fetchedmissWords: [NSManagedObject] = []
+    //var fetchedmissWords: [NSManagedObject] = []
+    var some:[String] = []
     
-    //管理オブジェクトコンテキスト
-    var managedContext:NSManagedObjectContext!
+    //コアデータの辞書
+    var MissQuestion:[String:String] = [:]
     
     //空の配列を作成
     var contentQ:[String] = []
@@ -95,7 +96,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         var filePath = ""
         //ファイルパスを取得
         if passedIndex == 0{
-            
+            read()
         }else if passedIndex == 1{
             filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
         }else if passedIndex == 2{
@@ -123,7 +124,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         
         missQ = detailInfo["question"] as! String
         missA = detailInfo["answer"] as! String
-        
+        print("missQ\(missQ)")
         //問題を毎回wordsAnswerに入れる
         resultArray.append(wordsAnswer)
         
@@ -200,17 +201,38 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
 
             switch CorrectAnswer{
                 case pushBtn:
+                    for (index, value) in contentQ.enumerated(){
+                        if  value == missQ{
+                        print("for文チェック\(index, value)")
+                            let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                            let viewContext = appDelegate.persistentContainer.viewContext
+                            let request: NSFetchRequest<MissWords> = MissWords.fetchRequest()
+                                do {
+                                    let fetchResults = try viewContext.fetch(request)
+                                    for result: AnyObject in fetchResults {
+                                    let record = result as! NSManagedObject
+                                    viewContext.delete(record)
+                                    }
+                                    try viewContext.save()
+                                } catch let error as NSError {
+                                    print("DBへの削除に失敗しました")
+                                }
+                        }
+                    }
+                    
                     resultImage.image = #imageLiteral(resourceName: "yes.png")
                     resultImage.alpha = 0.7
                     correctQuestionNumber += 1
                     wordsJudgment.append("Good")
                     correctAudioPlayer.play()
+                
                 default:
                     resultImage.image = #imageLiteral(resourceName: "no.png")
                     resultImage.alpha = 0.7
                     wordsJudgment.append("Bad")
                     mistakeAudioPlayer.play()
                 
+                    
                     //AppDelegateを使う準備をしておく
                     let appD:AppDelegate = UIApplication.shared.delegate as! AppDelegate
                     //エンティティを操作するためのオブジェクトを作成
@@ -225,7 +247,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     do {
                         try viewContext.save()
                         missWords.append(mistakeWord)
-                        print(missWords)
                     } catch let error as NSError {
                         print("DBへの保存に失敗しました")
                     }
@@ -380,7 +401,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
 
         //データを取得するエンティティの指定
         //<>の中はモデルファイルで指定したエンティティ名
-        //ここで上のツールを動かしてる？
         let query: NSFetchRequest<MissWords> = MissWords.fetchRequest()
 
         do {
