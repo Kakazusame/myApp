@@ -43,9 +43,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     var missA = ""
     //ミスした問題、答えを入れる配列
     var missWords: [NSManagedObject] = []
-    //ミスした問題を取得する配列
-    //var fetchedmissWords: [NSManagedObject] = []
-    var some:[String] = []
     
     //コアデータの辞書
     var MissQuestion:[String:String] = [:]
@@ -96,7 +93,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         var filePath = ""
         //ファイルパスを取得
         if passedIndex == 0{
-            read()
+            
         }else if passedIndex == 1{
             filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
         }else if passedIndex == 2{
@@ -106,7 +103,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         //プロパティリストからデータを取得（Dictionary型）
         let dic = NSDictionary(contentsOfFile: filePath)
         
-        for (key,quiz) in dic! {
+        for (key,quiz) in dic!{
             //必要なものリスト
             let testdic:NSDictionary = quiz as! NSDictionary
             let testinfo:NSDictionary = ["num":key,"answer":testdic["answer"],"question":testdic["question"]!]
@@ -203,10 +200,18 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 case pushBtn:
                     for (index, value) in contentQ.enumerated(){
                         if  value == missQ{
+                            //ミス問題表示できたら、「&& indexpath == 0」をif文に入れる
                         print("for文チェック\(index, value)")
                             let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                             let viewContext = appDelegate.persistentContainer.viewContext
                             let request: NSFetchRequest<MissWords> = MissWords.fetchRequest()
+
+                            //let searchTitle = questionLabel?.text
+                            //取得したタイトルをキーにqueryのデータを絞り込む
+                            //request.predicate = NSPredicate(format: "question = %@", searchTitle!)
+                            
+                            let predicate = NSPredicate(format:"%K = %@","question",missQ)
+                            request.predicate = predicate
                                 do {
                                     let fetchResults = try viewContext.fetch(request)
                                     for result: AnyObject in fetchResults {
@@ -219,7 +224,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                                 }
                         }
                     }
-                    
                     resultImage.image = #imageLiteral(resourceName: "yes.png")
                     resultImage.alpha = 0.7
                     correctQuestionNumber += 1
@@ -247,10 +251,11 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     do {
                         try viewContext.save()
                         missWords.append(mistakeWord)
+                        print("確認\(missWords)")
                     } catch let error as NSError {
                         print("DBへの保存に失敗しました")
                     }
-                    //CoreDataからデータを読み込む処理
+                    //CoreDataからデータを読み込む処理（表示のための処理）
                     read()
             }
         
@@ -391,16 +396,12 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         //配列の初期化
         contentQ = []
         contentA = []
-
+        
         //AppDelegateを使う準備をしておく
         let appD:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-
         //エンティティを操作するためのオブジェクトを作成
-        //操作するためのツールを作成
         let viewContext = appD.persistentContainer.viewContext
-
-        //データを取得するエンティティの指定
-        //<>の中はモデルファイルで指定したエンティティ名
+        //データを取得するエンティティの指定　検索の準備ができました
         let query: NSFetchRequest<MissWords> = MissWords.fetchRequest()
 
         do {
@@ -410,8 +411,10 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             for result: AnyObject in fetchResults {
                 let question : String = result.value(forKey: "question") as! String
                 let answer : String = result.value(forKey: "answer") as! String
+
                 contentQ.append(question)
                 contentA.append(answer)
+                
                 print("ミスした問題\(contentQ)その問題の答え\(contentA)")
             }
         } catch {
