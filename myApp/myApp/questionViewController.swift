@@ -99,18 +99,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
         }
         
-        if passedIndex > 0 {
-            //プロパティリストからデータを取得（Dictionary型）
-            let dic = NSDictionary(contentsOfFile: filePath)
-
-            for (key,quiz) in dic!{
-                //必要なものリスト
-                let testdic:NSDictionary = quiz as! NSDictionary
-                let testinfo:NSDictionary = ["num":key,"answer":testdic["answer"],"question":testdic["question"]!]
-                //リストを追加
-                testList.append(testinfo)
-            }
-        } else if passedIndex == 0{
+        if passedIndex == 0 {
             //プロパティリストからデータを取得（Dictionary型）
             let dic = NSDictionary(contentsOfFile: dummy)
             for (key,quiz) in dic!{
@@ -120,6 +109,17 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 //リストを追加
                 dummyA.append(dummyAnswer)
                 print("dummyA:\(dummyA)")
+            }
+        } else {
+            //プロパティリストからデータを取得（Dictionary型）
+            let dic = NSDictionary(contentsOfFile: filePath)
+            
+            for (key,quiz) in dic!{
+                //必要なものリスト
+                let testdic:NSDictionary = quiz as! NSDictionary
+                let testinfo:NSDictionary = ["num":key,"answer":testdic["answer"],"question":testdic["question"]!]
+                //リストを追加
+                testList.append(testinfo)
             }
         }
 
@@ -163,16 +163,15 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 let detailInfo = dummyA[incorrectRandomNumber]
                 selectBtn[i]?.setTitle(detailInfo["answer"] as? String, for: UIControlState())
                 //オブジェクトを削除、1回使用した選択肢を削除する
-                QList.remove(object: detailInfo)
+                dummyA.remove(object: detailInfo)
             }
-        }else if passedIndex > 0{
+        }else {
             for i in 0...3{
                 let incorrectRandomNumber = Int(arc4random()) % QList.count
                 let detailInfo = QList[incorrectRandomNumber]
                 selectBtn[i]?.setTitle(detailInfo["answer"] as? String, for: UIControlState())
                 //オブジェクトを削除、1回使用した選択肢を削除する
                 QList.remove(object: detailInfo)
-                //print("Qlist:\(QList)")
             }
         }
 
