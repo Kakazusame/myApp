@@ -44,8 +44,10 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     //ミスした問題、答えを入れる配列
     var missWords: [NSManagedObject] = []
     
-    //コアデータの辞書
-    var MissQuestion:[String:String] = [:]
+    //ダミーのための配列
+    var dummy = ""
+    //ミス問題を出題するためのダミーの答えを入れる配列
+    var dummyA:[NSDictionary] = []
     
     //空の配列を作成
     var contentQ:[String] = []
@@ -60,8 +62,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     var correctAudioPlayer: AVAudioPlayer! = nil
     //不正解音
     var mistakeAudioPlayer: AVAudioPlayer! = nil
-
-    
     
     //選択された行番号が受け渡されるプロパティ
     var passedIndex = -1
@@ -110,9 +110,19 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 //リストを追加
                 testList.append(testinfo)
             }
+        } else if passedIndex == 0{
+            //プロパティリストからデータを取得（Dictionary型）
+            let dic = NSDictionary(contentsOfFile: dummy)
+            for (key,quiz) in dic!{
+                //必要なものリスト
+                let testdic:NSDictionary = quiz as! NSDictionary
+                let dummyAnswer:NSDictionary = ["answer":testdic["answer"]]
+                //リストを追加
+                dummyA.append(dummyAnswer)
+                print("dummyA:\(dummyA)")
+            }
         }
 
-        //4を指定するんじゃなくて問題数に変更
         var RandomNumber:Int = Int(arc4random()) % testList.count
         
         //今画面に表示したいデータの取得
@@ -126,19 +136,12 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         missQ = detailInfo["question"] as! String
         missA = detailInfo["answer"] as! String
 
-        //問題を毎回wordsAnswerに入れる
+        //問題を毎回resultArrayに入れる
         resultArray.append(wordsAnswer)
-        //print("resultArray:\(resultArray)")
-
-//        for(key,data) in dic!{
-//            var _:NSDictionary = data as! NSDictionary
-//        }
         
         //問題文
         questionLabel.text = "Q\(count).\(detailInfo["question"]!)"
-        //print(questionLabel.text)
         
-        //4択を表示（不正解）
         //正解の取得
         var correctSlang = testList[RandomNumber]
         //正解を4択から除外
@@ -148,29 +151,35 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         
         for correct in testList {
             if correctSlang != correct {
-                print(correct["answer"] as! String)
                 QList.append(correct)
             }
         }
         
         
         var selectBtn = [answerButtonOne,answerButtonTwo,answerButtonThree,answerButtonFour]
-        for i in 0...3{
-            let incorrectRandomNumber = Int(arc4random()) % QList.count
-
-            let detailInfo = QList[incorrectRandomNumber]
-            selectBtn[i]?.setTitle(detailInfo["answer"] as? String, for: UIControlState())
-            
-            //オブジェクトを削除、1回使用した選択肢を削除する
-            QList.remove(object: detailInfo)
-            print("Qlist:\(QList)")
+        if passedIndex == 0{
+            for i in 0...3{
+                let incorrectRandomNumber = Int(arc4random()) % dummyA.count
+                let detailInfo = dummyA[incorrectRandomNumber]
+                selectBtn[i]?.setTitle(detailInfo["answer"] as? String, for: UIControlState())
+                //オブジェクトを削除、1回使用した選択肢を削除する
+                QList.remove(object: detailInfo)
+            }
+        }else if passedIndex > 0{
+            for i in 0...3{
+                let incorrectRandomNumber = Int(arc4random()) % QList.count
+                let detailInfo = QList[incorrectRandomNumber]
+                selectBtn[i]?.setTitle(detailInfo["answer"] as? String, for: UIControlState())
+                //オブジェクトを削除、1回使用した選択肢を削除する
+                QList.remove(object: detailInfo)
+                //print("Qlist:\(QList)")
+            }
         }
 
         //正解とボタンを一致させる
         var correctNumber:Int = Int(arc4random() % 4)
         correctNumber += 1
         CorrectAnswer = String(correctNumber)
-        //print(CorrectAnswer)
         
         if CorrectAnswer == "1" {
             answerButtonOne.setTitle(detailInfo["answer"] as? String, for: UIControlState())
@@ -190,8 +199,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     }
     
     ///////ここまで画面//////////
-    
-    
     @IBAction func pushBtn(_ sender: UIButton) {
         // 開始した時刻を記録
         startTime = Date().timeIntervalSince1970
@@ -205,9 +212,8 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             switch CorrectAnswer{
                 case pushBtn:
                     for (index, value) in contentQ.enumerated(){
-                        if  value == missQ{
-                            //ミス問題表示できたら、「&& indexpath == 0」をif文に入れる
-                        print("for文チェック\(index, value)")
+                        if  value == missQ && passedIndex == 0 {
+
                             let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                             let viewContext = appDelegate.persistentContainer.viewContext
                             let request: NSFetchRequest<MissWords> = MissWords.fetchRequest()
@@ -257,7 +263,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     do {
                         try viewContext.save()
                         missWords.append(mistakeWord)
-                        print("確認\(missWords)")
+                        //print("確認\(missWords)")
                     } catch let error as NSError {
                         print("DBへの保存に失敗しました")
                     }
@@ -297,7 +303,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                     let newVC = segue.destination as! ResultViewController
                     newVC.correctQuestionNumber = self.correctQuestionNumber
-                    print(correctQuestionNumber)
+                    //print(correctQuestionNumber)
                     
                 }
                 
@@ -429,6 +435,9 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
 
                 //print("testList:\(testList)")
                 //print("ミスした問題\(contentQ)その問題の答え\(contentA)")
+                
+                //plistを取得
+                 dummy = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
             }
             
         } catch {
