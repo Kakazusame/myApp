@@ -71,59 +71,69 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         super.viewDidLoad()
         print("渡された行番号：\(passedIndex)")
         //問題を表示
+        readQuestion()
         RandomQuestions()
-        
         //音を鳴らす
         correctSound()
         mistakeSound()
-        
-        //コアデータの読み込み
-        read()
     }
     
     
     ///////ここから問題画面///////
-
+    func readQuestion(){
+            var filePath = ""
+            //ファイルパスを取得
+            if passedIndex == 0{
+                read()
+            }else if passedIndex == 1{
+                filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
+                dummy = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
+            }else if passedIndex == 2{
+                filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
+                dummy = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
+            }
+        
+            if passedIndex == 0 {
+                //プロパティリストからデータを取得（Dictionary型）
+                //ミス問題がない時、今エラー出てるからそれを画像にする！！！！！！！！！！！
+                let dic = NSDictionary(contentsOfFile: dummy)
+                for (key,quiz) in dic!{
+                    //必要なものリスト
+                    let testdic:NSDictionary = quiz as! NSDictionary
+                    let dummyAnswer:NSDictionary = ["answer":testdic["answer"]]
+                    //リストを追加
+                    dummyA.append(dummyAnswer)
+                    print("dummyA:\(dummyA)")
+                }
+            } else {
+                //プロパティリストからデータを取得（Dictionary型）
+                let dic = NSDictionary(contentsOfFile: filePath)
+                let dic02 = NSDictionary(contentsOfFile: dummy)
+                for (key,quiz) in dic! {
+                    //必要なものリスト
+                    let testdic:NSDictionary = quiz as! NSDictionary
+                    let testinfo:NSDictionary = ["num":key,"answer":testdic["answer"],"question":testdic["question"]!]
+                    //リストを追加
+                    testList.append(testinfo)
+                    
+                    let testdic02:NSDictionary = quiz as! NSDictionary
+                    let dummyAnswer02:NSDictionary = ["answer":testdic02["answer"]]
+                    //リストを追加
+                    dummyA.append(dummyAnswer02)
+                    print("dummyA:\(dummyA)")
+                }
+                
+            }
+    }
+    
+    
     func  RandomQuestions(){
         
         //問題数の表示
         count += 1
         
-        var filePath = ""
-        //ファイルパスを取得
-        if passedIndex == 0{
-            read()
-        }else if passedIndex == 1{
-            filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
-        }else if passedIndex == 2{
-            filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
-        }
-        
-        if passedIndex == 0 {
-            //プロパティリストからデータを取得（Dictionary型）
-            let dic = NSDictionary(contentsOfFile: dummy)
-            for (key,quiz) in dic!{
-                //必要なものリスト
-                let testdic:NSDictionary = quiz as! NSDictionary
-                let dummyAnswer:NSDictionary = ["answer":testdic["answer"]]
-                //リストを追加
-                dummyA.append(dummyAnswer)
-                print("dummyA:\(dummyA)")
-            }
-        } else {
-            //プロパティリストからデータを取得（Dictionary型）
-            let dic = NSDictionary(contentsOfFile: filePath)
-            
-            for (key,quiz) in dic!{
-                //必要なものリスト
-                let testdic:NSDictionary = quiz as! NSDictionary
-                let testinfo:NSDictionary = ["num":key,"answer":testdic["answer"],"question":testdic["question"]!]
-                //リストを追加
-                testList.append(testinfo)
-            }
-        }
-
         var RandomNumber:Int = Int(arc4random()) % testList.count
+        //ミス問題がなかった時は押せないか画像出すかする。
         
         //今画面に表示したいデータの取得
         let detailInfo = testList[RandomNumber] as! NSDictionary
@@ -152,6 +162,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         for correct in testList {
             if correctSlang != correct {
                 QList.append(correct)
+                print("QList\(QList)")
             }
         }
         
@@ -163,15 +174,15 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 let detailInfo = dummyA[incorrectRandomNumber]
                 selectBtn[i]?.setTitle(detailInfo["answer"] as? String, for: UIControlState())
                 //オブジェクトを削除、1回使用した選択肢を削除する
-                dummyA.remove(object: detailInfo)
+                //dummyA.remove(object: detailInfo)
             }
         }else {
             for i in 0...3{
-                let incorrectRandomNumber = Int(arc4random()) % QList.count
-                let detailInfo = QList[incorrectRandomNumber]
+                let incorrectRandomNumber = Int(arc4random()) % dummyA.count
+                let detailInfo = dummyA[incorrectRandomNumber]
                 selectBtn[i]?.setTitle(detailInfo["answer"] as? String, for: UIControlState())
                 //オブジェクトを削除、1回使用した選択肢を削除する
-                QList.remove(object: detailInfo)
+                //dummyA.remove(object: detailInfo)
             }
         }
 
@@ -217,9 +228,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                             let viewContext = appDelegate.persistentContainer.viewContext
                             let request: NSFetchRequest<MissWords> = MissWords.fetchRequest()
 
-                            //let searchTitle = questionLabel?.text
-                            //取得したタイトルをキーにqueryのデータを絞り込む
-                            //request.predicate = NSPredicate(format: "question = %@", searchTitle!)
+
                             
                             let predicate = NSPredicate(format:"%K = %@","question",missQ)
                             request.predicate = predicate
@@ -266,15 +275,11 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     } catch let error as NSError {
                         print("DBへの保存に失敗しました")
                     }
-                    //CoreDataからデータを読み込む処理（表示のための処理）
-                    read()
             }
-        
         // 0.01秒ごとにupdateLabel()を呼び出す
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateLabel), userInfo: nil, repeats: true)
         // タイマーが完了するまでボタンを非活性にする
         allAnswerBtnDisabled()
-        
     }
 
     @objc func updateLabel() {
@@ -292,20 +297,26 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             timer.invalidate()
            
             //3問終わったらscore画面へ遷移
-            if quiznum == 5{
+            if passedIndex > 0 &&  quiznum == 15{
                 quiznum += 1
-               
                 //次のコントローラーへ遷移する
                 self.performSegue(withIdentifier: "toResultView", sender: nil)
-                
                 //ゲーム画面→結果表示画面のViewControllerにプロパティの値を渡す
                 func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                     let newVC = segue.destination as! ResultViewController
                     newVC.correctQuestionNumber = self.correctQuestionNumber
                     //print(correctQuestionNumber)
-                    
                 }
-                
+            }else if passedIndex == 0 && quiznum == testList.count{
+                quiznum += 1
+                //次のコントローラーへ遷移する
+                self.performSegue(withIdentifier: "toResultView", sender: nil)
+                //ゲーム画面→結果表示画面のViewControllerにプロパティの値を渡す
+                func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                    let newVC = segue.destination as! ResultViewController
+                    newVC.correctQuestionNumber = self.correctQuestionNumber
+                    //print(correctQuestionNumber)
+                }
             }else{
                 //問題数までのアクション
                 quiznum += 1
