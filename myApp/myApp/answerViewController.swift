@@ -17,32 +17,20 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
     //選択された行番号が受け渡されるプロパティ
     var passedIndex = -1
     
+    //何行目か保存されてない時を見分けるため-1を代入
+    var selectedRowIndex = -1
+    var detail:[String: String] = [:]
+    
     //値が受け渡されるプロパティ
     var wordsJudgment:[String] = []
     var resultArray:[NSDictionary] = []
-
+    
     //グローバル変数での値受け取り
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         var appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        passedIndex = appDelegate.questionCategory!
         wordsJudgment = appDelegate.Judgment! as! [String]
         resultArray = appDelegate.Answer as! [NSDictionary]
-        print(wordsJudgment)
-        print(resultArray)
-        
-        
-        //ファイルパスを取得
-        var filePath = ""
-        if passedIndex == 0{
-            filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
-            print("0番目の問題が読み込まれました")
-            
-        }else if passedIndex == 1{
-            filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
-            print("1番目の問題が読み込まれました")
-        }
-        
     }
     
     override func viewDidLoad() {
@@ -58,7 +46,9 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //セルの選択不可
-        self.listView.allowsSelection = false
+        //self.listView.allowsSelection = false
+        
+        
         
         //セルの高さを変更
         self.listView.rowHeight = 70
@@ -71,12 +61,33 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         wordCell.questionLabel.text = wordsinfo["question"] as? String
         wordCell.answerLabel.text = wordsinfo["answer"] as? String
         wordCell.judgeLabel.text = wordsJudgment[indexPath.row]
-        
+        //矢印を右側につける
+        wordCell.accessoryType = .disclosureIndicator
         //文字を設定したセルを返す
         return wordCell
     }
     
+    // 選択された時に行う処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let wordCell = tableView.dequeueReusableCell(withIdentifier: "wordCell", for: indexPath) as! customWordCellTableViewCell
+
+        selectedRowIndex = indexPath.row
+        
+        // 一行分のデータを取得
+        detail = resultArray[indexPath.row] as! [String : String]
+        print("============================")
+        print(detail)
+
+        //セグエの名前
+        performSegue(withIdentifier: "goDetail",sender: nil)
+    }
     
+    // Segueで画面遷移する時
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! detailsViewController
+        dvc.resultArray = detail
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

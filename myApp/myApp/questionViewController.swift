@@ -87,10 +87,10 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 read()
             }else if passedIndex == 1{
                 filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
-                dummy = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
             }else if passedIndex == 2{
                 filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
-                dummy = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
+            }else if passedIndex == 5{
+                filePath = Bundle.main.path(forResource:"acronym", ofType:"plist")!
             }
         
             if passedIndex == 0 {
@@ -103,26 +103,19 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     let dummyAnswer:NSDictionary = ["answer":testdic["answer"]]
                     //リストを追加
                     dummyA.append(dummyAnswer)
-                    print("dummyA:\(dummyA)")
                 }
             } else {
                 //プロパティリストからデータを取得（Dictionary型）
                 let dic = NSDictionary(contentsOfFile: filePath)
-                let dic02 = NSDictionary(contentsOfFile: dummy)
+                //let dic02 = NSDictionary(contentsOfFile: dummy)
                 for (key,quiz) in dic! {
                     //必要なものリスト
                     let testdic:NSDictionary = quiz as! NSDictionary
-                    let testinfo:NSDictionary = ["num":key,"answer":testdic["answer"],"question":testdic["question"]!]
+                    let testinfo:NSDictionary = ["num":key,"answer":testdic["answer"],"question":testdic["question"],"detail":testdic["detail"]!]
                     //リストを追加
                     testList.append(testinfo)
-                    
-                    let testdic02:NSDictionary = quiz as! NSDictionary
-                    let dummyAnswer02:NSDictionary = ["answer":testdic02["answer"]]
-                    //リストを追加
-                    dummyA.append(dummyAnswer02)
-                    print("dummyA:\(dummyA)")
+                    //print(testList)
                 }
-                
             }
     }
     
@@ -140,8 +133,9 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
         print(detailInfo["question"] as! String)
         print(detailInfo["answer"] as! String)
+        print(detailInfo["detail"] as! String)
         
-        let wordsAnswer:NSDictionary = ["question":detailInfo["question"] as! String, "answer":detailInfo["answer"] as! String]
+        let wordsAnswer:NSDictionary = ["question":detailInfo["question"] as! String, "answer":detailInfo["answer"] as! String, "detail":detailInfo["detail"] as! String]
         
         missQ = detailInfo["question"] as! String
         missA = detailInfo["answer"] as! String
@@ -162,7 +156,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         for correct in testList {
             if correctSlang != correct {
                 QList.append(correct)
-                print("QList\(QList)")
             }
         }
         
@@ -178,11 +171,11 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             }
         }else {
             for i in 0...3{
-                let incorrectRandomNumber = Int(arc4random()) % dummyA.count
-                let detailInfo = dummyA[incorrectRandomNumber]
+                let incorrectRandomNumber = Int(arc4random()) % QList.count
+                let detailInfo = QList[incorrectRandomNumber]
                 selectBtn[i]?.setTitle(detailInfo["answer"] as? String, for: UIControlState())
                 //オブジェクトを削除、1回使用した選択肢を削除する
-                //dummyA.remove(object: detailInfo)
+                QList.remove(object: detailInfo)
             }
         }
 
@@ -215,7 +208,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         
         //タップされたボタンの番号を取得
         let b:UIButton = sender
-        //print(b.tag)
         var btn: String = String(b.tag)
         pushBtn = btn
 
@@ -271,7 +263,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     do {
                         try viewContext.save()
                         missWords.append(mistakeWord)
-                        //print("確認\(missWords)")
                     } catch let error as NSError {
                         print("DBへの保存に失敗しました")
                     }
@@ -297,7 +288,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             timer.invalidate()
            
             //3問終わったらscore画面へ遷移
-            if passedIndex > 0 &&  quiznum == 15{
+            if passedIndex > 0 &&  quiznum == 3{
                 quiznum += 1
                 //次のコントローラーへ遷移する
                 self.performSegue(withIdentifier: "toResultView", sender: nil)
@@ -305,17 +296,14 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                     let newVC = segue.destination as! ResultViewController
                     newVC.correctQuestionNumber = self.correctQuestionNumber
-                    //print(correctQuestionNumber)
                 }
-            }else if passedIndex == 0 && quiznum == testList.count{
-                quiznum += 1
+            }else if testList.count == 0{
                 //次のコントローラーへ遷移する
                 self.performSegue(withIdentifier: "toResultView", sender: nil)
                 //ゲーム画面→結果表示画面のViewControllerにプロパティの値を渡す
                 func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                     let newVC = segue.destination as! ResultViewController
                     newVC.correctQuestionNumber = self.correctQuestionNumber
-                    //print(correctQuestionNumber)
                 }
             }else{
                 //問題数までのアクション
@@ -350,6 +338,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         appDelegate.Judgment = wordsJudgment
         //問題解いた順
         appDelegate.Answer = resultArray
+        
     }
     
     
@@ -442,9 +431,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 let testinfo:NSDictionary = ["answer":answer,"question":question]
                 //リストを追加
                 testList.append(testinfo)
-
-                //print("testList:\(testList)")
-                //print("ミスした問題\(contentQ)その問題の答え\(contentA)")
                 
                 //plistを取得
                  dummy = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
