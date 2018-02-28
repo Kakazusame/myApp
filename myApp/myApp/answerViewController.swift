@@ -13,6 +13,7 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
     
 
     @IBOutlet weak var listView: UITableView!
+    @IBOutlet weak var goBackHome: UIButton!
     
     //選択された行番号が受け渡されるプロパティ
     var passedIndex = -1
@@ -75,17 +76,27 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         // 一行分のデータを取得
         detail = resultArray[indexPath.row] as! [String : String]
-        print("============================")
-        print(detail)
-
         //セグエの名前
         performSegue(withIdentifier: "goDetail",sender: nil)
     }
     
+    
+    @IBAction func tapHomeBtn(_ sender: UIButton) {
+        
+        
+    }
+    
     // Segueで画面遷移する時
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dvc = segue.destination as! detailsViewController
-        dvc.resultArray = detail
+        
+        if segue.identifier == "goHome"{
+            
+        }else if segue.identifier == "goDetail"{
+            let dvc = segue.destination as! detailsViewController
+            dvc.resultArray = detail
+        }else{
+            
+        }
     }
 
 

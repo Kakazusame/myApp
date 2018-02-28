@@ -39,8 +39,9 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     var resultArray:[NSDictionary] = []
     //ミスした問題
     var missQ = ""
-    //ミスした問題の答え
     var missA = ""
+    var missD = ""
+    
     //ミスした問題、答えを入れる配列
     var missWords: [NSManagedObject] = []
     
@@ -52,6 +53,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     //空の配列を作成
     var contentQ:[String] = []
     var contentA:[String] = []
+    var contentD:[String] = []
     
     // Timerクラスのインスタンス
     var timer = Timer()
@@ -139,7 +141,8 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         
         missQ = detailInfo["question"] as! String
         missA = detailInfo["answer"] as! String
-
+        missD = detailInfo["detail"] as! String
+        
         //問題を毎回resultArrayに入れる
         resultArray.append(wordsAnswer)
         
@@ -177,6 +180,8 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 //オブジェクトを削除、1回使用した選択肢を削除する
                 QList.remove(object: detailInfo)
             }
+            //オブジェクトを削除、1回使用した選択肢を削除する
+//            QList.remove(object: detailInfo)
         }
 
         //正解とボタンを一致させる
@@ -259,6 +264,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     //レコードオブジェクトに値のセット
                     mistakeWord.setValue(missQ, forKeyPath: "question")
                     mistakeWord.setValue(missA, forKeyPath: "answer")
+                    mistakeWord.setValue(missD, forKeyPath: "detail")
                     //レコード(行)の即時保存
                     do {
                         try viewContext.save()
@@ -288,7 +294,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             timer.invalidate()
            
             //3問終わったらscore画面へ遷移
-            if passedIndex > 0 &&  quiznum == 3{
+            if passedIndex > 0 &&  quiznum == 2{
                 quiznum += 1
                 //次のコントローラーへ遷移する
                 self.performSegue(withIdentifier: "toResultView", sender: nil)
@@ -422,13 +428,14 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             for result: AnyObject in fetchResults {
                 let question : String = result.value(forKey: "question") as! String
                 let answer : String = result.value(forKey: "answer") as! String
+                let detail : String = result.value(forKey: "detail") as! String
 
                 contentQ.append(question)
                 contentA.append(answer)
                 
                 //必要なものリスト
                 //let testdic:NSDictionary = result as! NSDictionary
-                let testinfo:NSDictionary = ["answer":answer,"question":question]
+                let testinfo:NSDictionary = ["answer":answer,"question":question,"detail":detail]
                 //リストを追加
                 testList.append(testinfo)
                 

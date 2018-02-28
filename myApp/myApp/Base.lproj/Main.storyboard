@@ -257,7 +257,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ホーム"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="backHome" id="yIe-LQ-Ngh"/>
+                                    <action selector="tapHomeBtn:" destination="Ngt-ys-L9C" eventType="touchUpInside" id="m3e-bs-BQM"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="goHome" id="S8v-vp-hUQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="単語一覧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3W-Ds-UEi">
@@ -306,7 +307,6 @@
                                             <outlet property="answerLabel" destination="rhZ-Ho-lSa" id="iY9-zD-Em7"/>
                                             <outlet property="judgeLabel" destination="Dek-GF-MK3" id="rYi-4p-9aL"/>
                                             <outlet property="questionLabel" destination="5qw-wr-oTk" id="fcf-VX-Y5L"/>
-                                            <segue destination="GDG-7b-Z4R" kind="show" identifier="goDetail" id="pkg-tT-LE3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -320,7 +320,9 @@
                         <viewLayoutGuide key="safeArea" id="B3Y-o0-MvW"/>
                     </view>
                     <connections>
+                        <outlet property="goBackHome" destination="Dka-mV-8qY" id="nTL-M5-fNY"/>
                         <outlet property="listView" destination="YoH-AP-WzO" id="2Pr-T3-qfD"/>
+                        <segue destination="GDG-7b-Z4R" kind="show" identifier="goDetail" id="2kc-wO-VvU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hs5-Eu-cFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -386,8 +388,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pkg-tT-LE3"/>
+        <segue reference="2kc-wO-VvU"/>
         <segue reference="nii-nE-2zI"/>
-        <segue reference="yIe-LQ-Ngh"/>
+        <segue reference="S8v-vp-hUQ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -4,6 +4,8 @@
 <dict>
 	<key>06</key>
 	<dict>
+		<key>detail</key>
+		<string>これはイチゴという果物です</string>
 		<key>question</key>
 		<string>Strawberry</string>
 		<key>answer</key>
@@ -11,6 +13,8 @@
 	</dict>
 	<key>05</key>
 	<dict>
+		<key>detail</key>
+		<string>これは桃という果物です</string>
 		<key>question</key>
 		<string>Peach</string>
 		<key>answer</key>
@@ -18,6 +22,8 @@
 	</dict>
 	<key>04</key>
 	<dict>
+		<key>detail</key>
+		<string>これはブドウという果物です</string>
 		<key>question</key>
 		<string>Grape</string>
 		<key>answer</key>
@@ -25,6 +31,8 @@
 	</dict>
 	<key>03</key>
 	<dict>
+		<key>detail</key>
+		<string>これはバナナという果物です</string>
 		<key>question</key>
 		<string>Banana</string>
 		<key>answer</key>
@@ -32,6 +40,8 @@
 	</dict>
 	<key>02</key>
 	<dict>
+		<key>detail</key>
+		<string>これはみかんという果物です</string>
 		<key>question</key>
 		<string>Orange</string>
 		<key>answer</key>
@@ -39,6 +49,8 @@
 	</dict>
 	<key>01</key>
 	<dict>
+		<key>detail</key>
+		<string>これはリンゴという果物です</string>
 		<key>question</key>
 		<string>Apple</string>
 		<key>answer</key>
