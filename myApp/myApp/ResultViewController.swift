@@ -15,6 +15,10 @@ class ResultViewController: UIViewController {
     
      var audioPlayerClear : AVAudioPlayer! = nil //クリア時用
     
+    @IBOutlet weak var homeConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var answerConstraint: NSLayoutConstraint!
+    
     //questionViewControllerより引き渡される値を格納する
     var correctQuestionNumber: Int!
     
@@ -25,6 +29,9 @@ class ResultViewController: UIViewController {
         //音を鳴らす
         resultSound()
         self.audioPlayerClear.play()
+        
+        homeConstraint.constant = UIScreen.main.bounds.width * 90/414
+        answerConstraint.constant = UIScreen.main.bounds.width * 260/414
     }
     
 

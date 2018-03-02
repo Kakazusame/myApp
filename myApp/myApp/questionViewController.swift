@@ -20,6 +20,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var answerButtonThree: UIButton!
     @IBOutlet weak var answerButtonFour: UIButton!
     
+    
     @IBOutlet weak var resultImage: UIImageView!
     //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておく配列
     var testList:[NSDictionary] = []
@@ -304,9 +305,8 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     newVC.correctQuestionNumber = self.correctQuestionNumber
                 }
             }else if testList.count == 0{
-                //次のコントローラーへ遷移する
+
                 self.performSegue(withIdentifier: "toResultView", sender: nil)
-                //ゲーム画面→結果表示画面のViewControllerにプロパティの値を渡す
                 func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                     let newVC = segue.destination as! ResultViewController
                     newVC.correctQuestionNumber = self.correctQuestionNumber
@@ -447,8 +447,9 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             print("エラーがあります")
         }
     }
-
     /////ここまでCoreData///////
+    
+    
     
 }
     /*

@@ -62,6 +62,11 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         wordCell.questionLabel.text = wordsinfo["question"] as? String
         wordCell.answerLabel.text = wordsinfo["answer"] as? String
         wordCell.judgeLabel.text = wordsJudgment[indexPath.row]
+        if wordsJudgment == ["Good"]{
+            //judgeLabel.textColor = UIColor.red
+        }else{
+            //judgeLabel.textColor = UIColor.blue
+        }
         //矢印を右側につける
         wordCell.accessoryType = .disclosureIndicator
         //文字を設定したセルを返す
