@@ -34,12 +34,6 @@ class ResultViewController: UIViewController {
         answerConstraint.constant = UIScreen.main.bounds.width * 260/414
     }
     
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: サウンドファイル作成
     func resultSound() {
         //Clear音作る。

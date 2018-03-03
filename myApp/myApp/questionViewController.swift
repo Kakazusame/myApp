@@ -20,6 +20,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var answerButtonThree: UIButton!
     @IBOutlet weak var answerButtonFour: UIButton!
     
+    @IBOutlet weak var questionCountLabel: UILabel!
     
     @IBOutlet weak var resultImage: UIImageView!
     //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておく配列
@@ -79,9 +80,13 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         //音を鳴らす
         correctSound()
         mistakeSound()
+
+
+//        qCountConstraint.constant = UIScreen.main.bounds.width * 90/414
+//        print(qCountConstraint)
     }
     
-    
+    @IBOutlet weak var qCountConstraint: NSLayoutConstraint!
     ///////ここから問題画面///////
     func readQuestion(){
             var filePath = ""
@@ -148,7 +153,12 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         resultArray.append(wordsAnswer)
         
         //問題文
-        questionLabel.text = "Q\(count).\(detailInfo["question"]!)"
+        questionLabel.text = "\(detailInfo["question"]!)"
+        if passedIndex > 0{
+            questionCountLabel.text = "\(count)/10"
+        }else{
+            questionCountLabel.text = "\(count)/\(testList.count)"
+        }
         
         //正解の取得
         var correctSlang = testList[RandomNumber]
@@ -211,6 +221,9 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     @IBAction func pushBtn(_ sender: UIButton) {
         // 開始した時刻を記録
         startTime = Date().timeIntervalSince1970
+        
+        let button = UIButton(type: .system)
+        button.setBackgroundColor(.blue, for: .highlighted)
         
         //タップされたボタンの番号を取得
         let b:UIButton = sender
@@ -494,6 +507,28 @@ extension Array where Element: Equatable {
         self.layer.borderWidth = borderWidth
         
         super.draw(rect)
+    }
+}
+
+extension UIButton {
+    func setBackgroundColor(_ color: UIColor, for state: UIControlState) {
+        let image = color.image
+        setBackgroundImage(image, for: state)
+    }
+}
+
+extension UIColor {
+    var image: UIImage? {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        UIGraphicsBeginImageContext(rect.size)
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+        context.setFillColor(self.cgColor)
+        context.fill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 }
 /////ここまでボタン///////

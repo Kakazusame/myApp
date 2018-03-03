@@ -45,12 +45,6 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     //一行に表示する文字列の作成、表示
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        //セルの選択不可
-        //self.listView.allowsSelection = false
-        
-        
-        
         //セルの高さを変更
         self.listView.rowHeight = 70
         
@@ -61,11 +55,16 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         //文字の表示
         wordCell.questionLabel.text = wordsinfo["question"] as? String
         wordCell.answerLabel.text = wordsinfo["answer"] as? String
-        wordCell.judgeLabel.text = wordsJudgment[indexPath.row]
-        if wordsJudgment == ["Good"]{
-            //judgeLabel.textColor = UIColor.red
+        
+        if wordsJudgment[indexPath.row].contains("Good") {
+            print("\(wordsJudgment)ここは丸")
+            wordCell.judgeLabel.textColor = UIColor.red
+            wordCell.judgeLabel.text = wordsJudgment[indexPath.row]
         }else{
-            //judgeLabel.textColor = UIColor.blue
+            print("\(wordsJudgment)ここはばつ")
+            print(wordsJudgment)
+            wordCell.judgeLabel.textColor = UIColor.blue
+            wordCell.judgeLabel.text = wordsJudgment[indexPath.row]
         }
         //矢印を右側につける
         wordCell.accessoryType = .disclosureIndicator
@@ -85,22 +84,13 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         performSegue(withIdentifier: "goDetail",sender: nil)
     }
     
-    
-    @IBAction func tapHomeBtn(_ sender: UIButton) {
-        
-        
-    }
-    
     // Segueで画面遷移する時
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "goHome"{
-            
-        }else if segue.identifier == "goDetail"{
+        if segue.identifier == "goDetail"{
             let dvc = segue.destination as! detailsViewController
             dvc.resultArray = detail
         }else{
-            
         }
     }
 
@@ -109,6 +99,8 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func goAnswer(_ segue:UIStoryboardSegue) {}
     
 
     /*

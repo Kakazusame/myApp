@@ -202,11 +202,18 @@
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kn4-Pc-WGy">
-                                <rect key="frame" x="58" y="107" width="298" height="283"/>
+                                <rect key="frame" x="82" y="124" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Kn4-Pc-WGy" secondAttribute="height" multiplier="1:1" id="hDa-Ac-wzx"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCW-9g-pSQ">
+                                <rect key="frame" x="126" y="151" width="162" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -231,6 +238,7 @@
                         <outlet property="answerButtonOne" destination="BRs-hM-rNi" id="3fd-gL-5CI"/>
                         <outlet property="answerButtonThree" destination="UXe-o6-0Du" id="l9j-CM-mBG"/>
                         <outlet property="answerButtonTwo" destination="Vwx-vT-u4v" id="9WG-0Q-oHp"/>
+                        <outlet property="questionCountLabel" destination="hCW-9g-pSQ" id="cSH-9T-nrt"/>
                         <outlet property="questionLabel" destination="09a-lW-0mx" id="MoD-AD-Ino"/>
                         <outlet property="resultImage" destination="Kn4-Pc-WGy" id="7j8-HS-hFK"/>
                         <segue destination="vuK-fa-Iva" kind="modal" identifier="toResultView" id="CyF-rc-y1D"/>
@@ -238,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FxZ-3J-KwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="943.47826086956525" y="132.06521739130434"/>
+            <point key="canvasLocation" x="926" y="130"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="fXw-N9-Lc1">
@@ -280,7 +288,7 @@
                                 <rect key="frame" x="90" y="514" width="46" height="99"/>
                                 <state key="normal" title="ホーム"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="modal" identifier="toHomeView" id="elc-gw-fko"/>
+                                    <segue destination="X2r-60-cjk" kind="unwind" unwindAction="goBack:" id="Xqa-Kn-shD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -310,6 +318,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOv-Au-I7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="X2r-60-cjk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1892.753623188406" y="131.25"/>
         </scene>
@@ -397,8 +406,7 @@
                                 </constraints>
                                 <state key="normal" title="ホーム"/>
                                 <connections>
-                                    <action selector="tapHomeBtn:" destination="Ngt-ys-L9C" eventType="touchUpInside" id="m3e-bs-BQM"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="goHome" id="S8v-vp-hUQ"/>
+                                    <segue destination="Pje-nN-Y1O" kind="unwind" unwindAction="goBack:" id="knK-qa-YpU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -425,6 +433,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hs5-Eu-cFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Pje-nN-Y1O" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2826.0869565217395" y="132.06521739130434"/>
         </scene>
@@ -442,7 +451,7 @@
                                     <navigationItem title="例文" id="mfY-WN-EKz">
                                         <barButtonItem key="leftBarButtonItem" title="単語一覧" id="LuH-e9-wpR">
                                             <connections>
-                                                <segue destination="Ngt-ys-L9C" kind="show" id="nii-nE-2zI"/>
+                                                <segue destination="JlM-E9-n6u" kind="unwind" unwindAction="goAnswer:" id="Nhg-mi-fF7"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -473,6 +482,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qt6-5L-Gpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="JlM-E9-n6u" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3640.8000000000002" y="132.68365817091455"/>
         </scene>
@@ -490,14 +500,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLR-Jf-sBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-814" y="133"/>
+            <point key="canvasLocation" x="-839" y="111"/>
         </scene>
     </scenes>
     <resources>
         <image name="slug.jpg" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZHt-Nd-91T"/>
         <segue reference="a6c-Aw-QJf"/>
     </inferredMetricsTieBreakers>
 </document>
