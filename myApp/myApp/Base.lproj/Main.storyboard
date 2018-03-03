@@ -76,11 +76,27 @@
                     <navigationItem key="navigationItem" title="問題選択画面" id="nGq-w5-Hna"/>
                     <connections>
                         <segue destination="J4c-Ms-vXX" kind="show" identifier="nextSegue" id="voh-iR-bAB"/>
+                        <segue destination="2di-Lf-Ggz" kind="show" id="d0X-cr-Gxj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53.600000000000001" y="129.98500749625188"/>
+            <point key="canvasLocation" x="54" y="111"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pjU-oP-dkI">
+            <objects>
+                <viewController id="2di-Lf-Ggz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0id-78-Cof">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ljI-PM-VD5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GqS-Np-Yab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="915"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="g87-wu-OJd">
@@ -214,6 +230,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cFu-eZ-Y3D">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -238,6 +258,7 @@
                         <outlet property="answerButtonOne" destination="BRs-hM-rNi" id="3fd-gL-5CI"/>
                         <outlet property="answerButtonThree" destination="UXe-o6-0Du" id="l9j-CM-mBG"/>
                         <outlet property="answerButtonTwo" destination="Vwx-vT-u4v" id="9WG-0Q-oHp"/>
+                        <outlet property="noQuestion" destination="cFu-eZ-Y3D" id="N80-Oi-U6L"/>
                         <outlet property="questionCountLabel" destination="hCW-9g-pSQ" id="cSH-9T-nrt"/>
                         <outlet property="questionLabel" destination="09a-lW-0mx" id="MoD-AD-Ino"/>
                         <outlet property="resultImage" destination="Kn4-Pc-WGy" id="7j8-HS-hFK"/>
@@ -246,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FxZ-3J-KwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="130"/>
+            <point key="canvasLocation" x="924.63768115942037" y="110.86956521739131"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="fXw-N9-Lc1">
@@ -320,7 +341,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOv-Au-I7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="X2r-60-cjk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1892.753623188406" y="131.25"/>
+            <point key="canvasLocation" x="1893" y="111"/>
         </scene>
         <!--Answer View Controller-->
         <scene sceneID="Sws-nV-XsM">
@@ -435,7 +456,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hs5-Eu-cFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Pje-nN-Y1O" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2826.0869565217395" y="132.06521739130434"/>
+            <point key="canvasLocation" x="2816" y="111"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="7xv-MK-0io">
@@ -484,7 +505,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qt6-5L-Gpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="JlM-E9-n6u" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3640.8000000000002" y="132.68365817091455"/>
+            <point key="canvasLocation" x="3641" y="111"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UJz-6Z-5ZW">
@@ -507,6 +528,7 @@
         <image name="slug.jpg" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="voh-iR-bAB"/>
         <segue reference="a6c-Aw-QJf"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,15 +14,14 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     
 
     @IBOutlet weak var questionLabel: UILabel!
-    
     @IBOutlet weak var answerButtonOne: UIButton!
     @IBOutlet weak var answerButtonTwo: UIButton!
     @IBOutlet weak var answerButtonThree: UIButton!
     @IBOutlet weak var answerButtonFour: UIButton!
-    
     @IBOutlet weak var questionCountLabel: UILabel!
-    
     @IBOutlet weak var resultImage: UIImageView!
+    @IBOutlet weak var noQuestion: UIImageView!
+    
     //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておく配列
     var testList:[NSDictionary] = []
     //問題数
@@ -81,7 +80,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         correctSound()
         mistakeSound()
 
-
 //        qCountConstraint.constant = UIScreen.main.bounds.width * 90/414
 //        print(qCountConstraint)
     }
@@ -89,40 +87,38 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var qCountConstraint: NSLayoutConstraint!
     ///////ここから問題画面///////
     func readQuestion(){
-            var filePath = ""
-            //ファイルパスを取得
-            if passedIndex == 0{
-                read()
-            }else if passedIndex == 1{
-                filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
-            }else if passedIndex == 2{
-                filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
-            }else if passedIndex == 5{
-                filePath = Bundle.main.path(forResource:"acronym", ofType:"plist")!
-            }
+        var filePath = ""
+        //ファイルパスを取得
+        if passedIndex == 0{
+            read()
+        }else if passedIndex == 1{
+            filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
+        }else if passedIndex == 2{
+            filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
+        }else if passedIndex == 5{
+            filePath = Bundle.main.path(forResource:"acronym", ofType:"plist")!
+        }
         
             if passedIndex == 0 {
-                //プロパティリストからデータを取得（Dictionary型）
                 //ミス問題がない時、今エラー出てるからそれを画像にする！！！！！！！！！！！
-                let dic = NSDictionary(contentsOfFile: dummy)
+                //プロパティリストからデータを取得（Dictionary型）
+                var dic = NSDictionary(contentsOfFile: dummy)
+
                 for (key,quiz) in dic!{
                     //必要なものリスト
                     let testdic:NSDictionary = quiz as! NSDictionary
                     let dummyAnswer:NSDictionary = ["answer":testdic["answer"]]
-                    //リストを追加
+
                     dummyA.append(dummyAnswer)
                 }
             } else {
-                //プロパティリストからデータを取得（Dictionary型）
                 let dic = NSDictionary(contentsOfFile: filePath)
-                //let dic02 = NSDictionary(contentsOfFile: dummy)
                 for (key,quiz) in dic! {
                     //必要なものリスト
                     let testdic:NSDictionary = quiz as! NSDictionary
                     let testinfo:NSDictionary = ["num":key,"answer":testdic["answer"],"question":testdic["question"],"detail":testdic["detail"]!]
-                    //リストを追加
+
                     testList.append(testinfo)
-                    //print(testList)
                 }
             }
     }
@@ -427,7 +423,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         contentQ = []
         contentA = []
         
-        //AppDelegateを使う準備をしておく
+
         let appD:AppDelegate = UIApplication.shared.delegate as! AppDelegate
         //エンティティを操作するためのオブジェクトを作成
         let viewContext = appD.persistentContainer.viewContext
@@ -447,7 +443,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 contentA.append(answer)
                 
                 //必要なものリスト
-                //let testdic:NSDictionary = result as! NSDictionary
                 let testinfo:NSDictionary = ["answer":answer,"question":question,"detail":detail]
                 //リストを追加
                 testList.append(testinfo)

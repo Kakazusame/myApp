@@ -4,6 +4,8 @@
 <dict>
 	<key>01</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Away From Keyboard&quot;の略語。</string>
 		<key>question</key>
 		<string>AFK</string>
 		<key>answer</key>
@@ -11,6 +13,8 @@
 	</dict>
 	<key>02</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Age Sex Location&quot;の略語。チャットなどでまず聞かれる内容。ちなみに、&quot;ASLP&quot;だと、&quot;Age Sex Location Picture&quot;の略。</string>
 		<key>question</key>
 		<string>ASL</string>
 		<key>answer</key>
@@ -18,6 +22,8 @@
 	</dict>
 	<key>03</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Absence Without Leave&quot;の略語。もともとは軍隊用語。</string>
 		<key>question</key>
 		<string>AWOL</string>
 		<key>answer</key>
@@ -25,6 +31,8 @@
 	</dict>
 	<key>04</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Before&quot;の略語。</string>
 		<key>question</key>
 		<string>B4</string>
 		<key>answer</key>
@@ -32,6 +40,8 @@
 	</dict>
 	<key>05</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;because&quot;の略語。</string>
 		<key>question</key>
 		<string>b/c </string>
 		<key>answer</key>
@@ -39,6 +49,8 @@
 	</dict>
 	<key>06</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;boy friend&quot;（カレシ）の略語</string>
 		<key>question</key>
 		<string>bf</string>
 		<key>answer</key>
@@ -46,6 +58,8 @@
 	</dict>
 	<key>07</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Best Friend Forever&quot;（生涯の親友）の略語。</string>
 		<key>question</key>
 		<string>BFF</string>
 		<key>answer</key>
@@ -53,6 +67,8 @@
 	</dict>
 	<key>08</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Bye For Now&quot;の略語。</string>
 		<key>question</key>
 		<string>BFN</string>
 		<key>answer</key>
@@ -60,6 +76,8 @@
 	</dict>
 	<key>09</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Best Regards&quot;の略語。文の最後に使う表現。</string>
 		<key>question</key>
 		<string>BR</string>
 		<key>answer</key>
@@ -67,6 +85,8 @@
 	</dict>
 	<key>10</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Be Right Back&quot;の略語。</string>
 		<key>question</key>
 		<string>brb </string>
 		<key>answer</key>
@@ -74,6 +94,8 @@
 	</dict>
 	<key>11</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;BullShit&quot;の略語。</string>
 		<key>question</key>
 		<string>BS</string>
 		<key>answer</key>
@@ -81,6 +103,8 @@
 	</dict>
 	<key>12</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;By The Way&quot;の略語。</string>
 		<key>question</key>
 		<string>btw</string>
 		<key>answer</key>
@@ -88,6 +112,8 @@
 	</dict>
 	<key>13</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Bring Your Own Bottle&quot;の略語。</string>
 		<key>question</key>
 		<string>BYOB</string>
 		<key>answer</key>
@@ -95,6 +121,8 @@
 	</dict>
 	<key>14</key>
 	<dict>
+		<key>detail</key>
+		<string>Die In A Fireの略語。</string>
 		<key>question</key>
 		<string>DIAF </string>
 		<key>answer</key>
@@ -102,6 +130,8 @@
 	</dict>
 	<key>15</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Do It Yourself&quot;の略。ここでは日曜大工のDIYと違う意味で使っています。</string>
 		<key>question</key>
 		<string>DIY</string>
 		<key>answer</key>
@@ -109,6 +139,8 @@
 	</dict>
 	<key>16</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Direct Message&quot;の略語。</string>
 		<key>question</key>
 		<string>DM</string>
 		<key>answer</key>
@@ -116,6 +148,8 @@
 	</dict>
 	<key>17</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;don&apos;t know&quot;の略語。</string>
 		<key>question</key>
 		<string>dunno</string>
 		<key>answer</key>
@@ -123,6 +157,8 @@
 	</dict>
 	<key>18</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;fabulous&quot;の略語。</string>
 		<key>question</key>
 		<string>fab</string>
 		<key>answer</key>
@@ -130,6 +166,8 @@
 	</dict>
 	<key>19</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Fuck My Life&quot;の略語。物事が自分の思い通りに行かなかった時に使う。</string>
 		<key>question</key>
 		<string>FML</string>
 		<key>answer</key>
@@ -137,6 +175,8 @@
 	</dict>
 	<key>20</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;For The Win&quot;の略語。</string>
 		<key>question</key>
 		<string>fwd</string>
 		<key>answer</key>
@@ -144,6 +184,8 @@
 	</dict>
 	<key>21</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;For Your Information&quot;の略語。</string>
 		<key>question</key>
 		<string>FYI</string>
 		<key>answer</key>
@@ -151,6 +193,8 @@
 	</dict>
 	<key>22</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;girl friend&quot;（ガールフレンド）の略語。</string>
 		<key>question</key>
 		<string>gf</string>
 		<key>answer</key>
@@ -158,6 +202,8 @@
 	</dict>
 	<key>23</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Get The Fuck Out&quot;の略。</string>
 		<key>question</key>
 		<string>GTFO</string>
 		<key>answer</key>
@@ -165,6 +211,8 @@
 	</dict>
 	<key>24</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Got To Go&quot;の略語。g2gも同じ意味。</string>
 		<key>question</key>
 		<string>gtg</string>
 		<key>answer</key>
@@ -172,6 +220,8 @@
 	</dict>
 	<key>25</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Hit me up!の略語。ツイッター超頻出略語のひとつ。</string>
 		<key>question</key>
 		<string>hmu</string>
 		<key>answer</key>
@@ -179,6 +229,8 @@
 	</dict>
 	<key>26</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;honey&quot;の略語。</string>
 		<key>question</key>
 		<string>hun</string>
 		<key>answer</key>
@@ -186,6 +238,8 @@
 	</dict>
 	<key>27</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;I see.&quot;の略語。</string>
 		<key>question</key>
 		<string>IC</string>
 		<key>answer</key>
@@ -193,6 +247,8 @@
 	</dict>
 	<key>28</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;I Don&apos;t Know.&quot;の略語。</string>
 		<key>question</key>
 		<string>IDK</string>
 		<key>answer</key>
@@ -200,6 +256,8 @@
 	</dict>
 	<key>29</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;I Love U So Much&quot;の略語。</string>
 		<key>question</key>
 		<string>ILUSM</string>
 		<key>answer</key>
@@ -207,6 +265,8 @@
 	</dict>
 	<key>30</key>
 	<dict>
+		<key>detail</key>
+		<string>&quot;Instant Message&quot;の略語。</string>
 		<key>question</key>
 		<string>IRL</string>
 		<key>answer</key>

@@ -21,6 +21,8 @@
 		5E1158EA2020068E0063640E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1158E82020068E0063640E /* Main.storyboard */; };
 		5E1158EC2020068E0063640E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1158EB2020068E0063640E /* Assets.xcassets */; };
 		5E1158EF2020068E0063640E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1158ED2020068E0063640E /* LaunchScreen.storyboard */; };
+		5E317F7C204AAD9700AD2952 /* noQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E317F7B204AAD9700AD2952 /* noQuestionViewController.swift */; };
+		5E317F7E204AAF1D00AD2952 /* noQuestion.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E317F7D204AAF1D00AD2952 /* noQuestion.jpg */; };
 		5E5E9F112027FA1900FFA153 /* questionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5E9F102027FA1900FFA153 /* questionViewController.swift */; };
 		5E5E9F1520280B9300FFA153 /* Test01List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5E9F1420280B9300FFA153 /* Test01List.plist */; };
 		5E5E9F1720280BEA00FFA153 /* Test02List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5E9F1620280BEA00FFA153 /* Test02List.plist */; };
@@ -51,6 +53,8 @@
 		5E1158EB2020068E0063640E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E1158EE2020068E0063640E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E1158F02020068E0063640E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E317F7B204AAD9700AD2952 /* noQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noQuestionViewController.swift; sourceTree = "<group>"; };
+		5E317F7D204AAF1D00AD2952 /* noQuestion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noQuestion.jpg; sourceTree = "<group>"; };
 		5E5E9F102027FA1900FFA153 /* questionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionViewController.swift; sourceTree = "<group>"; };
 		5E5E9F1420280B9300FFA153 /* Test01List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Test01List.plist; sourceTree = "<group>"; };
 		5E5E9F1620280BEA00FFA153 /* Test02List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Test02List.plist; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				5E5E9F1620280BEA00FFA153 /* Test02List.plist */,
 				5EEA4B32204288A2004B9CCD /* acronym.plist */,
 				5E02D47320351CEB0076DB81 /* mistakeWords.xcdatamodeld */,
+				5E317F7B204AAD9700AD2952 /* noQuestionViewController.swift */,
 			);
 			path = myApp;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 				5ED42154202A8FE700E4D1F3 /* no.png */,
 				5ED42155202A8FE700E4D1F3 /* yes.png */,
 				5ED42156202A8FE700E4D1F3 /* slug.jpg */,
+				5E317F7D204AAF1D00AD2952 /* noQuestion.jpg */,
 			);
 			path = img;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E028EA02033C56D00EA84BB /* correct_answer3.mp3 in Resources */,
+				5E317F7E204AAF1D00AD2952 /* noQuestion.jpg in Resources */,
 				5E5E9F1720280BEA00FFA153 /* Test02List.plist in Resources */,
 				5E1158EF2020068E0063640E /* LaunchScreen.storyboard in Resources */,
 				5E1158EC2020068E0063640E /* Assets.xcassets in Resources */,
@@ -224,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E03F3AF202D4AFC00867FE8 /* CustomCell 11-15-20-828.swift in Sources */,
+				5E317F7C204AAD9700AD2952 /* noQuestionViewController.swift in Sources */,
 				5E02D47820351D910076DB81 /* MissWords+CoreDataClass.swift in Sources */,
 				5E03F3B1202D4CF700867FE8 /* customWordCell.swift in Sources */,
 				5EEA4B372042B116004B9CCD /* detailsViewController.swift in Sources */,

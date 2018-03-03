@@ -55,16 +55,15 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         return cell
     }
     
-    //セルをタップした時に発動
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
         performSegue(withIdentifier: "nextSegue", sender: nil)
+        
     }
     
     //セルをデバイスサイズに合わせて調整
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // 例えば端末サイズの半分の width と height にして 2 列にする場合
         let width: CGFloat = (UIScreen.main.bounds.width - margin*3) / 2
         let height = width
         return CGSize(width: width, height: height)

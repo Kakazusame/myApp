@@ -57,12 +57,9 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         wordCell.answerLabel.text = wordsinfo["answer"] as? String
         
         if wordsJudgment[indexPath.row].contains("Good") {
-            print("\(wordsJudgment)ここは丸")
             wordCell.judgeLabel.textColor = UIColor.red
             wordCell.judgeLabel.text = wordsJudgment[indexPath.row]
         }else{
-            print("\(wordsJudgment)ここはばつ")
-            print(wordsJudgment)
             wordCell.judgeLabel.textColor = UIColor.blue
             wordCell.judgeLabel.text = wordsJudgment[indexPath.row]
         }
@@ -86,7 +83,6 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     // Segueで画面遷移する時
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "goDetail"{
             let dvc = segue.destination as! detailsViewController
             dvc.resultArray = detail
