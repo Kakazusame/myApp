@@ -19,6 +19,9 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
      @IBAction func goBack(_ segue:UIStoryboardSegue) {}
     
+
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
+    
     //送る側の初期値
     var selectedIndex = -1
     
@@ -40,6 +43,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         let viewContext = appD.persistentContainer.viewContext
         //データを取得するエンティティの指定　検索の準備ができました
         let query: NSFetchRequest<MissWords> = MissWords.fetchRequest()
+        
+        testList = []
         
         do {
             //データの一括取得
@@ -65,14 +70,18 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             print("エラーがあります")
         }
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        categoryCollectionView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        read()
+    
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        read()
         return category.count
     }
     

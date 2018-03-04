@@ -75,6 +75,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="問題選択画面" id="nGq-w5-Hna"/>
                     <connections>
+                        <outlet property="categoryCollectionView" destination="oKK-tE-opn" id="3cD-DS-TAo"/>
                         <segue destination="J4c-Ms-vXX" kind="show" identifier="nextSegue" id="voh-iR-bAB"/>
                         <segue destination="2di-Lf-Ggz" kind="show" id="d0X-cr-Gxj"/>
                     </connections>
@@ -523,6 +524,7 @@
         <image name="slug.jpg" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="voh-iR-bAB"/>
         <segue reference="a6c-Aw-QJf"/>
     </inferredMetricsTieBreakers>
 </document>
