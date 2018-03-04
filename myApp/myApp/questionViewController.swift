@@ -20,7 +20,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var answerButtonFour: UIButton!
     @IBOutlet weak var questionCountLabel: UILabel!
     @IBOutlet weak var resultImage: UIImageView!
-    @IBOutlet weak var noQuestion: UIImageView!
     
     //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておく配列
     var testList:[NSDictionary] = []
@@ -100,7 +99,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         }
         
             if passedIndex == 0 {
-                //ミス問題がない時、今エラー出てるからそれを画像にする！！！！！！！！！！！
                 //プロパティリストからデータを取得（Dictionary型）
                 var dic = NSDictionary(contentsOfFile: dummy)
 
@@ -353,7 +351,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         appDelegate.Judgment = wordsJudgment
         //問題解いた順
         appDelegate.Answer = resultArray
-        
     }
     
     
@@ -446,7 +443,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 let testinfo:NSDictionary = ["answer":answer,"question":question,"detail":detail]
                 //リストを追加
                 testList.append(testinfo)
-                
                 //plistを取得
                  dummy = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
             }

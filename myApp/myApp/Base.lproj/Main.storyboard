@@ -230,10 +230,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cFu-eZ-Y3D">
-                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -258,7 +254,6 @@
                         <outlet property="answerButtonOne" destination="BRs-hM-rNi" id="3fd-gL-5CI"/>
                         <outlet property="answerButtonThree" destination="UXe-o6-0Du" id="l9j-CM-mBG"/>
                         <outlet property="answerButtonTwo" destination="Vwx-vT-u4v" id="9WG-0Q-oHp"/>
-                        <outlet property="noQuestion" destination="cFu-eZ-Y3D" id="N80-Oi-U6L"/>
                         <outlet property="questionCountLabel" destination="hCW-9g-pSQ" id="cSH-9T-nrt"/>
                         <outlet property="questionLabel" destination="09a-lW-0mx" id="MoD-AD-Ino"/>
                         <outlet property="resultImage" destination="Kn4-Pc-WGy" id="7j8-HS-hFK"/>
@@ -528,7 +523,6 @@
         <image name="slug.jpg" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="voh-iR-bAB"/>
         <segue reference="a6c-Aw-QJf"/>
     </inferredMetricsTieBreakers>
 </document>

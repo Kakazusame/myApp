@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 //値を渡すために使うメソッドを宣言します
 @objc protocol senderDelegate{
@@ -21,6 +22,9 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     //送る側の初期値
     var selectedIndex = -1
     
+    var testList:[NSDictionary] = []
+    var category:[String] = []
+    
     //単語一覧に送る値
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -29,11 +33,43 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         appDelegate.questionCategory = selectedIndex
     }
     
-    var category = ["ミス問題"," デート ","アプローチ","喧嘩","メール","略語"]
+    //既に存在するデータの読み込み処理
+    func read(){
+        let appD:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        //エンティティを操作するためのオブジェクトを作成
+        let viewContext = appD.persistentContainer.viewContext
+        //データを取得するエンティティの指定　検索の準備ができました
+        let query: NSFetchRequest<MissWords> = MissWords.fetchRequest()
+        
+        do {
+            //データの一括取得
+            let fetchResults = try viewContext.fetch(query)
+            //取得したデータを、デバックエリアにループで表示
+            for result: AnyObject in fetchResults {
+                let question : String = result.value(forKey: "question") as! String
+                let answer : String = result.value(forKey: "answer") as! String
+                let detail : String = result.value(forKey: "detail") as! String
+                //必要なものリスト
+                let testinfo:NSDictionary = ["answer":answer,"question":question,"detail":detail]
+                
+            testList.append(testinfo)
+            }
+            print("DB確認\(testList)")
+            
+            if testList.count == 0 {
+                category = [" デート ","アプローチ","喧嘩","メール","略語",]
+            }else{
+                category = [" デート ","アプローチ","喧嘩","メール","略語","ミス問題"]
+            }
+        }catch {
+            print("エラーがあります")
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        read()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
