@@ -89,16 +89,20 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         var filePath = ""
         //ファイルパスを取得
         if passedIndex == 0{
-            read()
+            filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
         }else if passedIndex == 1{
             filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
         }else if passedIndex == 2{
             filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
-        }else if passedIndex == 5{
+        }else if passedIndex == 3{
+            filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
+        }else if passedIndex == 4{
             filePath = Bundle.main.path(forResource:"acronym", ofType:"plist")!
+        }else if passedIndex == 5{
+            read()
         }
         
-            if passedIndex == 0 {
+            if passedIndex == 5 {
                 //プロパティリストからデータを取得（Dictionary型）
                 var dic = NSDictionary(contentsOfFile: dummy)
 
@@ -128,7 +132,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         count += 1
         
         var RandomNumber:Int = Int(arc4random()) % testList.count
-        //ミス問題がなかった時は押せないか画像出すかする。
         
         //今画面に表示したいデータの取得
         let detailInfo = testList[RandomNumber] as! NSDictionary
@@ -148,7 +151,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         
         //問題文
         questionLabel.text = "\(detailInfo["question"]!)"
-        if passedIndex > 0{
+        if passedIndex < 5{
             questionCountLabel.text = "\(count)/10"
         }else{
             questionCountLabel.text = "\(count)/\(testList.count)"
@@ -169,7 +172,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         
         
         var selectBtn = [answerButtonOne,answerButtonTwo,answerButtonThree,answerButtonFour]
-        if passedIndex == 0{
+        if passedIndex == 5{
             for i in 0...3{
                 let incorrectRandomNumber = Int(arc4random()) % dummyA.count
                 let detailInfo = dummyA[incorrectRandomNumber]
@@ -227,7 +230,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             switch CorrectAnswer{
                 case pushBtn:
                     for (index, value) in contentQ.enumerated(){
-                        if  value == missQ && passedIndex == 0 {
+                        if  value == missQ && passedIndex == 5 {
 
                             let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                             let viewContext = appDelegate.persistentContainer.viewContext
@@ -302,7 +305,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             timer.invalidate()
            
             //3問終わったらscore画面へ遷移
-            if passedIndex > 0 &&  quiznum == 2{
+            if passedIndex < 5 &&  quiznum == 2{
                 quiznum += 1
                 //次のコントローラーへ遷移する
                 self.performSegue(withIdentifier: "toResultView", sender: nil)
