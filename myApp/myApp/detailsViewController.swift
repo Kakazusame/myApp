@@ -19,7 +19,6 @@ class detailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         detailText.text = resultArray["detail"]
-        print(resultArray["detail"])
     }
     
         

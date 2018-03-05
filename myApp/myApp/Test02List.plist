@@ -2,59 +2,133 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>13</key>
+	<dict>
+		<key>detail</key>
+		<string>loser は lose＋erで「敗者」、基本的には競技で敗退を喫した人や賭けに負けた人を指す語だが、スラングとしては「よく失敗する人」「負け癖のついた人」「うだつの上がらない人」という意味合いで使われることがある。\
+lose には遺失・紛失という意味もあり、loser が「落とし主」を意味する場合も多々ある。</string>
+		<key>question</key>
+		<string>loser</string>
+		<key>answer</key>
+		<string>負け犬</string>
+	</dict>
+	<key>12</key>
+	<dict>
+		<key>detail</key>
+		<string>wimp は弱気で、自分に自身がなく、すぐに怖じ気づくような人を指す言い方。wimper とも言う。
+wimp out は「怖じ気づく」という意味の句動詞。</string>
+		<key>question</key>
+		<string>wimp</string>
+		<key>answer</key>
+		<string>ヘタレ</string>
+	</dict>
+	<key>11</key>
+	<dict>
+		<key>detail</key>
+		<string>moronは差別用語で「脳たりん」や「馬鹿」を表す英語。以前は軽度の知的障害者を指す専門用語だったが、その侮辱的な意味合いから不適切な言葉とみなされるようになった。</string>
+		<key>question</key>
+		<string>moron</string>
+		<key>answer</key>
+		<string>脳足りん</string>
+	</dict>
+	<key>10</key>
+	<dict>
+		<key>detail</key>
+		<string>You idiot は foolと似たよな表現だが以前は「白痴」を示す差別的・侮辱的用語で、知的障害者に使われた英語。</string>
+		<key>question</key>
+		<string>You idiot.</string>
+		<key>answer</key>
+		<string>馬鹿め。</string>
+	</dict>
+	<key>09</key>
+	<dict>
+		<key>detail</key>
+		<string>skeevyは「汚らしい」「嫌い」という意味を持つが、もっとも端的な表現は「キモい」。
+
+汚らしい」「嫌い」という意味を持ちますが、もっとも端的な表現は「キモい」。
+
+</string>
+		<key>question</key>
+		<string>skeevy</string>
+		<key>answer</key>
+		<string>きもい</string>
+	</dict>
+	<key>08</key>
+	<dict>
+		<key>detail</key>
+		<string>Bullshitは、BSと略して使われる場合もある。bullだけで「たわごと」という意味を持ち、更に侮辱的な意味あいの強いShit（糞）が付くため、更に罵りの要素が強い言葉。</string>
+		<key>question</key>
+		<string>Bullshit</string>
+		<key>answer</key>
+		<string>うそつくな！</string>
+	</dict>
+	<key>07</key>
+	<dict>
+		<key>detail</key>
+		<string>damnは元々「...を永遠に罰する、地獄に落とす」という意味の他動詞。damn単体で使うこともあるが、元々他動詞なので「damn it」のように、意味はないが「it」を入れることもよくある。
+アメリカのドラマなどで使われる表現だがとても下品で汚いスラングなので使わない方が良い。</string>
+		<key>question</key>
+		<string>damn</string>
+		<key>answer</key>
+		<string>ちくしょう！</string>
+	</dict>
 	<key>06</key>
 	<dict>
 		<key>detail</key>
-		<string>これはイチゴという果物です</string>
+		<string>bastardは「バカ」を表す単語。You bastard!で「この人でなし！」という意味になる。アメリカのアニメでも使われる表現だが、元々は差別用語なので使わない方がいい。</string>
 		<key>question</key>
-		<string>Strawberry</string>
+		<string>You bastard!</string>
 		<key>answer</key>
-		<string>いちご</string>
+		<string>この人でなし！</string>
 	</dict>
 	<key>05</key>
 	<dict>
 		<key>detail</key>
-		<string>これは桃という果物です</string>
+		<string>Bloody hellはイギリス英語のスラングで、イギリス映画には良く登場するフレーズ。割と日常的に使われている言葉。</string>
 		<key>question</key>
-		<string>Peach</string>
+		<string>Bloody hell</string>
 		<key>answer</key>
-		<string>もも</string>
+		<string>くそっ！</string>
 	</dict>
 	<key>04</key>
 	<dict>
 		<key>detail</key>
-		<string>これはブドウという果物です</string>
+		<string>Nerdは、オタクを指す言葉です。しかし、アメリカのスクールドラマなどではオタクというよりスクールカーストの最下層という意味合いが強い。
+類義語にgeekという言葉があるが今ではインターネットが普及し悪いイメージはなくなってきている。</string>
 		<key>question</key>
-		<string>Grape</string>
+		<string>Nerd</string>
 		<key>answer</key>
-		<string>ぶどう</string>
+		<string>カーストの最下層</string>
 	</dict>
 	<key>03</key>
 	<dict>
 		<key>detail</key>
-		<string>これはバナナという果物です</string>
+		<string>Kiss my assは直訳すると「俺のケツにキスしろ」という意味。表現が汚いのであまり使わない方がいい。
+&quot;fuck off&quot;や&quot;suck my dick&quot;でも同じような意味になる。</string>
 		<key>question</key>
-		<string>Banana</string>
+		<string>Kiss my ass.</string>
 		<key>answer</key>
-		<string>バナナ</string>
+		<string>くたばれ</string>
 	</dict>
 	<key>02</key>
 	<dict>
 		<key>detail</key>
-		<string>これはみかんという果物です</string>
+		<string>bitchはあばずれという日本でも有名な女性蔑視の表現。それをムカつく男性の母親を侮辱するという形で使われる。母親を侮辱されるのは最上級に酷い言葉である。</string>
 		<key>question</key>
-		<string>Orange</string>
+		<string>son of a bitch!</string>
 		<key>answer</key>
-		<string>みかん</string>
+		<string>売女の息子</string>
 	</dict>
 	<key>01</key>
 	<dict>
 		<key>detail</key>
-		<string>これはリンゴという果物です</string>
+		<string>mother fuckerは有名なスラングだが、迂闊に使ってはいけない。\
+文字の原意として、母親と近親相姦を行う子供のことを表す。そこから派生して（母親を犯してしまう程）嫌な奴、愚か者、臆病者、クソ野郎などの意味がある。
+ 人を罵るときに使う一番最悪な言葉で全てのメディアで放送禁止となっている。</string>
 		<key>question</key>
-		<string>Apple</string>
+		<string>mother fucker</string>
 		<key>answer</key>
-		<string>りんご</string>
+		<string>クソ野郎</string>
 	</dict>
 </dict>
 </plist>

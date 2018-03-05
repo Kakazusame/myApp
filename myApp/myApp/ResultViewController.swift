@@ -13,10 +13,10 @@ class ResultViewController: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
     
-     var audioPlayerClear : AVAudioPlayer! = nil //クリア時用
+    @IBOutlet weak var resultImage: UIImageView!
+    var audioPlayerClear : AVAudioPlayer! = nil //クリア時用
     
     @IBOutlet weak var homeConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var answerConstraint: NSLayoutConstraint!
     
     //questionViewControllerより引き渡される値を格納する
@@ -24,6 +24,8 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resultImage.image = #imageLiteral(resourceName: "Slug.jpg")
         //正答率を表示
         resultLabel.text = String(correctQuestionNumber)
         //音を鳴らす

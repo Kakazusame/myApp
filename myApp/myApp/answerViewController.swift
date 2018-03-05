@@ -54,14 +54,14 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
         var wordsinfo = resultArray[indexPath.row] as! NSDictionary
         //文字の表示
         wordCell.questionLabel.text = wordsinfo["question"] as? String
+        wordCell.questionLabel.adjustsFontSizeToFitWidth = true
         wordCell.answerLabel.text = wordsinfo["answer"] as? String
+        wordCell.answerLabel.adjustsFontSizeToFitWidth = true
         
         if wordsJudgment[indexPath.row].contains("Good") {
-            wordCell.judgeLabel.textColor = UIColor.red
-            wordCell.judgeLabel.text = wordsJudgment[indexPath.row]
+            wordCell.judgeImage.image = #imageLiteral(resourceName: "yes.jpg")
         }else{
-            wordCell.judgeLabel.textColor = UIColor.blue
-            wordCell.judgeLabel.text = wordsJudgment[indexPath.row]
+            wordCell.judgeImage.image = #imageLiteral(resourceName: "no.jpg")
         }
         //矢印を右側につける
         wordCell.accessoryType = .disclosureIndicator

@@ -20,7 +20,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var answerButtonFour: UIButton!
     @IBOutlet weak var questionCountLabel: UILabel!
     @IBOutlet weak var resultImage: UIImageView!
-    
     //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておく配列
     var testList:[NSDictionary] = []
     //問題数
@@ -68,17 +67,20 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     //選択された行番号が受け渡されるプロパティ
     var passedIndex = -1
     
+    var missNumCount = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("渡された行番号：\(passedIndex)")
         //問題を表示
         readQuestion()
+        missNumCount = testList.count
         RandomQuestions()
         //音を鳴らす
         correctSound()
         mistakeSound()
-
+        
 //        qCountConstraint.constant = UIScreen.main.bounds.width * 90/414
 //        print(qCountConstraint)
     }
@@ -154,7 +156,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         if passedIndex < 5{
             questionCountLabel.text = "\(count)/10"
         }else{
-            questionCountLabel.text = "\(count)/\(testList.count)"
+            questionCountLabel.text = "\(count)/\(missNumCount)"
         }
         
         //正解の取得
@@ -252,14 +254,14 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                                 }
                         }
                     }
-                    resultImage.image = #imageLiteral(resourceName: "yes.png")
+                    resultImage.image = #imageLiteral(resourceName: "yes.jpg")
                     resultImage.alpha = 0.7
                     correctQuestionNumber += 1
                     wordsJudgment.append("Good")
                     correctAudioPlayer.play()
                 
                 default:
-                    resultImage.image = #imageLiteral(resourceName: "no.png")
+                    resultImage.image = #imageLiteral(resourceName: "no.jpg")
                     resultImage.alpha = 0.7
                     wordsJudgment.append("Bad")
                     mistakeAudioPlayer.play()
