@@ -93,9 +93,9 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         if passedIndex == 0{
             filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
         }else if passedIndex == 1{
-            filePath = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
-        }else if passedIndex == 2{
             filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
+        }else if passedIndex == 2{
+            filePath = Bundle.main.path(forResource:"PartnerList", ofType:"plist")!
         }else if passedIndex == 3{
             filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
         }else if passedIndex == 4{
@@ -307,7 +307,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
             timer.invalidate()
            
             //3問終わったらscore画面へ遷移
-            if passedIndex < 5 &&  quiznum == 2{
+            if passedIndex < 5 &&  quiznum == 10{
                 quiznum += 1
                 //次のコントローラーへ遷移する
                 self.performSegue(withIdentifier: "toResultView", sender: nil)
