@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>19</key>
+	<dict>
+		<key>detail</key>
+		<string>cheesyは「安っぽい」「くだらない」という意味のスラング。</string>
+		<key>question</key>
+		<string>cheesy</string>
+		<key>answer</key>
+		<string>安っぽい</string>
+	</dict>
+	<key>18</key>
+	<dict>
+		<key>detail</key>
+		<string>keep it は、直訳すると「それを取っておく」となる。スラングでは、人や物を認める・賞賛するときに使う。
+例文：What do you think of these shoes?― Keep it.
+　　　ねぇ、この靴どう思う？　　ーーー　　　いいんじゃない？　</string>
+		<key>question</key>
+		<string>keep it</string>
+		<key>answer</key>
+		<string>いいね</string>
+	</dict>
+	<key>17</key>
+	<dict>
+		<key>detail</key>
+		<string>hooked on は、be hooked on something の形で用いられ、それが好きすぎて中毒のようになっている、いわばやみつきになっているさまを表現するスラング。</string>
+		<key>question</key>
+		<string>hooked on</string>
+		<key>answer</key>
+		<string>やみつき</string>
+	</dict>
+	<key>16</key>
+	<dict>
+		<key>detail</key>
+		<string>no chillの元の意味は「寒くない」だがスラングでは、「全くもって馬鹿で間抜けなことをする人」を指す。
+</string>
+		<key>question</key>
+		<string>no chill</string>
+		<key>answer</key>
+		<string>間抜けなことをする人</string>
+	</dict>
+	<key>15</key>
+	<dict>
+		<key>detail</key>
+		<string>looker は、容貌の美しい人、キレイな人、という意味で用いられるスラング。性別を問わず用いられるが、魅力的な容貌の若い女性に対して用いられることの方が多い。
+例文：She is real looker.
+         彼女はとても綺麗な人だな。</string>
+		<key>question</key>
+		<string>looker</string>
+		<key>answer</key>
+		<string>綺麗な人</string>
+	</dict>
+	<key>14</key>
+	<dict>
+		<key>detail</key>
+		<string>shadeの元の意味は「影」だがスラングでは、「誰かをからかうこと」を意味します。</string>
+		<key>question</key>
+		<string>shade</string>
+		<key>answer</key>
+		<string>人をからかうこと</string>
+	</dict>
+	<key>13</key>
+	<dict>
+		<key>detail</key>
+		<string>hang out は、「ぶらつく」「ウロウロする」「つるむ」あるいは「行きつけの店に出入りする」というような意味合いで、文脈に応じてさまざまな用いられる表現。その根底にあるニュアンスは「楽しい時間を共にする」という感覚。
+例文：I want to hang out with you.
+          私はあなたと遊びに行きたい</string>
+		<key>question</key>
+		<string>hang out</string>
+		<key>answer</key>
+		<string>遊ぶ</string>
+	</dict>
+	<key>12</key>
+	<dict>
+		<key>detail</key>
+		<string>chill out は、「のんびりする」「まったりする」といった意味合いで用いられるスラング。ほぼ relax  と同様の意味で使われる。
+例文：We are just chilling out.
+         私たちはただのんびりしているだけ。</string>
+		<key>question</key>
+		<string>chill out</string>
+		<key>answer</key>
+		<string>のんびりする</string>
+	</dict>
+	<key>11</key>
+	<dict>
+		<key>detail</key>
+		<string>amp は過去分詞形 amped の形で用いられます。amp は amplify の略（またはamplifier の略）。つまり、「増幅させ（られ）る」といった意味合いが基本。be動詞を伴って受動態の形を取る。
+excited を代替する表現と考えられる。
+例文： I am amped!!!
+          本当に楽しみ！
+</string>
+		<key>question</key>
+		<string>amp</string>
+		<key>answer</key>
+		<string>興奮している</string>
+	</dict>
+	<key>10</key>
+	<dict>
+		<key>detail</key>
+		<string>dragは元々「引きずる」などの意味。名詞では「足手まとい」と言う意味もある。それが変わってスラングでは「めんどくさい」などと使われている。
+drugとスペルは似てるが違う用語なので注意。</string>
+		<key>question</key>
+		<string>drag</string>
+		<key>answer</key>
+		<string>面倒くさい</string>
+	</dict>
+	<key>09</key>
+	<dict>
+		<key>detail</key>
+		<string>cancelは取り消すなどの意味で使われるが、スラングでは「イヤだ」と言う風に使われる。
+例文：Aさん  He said that he wanted to go out with you.
+                    彼があなたとデートしたいって言ってたよー
+　　　Bさん　cancel
+　　　　　　　イヤだ</string>
+		<key>question</key>
+		<string>cancel</string>
+		<key>answer</key>
+		<string>イヤだ</string>
+	</dict>
+	<key>08</key>
+	<dict>
+		<key>detail</key>
+		<string>basic はスラングとしては人を軽視する意味合いで使われる表現。地味で根暗な人ではなくて、流行に敏感だがただ流行に追従しているだけで、かえって魅力に欠ける俗物を指す。ファッション誌や音楽のヒットチャートを踏襲して流されているつまらない奴といったニュアンス。</string>
+		<key>question</key>
+		<string>basic</string>
+		<key>answer</key>
+		<string>イケてない</string>
+	</dict>
+	<key>07</key>
+	<dict>
+		<key>detail</key>
+		<string>wheelは直訳すると車輪という意味だが、それに複数形のsをつけることにより車輪を多く持つ＝車を表している。
+sをつけないとただの車輪という意味になるので注意。</string>
+		<key>question</key>
+		<string>wheels</string>
+		<key>answer</key>
+		<string>車</string>
+	</dict>
+	<key>06</key>
+	<dict>
+		<key>detail</key>
+		<string>sickの元の意味は「病気の」などだが、スラングになると意味が変わるので注意が必要。
+他にもcoolと同等の意味や気持ち悪いという意味も持つ。</string>
+		<key>question</key>
+		<string>sick</string>
+		<key>answer</key>
+		<string>イケてる</string>
+	</dict>
+	<key>05</key>
+	<dict>
+		<key>detail</key>
+		<string>話し言葉に使う。違法な方法でお金を稼ぐことに多く使われる。</string>
+		<key>question</key>
+		<string>buck</string>
+		<key>answer</key>
+		<string>お金</string>
+	</dict>
+	<key>04</key>
+	<dict>
+		<key>detail</key>
+		<string>疑問文の時はwhyを使うが、否定文の時にはwhy not を使う。
+何かを際の返答にも使える。
+断る理由がない場合などの「是非」という積極的な返答に使う。</string>
+		<key>question</key>
+		<string>Why not?</string>
+		<key>answer</key>
+		<string>どうして？</string>
+	</dict>
+	<key>03 </key>
+	<dict>
+		<key>detail</key>
+		<string>You Only Live Onceの略。形容詞としても使える。</string>
+		<key>question</key>
+		<string>YOLO</string>
+		<key>answer</key>
+		<string>人生は一度きり</string>
+	</dict>
+	<key>02</key>
+	<dict>
+		<key>detail</key>
+		<string>zitはニキビという意味のスラング。他にもpimpleやacneなどもある。</string>
+		<key>question</key>
+		<string>zit</string>
+		<key>answer</key>
+		<string>ニキビ</string>
+	</dict>
+	<key>01</key>
+	<dict>
+		<key>detail</key>
+		<string>YESなど返事をするときに使うスラング。承諾するときに使う。</string>
+		<key>question</key>
+		<string>Yep</string>
+		<key>answer</key>
+		<string>はい</string>
+	</dict>
+</dict>
+</plist>

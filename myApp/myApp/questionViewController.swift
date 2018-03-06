@@ -97,7 +97,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         }else if passedIndex == 2{
             filePath = Bundle.main.path(forResource:"PartnerList", ofType:"plist")!
         }else if passedIndex == 3{
-            filePath = Bundle.main.path(forResource:"Test02List", ofType:"plist")!
+            filePath = Bundle.main.path(forResource:"everydayConversation", ofType:"plist")!
         }else if passedIndex == 4{
             filePath = Bundle.main.path(forResource:"acronym", ofType:"plist")!
         }else if passedIndex == 5{

@@ -30,6 +30,7 @@
 		5E5E9F112027FA1900FFA153 /* questionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5E9F102027FA1900FFA153 /* questionViewController.swift */; };
 		5E5E9F1520280B9300FFA153 /* Test01List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5E9F1420280B9300FFA153 /* Test01List.plist */; };
 		5E5E9F1720280BEA00FFA153 /* Test02List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E5E9F1620280BEA00FFA153 /* Test02List.plist */; };
+		5E7A8CEB204E233600FD72F7 /* everydayConversation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E7A8CEA204E233600FD72F7 /* everydayConversation.plist */; };
 		5ECDD4B92029DCB400FB5015 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDD4B82029DCB400FB5015 /* ResultViewController.swift */; };
 		5EEA4B33204288A2004B9CCD /* acronym.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EEA4B32204288A2004B9CCD /* acronym.plist */; };
 		5EEA4B372042B116004B9CCD /* detailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEA4B362042B116004B9CCD /* detailsViewController.swift */; };
@@ -63,6 +64,7 @@
 		5E5E9F102027FA1900FFA153 /* questionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionViewController.swift; sourceTree = "<group>"; };
 		5E5E9F1420280B9300FFA153 /* Test01List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Test01List.plist; sourceTree = "<group>"; };
 		5E5E9F1620280BEA00FFA153 /* Test02List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Test02List.plist; sourceTree = "<group>"; };
+		5E7A8CEA204E233600FD72F7 /* everydayConversation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = everydayConversation.plist; sourceTree = "<group>"; };
 		5ECDD4B82029DCB400FB5015 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		5EEA4B32204288A2004B9CCD /* acronym.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = acronym.plist; sourceTree = "<group>"; };
 		5EEA4B362042B116004B9CCD /* detailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				5E1158F02020068E0063640E /* Info.plist */,
 				5E07D4F42024152C00B6D423 /* category.xib */,
 				5E5E9F1420280B9300FFA153 /* Test01List.plist */,
+				5E7A8CEA204E233600FD72F7 /* everydayConversation.plist */,
 				5E5E9F1620280BEA00FFA153 /* Test02List.plist */,
 				5E317F85204CF35200AD2952 /* PartnerList.plist */,
 				5EEA4B32204288A2004B9CCD /* acronym.plist */,
@@ -212,6 +215,7 @@
 				5E028EA02033C56D00EA84BB /* correct_answer3.mp3 in Resources */,
 				5E317F84204CE07500AD2952 /* Slug.jpg in Resources */,
 				5E317F86204CF35200AD2952 /* PartnerList.plist in Resources */,
+				5E7A8CEB204E233600FD72F7 /* everydayConversation.plist in Resources */,
 				5E317F7E204AAF1D00AD2952 /* noQuestion.jpg in Resources */,
 				5E5E9F1720280BEA00FFA153 /* Test02List.plist in Resources */,
 				5E1158EF2020068E0063640E /* LaunchScreen.storyboard in Resources */,

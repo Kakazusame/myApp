@@ -62,9 +62,9 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             print("DB確認\(testList)")
             
             if testList.count == 0 {
-                category = ["いいスラング","使わない方がいいスラング","  喧嘩  "," メール ","  略語  ",]
+                category = ["褒めるスラング","使わない方がいいスラング","恋愛系","日常会話","  略語  ",]
             }else{
-                category = ["いいスラング","使わない方がいいスラング","  喧嘩　　"," メール　","  略語　　"," ミス問題 "]
+                category = ["褒めるスラング","使わない方がいいスラング","恋愛系","日常会話","  略語　　"," ミス問題 "]
             }
         }catch {
             print("エラーがあります")

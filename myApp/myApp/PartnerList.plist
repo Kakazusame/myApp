@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>15</key>
+	<dict>
+		<key>detail</key>
+		<string>xとoはそれぞれ「キス」（接吻）と「ハグ」（抱擁）を意味する。ただし表記の由来は諸説あり定かではない。普通は x がキスで o がハグと見なされているが、これも決定的な根拠があるわけではない。
+俗説では、xは十字架の形であり、（キリスト教における誓いの証としての）十字架への口づけ＝キス、という意味合いがあるとも言われている。あるいは単に口をすぼめた形と言う見解もある。またoは、2人で向き合って腕を広げている様子や腕で包み込んでいる様子を俯瞰した形＝ハグ、と言われている。</string>
+		<key>question</key>
+		<string>XOXO</string>
+		<key>answer</key>
+		<string>ハグ＆キッス</string>
+	</dict>
 	<key>14</key>
 	<dict>
 		<key>detail</key>
