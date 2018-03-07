@@ -103,8 +103,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09a-lW-0mx">
-                                <rect key="frame" x="64" y="208" width="286" height="82"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="287" translatesAutoresizingMaskIntoConstraints="NO" id="09a-lW-0mx">
+                                <rect key="frame" x="64" y="208.33333333333334" width="286" height="82.000000000000028"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="xJF-W3-dIX"/>
@@ -114,10 +114,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HKv-Sb-m5z">
-                                <rect key="frame" x="52" y="434" width="311" height="215"/>
+                                <rect key="frame" x="51.666666666666657" y="428.33333333333326" width="310.66666666666674" height="215"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRs-hM-rNi" customClass="CustomButton" customModule="myApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="310.66666666666669" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="UFa-24-BFC"/>
                                         </constraints>
@@ -138,7 +138,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3l-i2-O1B" customClass="CustomButton" customModule="myApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55" width="311" height="50"/>
+                                        <rect key="frame" x="0.0" y="55" width="310.66666666666669" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -156,7 +156,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXe-o6-0Du" customClass="CustomButton" customModule="myApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="110" width="311" height="50"/>
+                                        <rect key="frame" x="0.0" y="110.00000000000006" width="310.66666666666669" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -174,7 +174,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwx-vT-u4v" customClass="CustomButton" customModule="myApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="165" width="311" height="50"/>
+                                        <rect key="frame" x="0.0" y="165.00000000000006" width="310.66666666666669" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -202,14 +202,14 @@
                                     <constraint firstItem="Vwx-vT-u4v" firstAttribute="leading" secondItem="BRs-hM-rNi" secondAttribute="leading" id="yWQ-aw-gdC"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kn4-Pc-WGy">
-                                <rect key="frame" x="82" y="124" width="250" height="250"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kn4-Pc-WGy">
+                                <rect key="frame" x="52" y="94" width="310" height="310"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Kn4-Pc-WGy" secondAttribute="height" multiplier="1:1" id="hDa-Ac-wzx"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCW-9g-pSQ">
-                                <rect key="frame" x="186.33333333333334" y="151" width="41.666666666666657" height="49"/>
+                                <rect key="frame" x="186.33333333333334" y="151.33333333333334" width="41.666666666666657" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="779-Lp-laf"/>
                                 </constraints>
@@ -232,7 +232,7 @@
                             <constraint firstItem="09a-lW-0mx" firstAttribute="leading" secondItem="IIk-Mm-I1M" secondAttribute="leading" constant="64" id="Yyp-tP-pJL"/>
                             <constraint firstItem="09a-lW-0mx" firstAttribute="top" secondItem="hCW-9g-pSQ" secondAttribute="bottom" constant="8" symbolic="YES" id="dcN-UA-QeI"/>
                             <constraint firstItem="HKv-Sb-m5z" firstAttribute="centerX" secondItem="Jbl-h9-MHf" secondAttribute="centerX" id="hij-6h-0oa"/>
-                            <constraint firstItem="HKv-Sb-m5z" firstAttribute="top" secondItem="Kn4-Pc-WGy" secondAttribute="bottom" constant="30" id="myc-vb-L4q"/>
+                            <constraint firstItem="HKv-Sb-m5z" firstAttribute="top" secondItem="Kn4-Pc-WGy" secondAttribute="bottom" multiplier="1.06" id="myc-vb-L4q"/>
                             <constraint firstItem="Kn4-Pc-WGy" firstAttribute="top" secondItem="Rp3-f9-bjw" secondAttribute="bottom" constant="50" id="y5U-Xf-zoJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IIk-Mm-I1M"/>
