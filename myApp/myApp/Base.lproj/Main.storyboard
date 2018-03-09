@@ -32,14 +32,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="gl4-rt-LP2" customClass="CustomCell" customModule="myApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="170" height="180"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="180"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Gv-Q6-dXC">
-                                                    <rect key="frame" x="10" y="129" width="150" height="35"/>
+                                                    <rect key="frame" x="10" y="120.33333333333333" width="140" height="33.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                                             <constraint firstItem="4Gv-Q6-dXC" firstAttribute="leading" secondItem="gl4-rt-LP2" secondAttribute="leading" constant="10" id="bxO-oq-p9E"/>
                                             <constraint firstItem="4Gv-Q6-dXC" firstAttribute="height" secondItem="gl4-rt-LP2" secondAttribute="height" multiplier="35/180" id="ndO-SA-T4Z"/>
                                         </constraints>
-                                        <size key="customSize" width="170" height="180"/>
+                                        <size key="customSize" width="160" height="170"/>
                                         <connections>
                                             <outlet property="myLabel" destination="4Gv-Q6-dXC" id="Pyq-EE-v81"/>
                                         </connections>

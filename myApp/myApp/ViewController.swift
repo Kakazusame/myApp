@@ -59,7 +59,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
                 
             testList.append(testinfo)
             }
-            print("DB確認\(testList)")
             
             if testList.count == 0 {
                 category = ["褒めるスラング","使わない方がいいスラング","恋愛系","日常会話","  略語  ",]

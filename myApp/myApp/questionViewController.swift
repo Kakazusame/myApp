@@ -237,10 +237,9 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                             let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                             let viewContext = appDelegate.persistentContainer.viewContext
                             let request: NSFetchRequest<MissWords> = MissWords.fetchRequest()
-
-
                             
                             let predicate = NSPredicate(format:"%K = %@","question",missQ)
+                            print("predicate",predicate)
                             request.predicate = predicate
                                 do {
                                     let fetchResults = try viewContext.fetch(request)
@@ -266,23 +265,39 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                     wordsJudgment.append("Bad")
                     mistakeAudioPlayer.play()
                 
-                    
-                    //AppDelegateを使う準備をしておく
                     let appD:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                    //エンティティを操作するためのオブジェクトを作成
                     let viewContext = appD.persistentContainer.viewContext
-                    let MissWords = NSEntityDescription.entity(forEntityName: "MissWords", in: viewContext)
-                    //エンティティにレコード(行)を挿入するためのオブジェクトを作成
-                    let mistakeWord = NSManagedObject(entity: MissWords!, insertInto: viewContext)
-                    //レコードオブジェクトに値のセット
-                    mistakeWord.setValue(missQ, forKeyPath: "question")
-                    mistakeWord.setValue(missA, forKeyPath: "answer")
-                    mistakeWord.setValue(missD, forKeyPath: "detail")
+                    let request: NSFetchRequest<MissWords> = MissWords.fetchRequest()
+                    
+                    let MissWordEntity = NSEntityDescription.entity(forEntityName: "MissWords", in: viewContext)
+                    
+                    
+                    print(missQ)
+                    
                     //レコード(行)の即時保存
                     do {
-                        try viewContext.save()
-                        missWords.append(mistakeWord)
-                    } catch let error as NSError {
+                        //データの一括取得
+                        let predicate = NSPredicate(format:"%K = %@","question",missQ)
+                        request.predicate = predicate
+                        let fetchResults = try viewContext.fetch(request)
+
+                        print(fetchResults.count)
+                        
+                        if fetchResults.count == 0{
+                            //エンティティにレコード(行)を挿入するためのオブジェクトを作成
+                            let mistakeWord = NSManagedObject(entity: MissWordEntity!, insertInto: viewContext)
+                            //レコードオブジェクトに値のセット
+                            mistakeWord.setValue(missQ, forKeyPath: "question")
+                            mistakeWord.setValue(missA, forKeyPath: "answer")
+                            mistakeWord.setValue(missD, forKeyPath: "detail")
+                            
+                            try viewContext.save()
+                            missWords.append(mistakeWord)
+                        }
+//                            try viewContext.save()
+//                            missWords.append(mistakeWord)
+
+                    }catch let error as NSError {
                         print("DBへの保存に失敗しました")
                     }
             }
