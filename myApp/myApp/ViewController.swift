@@ -19,7 +19,6 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
      @IBAction func goBack(_ segue:UIStoryboardSegue) {}
     
-
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     //送る側の初期値
@@ -87,6 +86,13 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! CustomCell
         
+        switch <#value#> {
+        case <#pattern#>:
+            <#code#>
+        default:
+            <#code#>
+        }
+        
         //セルの背景色をランダムに設定する。
         cell.backgroundColor = UIColor(red: CGFloat(drand48()),
                                        green: CGFloat(drand48()),
@@ -113,7 +119,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         return CGSize(width: width, height: height)
     }
     
-    let margin:CGFloat = 8.0
+    let margin:CGFloat = 20.0
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)

@@ -12,4 +12,5 @@ class CustomCell: UICollectionViewCell {
     
     @IBOutlet weak var myLabel: UILabel!
     
+    @IBOutlet weak var categoryImage: UIImageView!
 }
