@@ -20,6 +20,7 @@ class detailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         detailText.text = resultArray["detail"]
+        detailText.isEditable = false //編集不可(読み取り専用)
     }
     
         

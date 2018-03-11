@@ -218,11 +218,16 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
     
     ///////ここまで画面//////////
     @IBAction func pushBtn(_ sender: UIButton) {
+        
+//        let button = UIButton(type: .system)
+//        button.setTitle("button", for: .normal)
+//        button.setBackgroundColor(.gray, for: .highlighted)
+        
+        
         // 開始した時刻を記録
         startTime = Date().timeIntervalSince1970
         
-        let button = UIButton(type: .system)
-        button.setBackgroundColor(.blue, for: .highlighted)
+        //let button = UIButton(type: .system)
         
         //タップされたボタンの番号を取得
         let b:UIButton = sender
@@ -519,29 +524,82 @@ extension Array where Element: Equatable {
         
         super.draw(rect)
     }
-}
-
-extension UIButton {
-    func setBackgroundColor(_ color: UIColor, for state: UIControlState) {
-        let image = color.image
-        setBackgroundImage(image, for: state)
+    
+    var selectView: UIView! = nil
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        Btn()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+       Btn()
+    }
+    
+    func Btn() {
+        // ボタンを押している時にボタンの色を暗くするためのView
+        selectView = UIView(frame: self.bounds)
+        selectView.backgroundColor = UIColor.lightGray
+        selectView.alpha = 0.0
+        self.addSubview(selectView)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        selectView.frame = self.bounds
+    }
+    
+    // タッチ開始
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {() -> Void in
+            
+            self.selectView.alpha = 0.5
+            
+        }, completion: {(finished: Bool) -> Void in
+        })
+    }
+    
+    // タッチ終了
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {() -> Void in
+            
+            self.selectView.alpha = 0.0
+            
+        }, completion: {(finished: Bool) -> Void in
+        })
     }
 }
 
-extension UIColor {
-    var image: UIImage? {
-        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
-        UIGraphicsBeginImageContext(rect.size)
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return nil
-        }
-        context.setFillColor(self.cgColor)
-        context.fill(rect)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
-    }
-}
+//extension UIButton {
+//    func setBackgroundColor(_ color: UIColor, for state: UIControlState) {
+//        let image = color.image
+//        setBackgroundImage(image, for: state)
+//    }
+//}
+//
+//extension UIColor {
+//    var image: UIImage? {
+//        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+//        UIGraphicsBeginImageContext(rect.size)
+//        guard let context = UIGraphicsGetCurrentContext() else {
+//            return nil
+//        }
+//        context.setFillColor(self.cgColor)
+//        context.fill(rect)
+//        let image = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        return image
+//    }
+//}
+
 /////ここまでボタン///////
 
 

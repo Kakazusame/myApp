@@ -7,7 +7,7 @@
 		<key>detail</key>
 		<string>元々、douchebagとは、「女性の膣洗浄器」という意味があるが、アメリカでは、本当にムカツク人間に対して使われることが多く「バカな発言をするイヤなヤツ」というように、よりその人の品性や知性を疑うような意味になっている。</string>
 		<key>question</key>
-		<string>Douchebag</string>
+		<string>douchebag</string>
 		<key>answer</key>
 		<string>思い上がったバカ</string>
 	</dict>
@@ -23,7 +23,7 @@
 	<key>13</key>
 	<dict>
 		<key>detail</key>
-		<string>loser は lose＋erで「敗者」、基本的には競技で敗退を喫した人や賭けに負けた人を指す語だが、スラングとしては「よく失敗する人」「負け癖のついた人」「うだつの上がらない人」という意味合いで使われることがある。\
+		<string>loser は lose＋erで「敗者」、基本的には競技で敗退を喫した人や賭けに負けた人を指す語だが、スラングとしては「よく失敗する人」「負け癖のついた人」「うだつの上がらない人」という意味合いで使われることがある。
 lose には遺失・紛失という意味もあり、loser が「落とし主」を意味する場合も多々ある。</string>
 		<key>question</key>
 		<string>loser</string>
@@ -52,9 +52,9 @@ wimp out は「怖じ気づく」という意味の句動詞。</string>
 	<key>10</key>
 	<dict>
 		<key>detail</key>
-		<string>You idiot は foolと似たよな表現だが以前は「白痴」を示す差別的・侮辱的用語で、知的障害者に使われた英語。</string>
+		<string>you idiot は foolと似たよな表現だが以前は「白痴」を示す差別的・侮辱的用語で、知的障害者に使われた英語。</string>
 		<key>question</key>
-		<string>You idiot.</string>
+		<string>you idiot</string>
 		<key>answer</key>
 		<string>馬鹿め</string>
 	</dict>
@@ -74,9 +74,9 @@ wimp out は「怖じ気づく」という意味の句動詞。</string>
 	<key>08</key>
 	<dict>
 		<key>detail</key>
-		<string>Bullshitは、BSと略して使われる場合もある。bullだけで「たわごと」という意味を持ち、更に侮辱的な意味あいの強いShit（糞）が付くため、更に罵りの要素が強い言葉。</string>
+		<string>bullshitは、BSと略して使われる場合もある。bullだけで「たわごと」という意味を持ち、更に侮辱的な意味あいの強いShit（糞）が付くため、更に罵りの要素が強い言葉。</string>
 		<key>question</key>
-		<string>Bullshit</string>
+		<string>bullshit</string>
 		<key>answer</key>
 		<string>うそつくな！</string>
 	</dict>
@@ -95,36 +95,36 @@ wimp out は「怖じ気づく」という意味の句動詞。</string>
 		<key>detail</key>
 		<string>bastardは「バカ」を表す単語。You bastard!で「この人でなし！」という意味になる。アメリカのアニメでも使われる表現だが、元々は差別用語なので使わない方がいい。</string>
 		<key>question</key>
-		<string>You bastard!</string>
+		<string>you bastard!</string>
 		<key>answer</key>
 		<string>この人でなし！</string>
 	</dict>
 	<key>05</key>
 	<dict>
 		<key>detail</key>
-		<string>Bloody hellはイギリス英語のスラングで、イギリス映画には良く登場するフレーズ。割と日常的に使われている言葉。</string>
+		<string>bloody hellはイギリス英語のスラングで、イギリス映画には良く登場するフレーズ。割と日常的に使われている言葉。</string>
 		<key>question</key>
-		<string>Bloody hell</string>
+		<string>bloody hell</string>
 		<key>answer</key>
 		<string>くそっ！</string>
 	</dict>
 	<key>04</key>
 	<dict>
 		<key>detail</key>
-		<string>Nerdは、オタクを指す言葉です。しかし、アメリカのスクールドラマなどではオタクというよりスクールカーストの最下層という意味合いが強い。
+		<string>nerdは、オタクを指す言葉です。しかし、アメリカのスクールドラマなどではオタクというよりスクールカーストの最下層という意味合いが強い。
 類義語にgeekという言葉があるが今ではインターネットが普及し悪いイメージはなくなってきている。</string>
 		<key>question</key>
-		<string>Nerd</string>
+		<string>nerd</string>
 		<key>answer</key>
 		<string>カーストの最下層</string>
 	</dict>
 	<key>03</key>
 	<dict>
 		<key>detail</key>
-		<string>Kiss my assは直訳すると「俺のケツにキスしろ」という意味。表現が汚いのであまり使わない方がいい。
+		<string>kiss my assは直訳すると「俺のケツにキスしろ」という意味。表現が汚いのであまり使わない方がいい。
 &quot;fuck off&quot;や&quot;suck my dick&quot;でも同じような意味になる。</string>
 		<key>question</key>
-		<string>Kiss my ass.</string>
+		<string>kiss my ass</string>
 		<key>answer</key>
 		<string>くたばれ</string>
 	</dict>
@@ -140,7 +140,7 @@ wimp out は「怖じ気づく」という意味の句動詞。</string>
 	<key>01</key>
 	<dict>
 		<key>detail</key>
-		<string>mother fuckerは有名なスラングだが、迂闊に使ってはいけない。\
+		<string>mother fuckerは有名なスラングだが、迂闊に使ってはいけない。
 文字の原意として、母親と近親相姦を行う子供のことを表す。そこから派生して（母親を犯してしまう程）嫌な奴、愚か者、臆病者、クソ野郎などの意味がある。
  人を罵るときに使う一番最悪な言葉で全てのメディアで放送禁止となっている。</string>
 		<key>question</key>

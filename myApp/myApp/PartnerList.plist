@@ -16,6 +16,7 @@
 	<dict>
 		<key>detail</key>
 		<string>whippedは主に男性が女性の尻に敷かれているときに使う。女性が男性に支配されている場合はdick whippedとも言われる。
+
 例文：Kim is so whipped.
           キムって本当に尻に敷かれているよね</string>
 		<key>question</key>
@@ -26,11 +27,12 @@
 	<key>13</key>
 	<dict>
 		<key>detail</key>
-		<string>Gold diggerはお金目当てで近寄ってくる人や付き合う人を指す。傾向としては女性に使われることが多い。
+		<string>gold diggerはお金目当てで近寄ってくる人や付き合う人を指す。傾向としては女性に使われることが多い。
+
 例文：She wants to date him because he is rich. She is such a gold digger.
          彼女は彼がお金持ちだからデートをしたがってるの。彼女って本当にお金目当てだよね。</string>
 		<key>question</key>
-		<string>Gold digger</string>
+		<string>gold digger</string>
 		<key>answer</key>
 		<string>お金目当てで寄ってくる人</string>
 	</dict>
@@ -38,10 +40,11 @@
 	<dict>
 		<key>detail</key>
 		<string>前の彼女と今の彼女、彼女と浮気相手が出会ってしまったような状況を表す。
+
 例文：Last night’s party was such a hot room!
 　　　昨日のパーティーは修羅場だったよ！</string>
 		<key>question</key>
-		<string>Hot Room</string>
+		<string>hot Room</string>
 		<key>answer</key>
 		<string>修羅場</string>
 	</dict>
@@ -50,10 +53,11 @@
 		<key>detail</key>
 		<string>恋愛における”thirsty”はあまりいい表現ではなく、異性の注意を切実に引きたい欲求不満の状態を表す。
 Thirst trapとはSNSで女性が内容と関係のない谷間などを自然に写り込んだかのような写真をアップすること。
+
 例文：She’s posting thirst trap photos again.
 　　　彼女はまた気をひくための写真を載せてるよ。</string>
 		<key>question</key>
-		<string>Thirst trap</string>
+		<string>thirst trap</string>
 		<key>answer</key>
 		<string>気をひくための罠</string>
 	</dict>
@@ -62,10 +66,11 @@ Thirst trapとはSNSで女性が内容と関係のない谷間などを自然に
 		<key>detail</key>
 		<string>クリスマスやバレンタインなど恋人が欲しくなるような時期に使われるスラング。
 cuffは「手錠をかける」という意味があり、何かに縛り付けるといったニュアンスを持つ。
+
 例文：It’s cuffing season.
           人肌恋しい季節</string>
 		<key>question</key>
-		<string>Cuffing season</string>
+		<string>cuffing season</string>
 		<key>answer</key>
 		<string>人肌恋しい時期</string>
 	</dict>
@@ -74,33 +79,36 @@ cuffは「手錠をかける」という意味があり、何かに縛り付け�
 		<key>detail</key>
 		<string>hubbyはhusbandが変形した形で、理想の花婿になりうる素質を持った人に使う表現。
 結婚を考えている恋人にも使われる。
+
 例文：He will be a good hubby material.
          彼はいい旦那さんになるだろう </string>
 		<key>question</key>
-		<string>Hubby Material</string>
+		<string>hubby Material</string>
 		<key>answer</key>
 		<string>花婿候補</string>
 	</dict>
 	<key>08</key>
 	<dict>
 		<key>detail</key>
-		<string>WifeyはWifeが変形した形で、理想の花嫁になりうる素質を持った人に使う表現。
+		<string>wifeyはwifeが変形した形で、理想の花嫁になりうる素質を持った人に使う表現。
 結婚を考えている恋人などにも使われます。
+
 例文：She will be a good wifey material.
           彼女はいいお嫁さんになるだろう</string>
 		<key>question</key>
-		<string>Wifey material</string>
+		<string>wifey material</string>
 		<key>answer</key>
 		<string>花嫁候補</string>
 	</dict>
 	<key>07</key>
 	<dict>
 		<key>detail</key>
-		<string>Manicornは伝説の生き物、ユニコーンに男性をかけたスラングで女性が憧れるような現実には存在しない男性を表している。
+		<string>manicornは伝説の生き物、ユニコーンに男性をかけたスラングで女性が憧れるような現実には存在しない男性を表している。
+
 例文：Where is my manicorn?!
 　　　私の白馬の王子さまはどこ？！</string>
 		<key>question</key>
-		<string>Manicorn</string>
+		<string>manicorn</string>
 		<key>answer</key>
 		<string>白馬の王子様</string>
 	</dict>
@@ -108,6 +116,7 @@ cuffは「手錠をかける」という意味があり、何かに縛り付け�
 	<dict>
 		<key>detail</key>
 		<string>将来の夫になるに相応しい完璧な男性を表す英語。理想の男性像を話す時にピッタリ。
+
 例文：I’m waiting for Mr. Right.
           私は理想の男性を待っている</string>
 		<key>question</key>
@@ -118,12 +127,13 @@ cuffは「手錠をかける」という意味があり、何かに縛り付け�
 	<key>05</key>
 	<dict>
 		<key>detail</key>
-		<string>Crushは「物を押しつぶす、粉々にする」という意味の単語だが、Crush on～で「（誰かに）気がある、夢中になる」という意味になり、最近ではただ単にCrushで「片思いの人」を指す言葉になっている。
+		<string>crushは「物を押しつぶす、粉々にする」という意味の単語だが、Crush on～で「（誰かに）気がある、夢中になる」という意味になり、最近ではただ単にCrushで「片思いの人」を指す言葉になっている。
 Secret crushは「ひそかに思いを寄せている人」という意味になり、He&apos;s my crushで「私の片思いの人」といった意味なる。
+
 例文：I&apos;m crush on Kim
 　　　私はキムに夢中</string>
 		<key>question</key>
-		<string>Crush on</string>
+		<string>crush on</string>
 		<key>answer</key>
 		<string>夢中になる</string>
 	</dict>
@@ -131,21 +141,23 @@ Secret crushは「ひそかに思いを寄せている人」という意味に�
 	<dict>
 		<key>detail</key>
 		<string>dumpは「投げ捨てる」という意味。ただ別れるというよりヒドイ振り方をしたときに使われる。
+
 例文：I heard that Kim dumped Lola last friday.
          先週の金曜にキムがローラを振ったらしい！</string>
 		<key>question</key>
-		<string>Dump</string>
+		<string>dump</string>
 		<key>answer</key>
 		<string>恋人を振る</string>
 	</dict>
 	<key>03</key>
 	<dict>
 		<key>detail</key>
-		<string>low keyは何かを黙っている、秘密にしておくという意味がある。それにrelationshipをつけることで、周りには内緒で付き合っているという意味になる。
+		<string>lowkeyは何かを黙っている、秘密にしておくという意味がある。それにrelationshipをつけることで、周りには内緒で付き合っているという意味になる。
+
 例文：We want to keep our relationship low key.
 　　　私たちは付き合っていることを秘密にしたい</string>
 		<key>question</key>
-		<string>relationship low key</string>
+		<string>relationship lowkey</string>
 		<key>answer</key>
 		<string>内緒で付き合っている</string>
 	</dict>
@@ -154,10 +166,11 @@ Secret crushは「ひそかに思いを寄せている人」という意味に�
 		<key>detail</key>
 		<string>元々は心理学や社会学の用語で「人生や幸福感に重要な影響を与える人」などを意味する。この使い方が変形し、恋愛に関して使われる際は恋人や配偶者を示すスラングになった。
 性別も指定されていないので、同性のパートナーにも使える。
+
 例文：She&apos;s my significant other. 
          彼女は私のパートナーです。</string>
 		<key>question</key>
-		<string>Significant other</string>
+		<string>significant other</string>
 		<key>answer</key>
 		<string>配偶者・恋人</string>
 	</dict>
@@ -168,7 +181,7 @@ Secret crushは「ひそかに思いを寄せている人」という意味に�
 かなり多用されていて、恋人だけでなく友人間でも使われる。
 ちなみに、”bae”はデンマーク語で「ウンチ」を意味する。</string>
 		<key>question</key>
-		<string>Bae</string>
+		<string>bae</string>
 		<key>answer</key>
 		<string>ベイビー/ハニー</string>
 	</dict>

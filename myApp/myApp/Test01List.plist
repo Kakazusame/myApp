@@ -5,23 +5,25 @@
 	<key>15</key>
 	<dict>
 		<key>detail</key>
-		<string>Squadは元々「分隊」を表す軍事用語として使われていた単語だが、最近ではスラングとして違った意味を持つようになった。
+		<string>squadは元々「分隊」を表す軍事用語として使われていた単語だが、最近ではスラングとして違った意味を持つようになった。
+
 例文：I&apos;m going to go to the tennis game with my squad tomorrow.
 　　　 明日いつも一緒にいる仲間と一緒にテニスの試合に行くんだ</string>
 		<key>question</key>
-		<string>Squad</string>
+		<string>squad</string>
 		<key>answer</key>
 		<string>いつも一緒にいるメンバー</string>
 	</dict>
 	<key>Test14</key>
 	<dict>
 		<key>detail</key>
-		<string>Snatchedはひったくるなどを意味するが、スラングでは似合っているという意味になる。
+		<string>snatchedはひったくるなどを意味するが、スラングでは似合っているという意味になる。
 Slayと同じように使われる（Slayは本来「何かを殺す」という意味だが「かっこいい」や「素晴らしい」を意味するスラング）。
+
 例文：Your outfit is snatched today!
 　　　君の今日の服装、似合ってるよ！</string>
 		<key>question</key>
-		<string>Snatched</string>
+		<string>snatched</string>
 		<key>answer</key>
 		<string>似合ってる</string>
 	</dict>
@@ -29,10 +31,11 @@ Slayと同じように使われる（Slayは本来「何かを殺す」という
 	<dict>
 		<key>detail</key>
 		<string>hang inはあきらめずにがんばるという意味。それにthereをつけて諦めずに頑張れという命令形になる。thereでその人が置かれている状況をさしている
+
 例文：Hang in there. It&apos;ll work out if you continue to do what you do now.
 　　　 諦めるなよ。今やってることを続ければうまくいくよ。</string>
 		<key>question</key>
-		<string>Hang in there</string>
+		<string>hang in there</string>
 		<key>answer</key>
 		<string>諦めずに頑張れ</string>
 	</dict>
@@ -40,6 +43,7 @@ Slayと同じように使われる（Slayは本来「何かを殺す」という
 	<dict>
 		<key>detail</key>
 		<string>BA-DONKA-DONKは曲線美がきれいなお尻のこと。
+
 例文：She is BA-DONKA-DONK 
 　　　彼女はボン・キュ・ボンだ</string>
 		<key>question</key>
@@ -52,8 +56,10 @@ Slayと同じように使われる（Slayは本来「何かを殺す」という
 		<key>detail</key>
 		<string>beefcakeはハンサムな筋肉質の男性という意味。しかし、筋肉バカなどの意味もある。
 男性はbeefcakeを言われると喜ぶらしい。
+
 例文：What a beefcake he is!!
 　　　 彼は何てムキムキなんだ!!
+
 ちなみに、セクシーな女性を表すcheesecakeという言葉もあるがそれほど使われない。</string>
 		<key>question</key>
 		<string>beefcake</string>
@@ -65,6 +71,7 @@ Slayと同じように使われる（Slayは本来「何かを殺す」という
 		<key>detail</key>
 		<string>big upは元々1980年代にジャマイカなどのカリブビアン達の中で使われだした言葉。
 up「上に」という意味にbigをつけることで感謝や敬意を示し、賛辞を送るような意味を持つ。
+
 例文：I want to big up everyone 
 　　　みなさんに感謝！</string>
 		<key>question</key>
@@ -76,6 +83,7 @@ up「上に」という意味にbigをつけることで感謝や敬意を示し
 	<dict>
 		<key>detail</key>
 		<string>blastは元々の意味の「突風、爆風」から（突風が起こったかのように）楽しい時間というような意味でも使われる。パーティーやクラブイベントなどで使うとぴったりな表現。
+
 例文：The party was blast 
 　　　パーティーは盛り上がった</string>
 		<key>question</key>
@@ -87,6 +95,7 @@ up「上に」という意味にbigをつけることで感謝や敬意を示し
 	<dict>
 		<key>detail</key>
 		<string>booyahやbooyaは感動詞の一つで、とても嬉しい時や成功した時に使う。booyakaという感動詞もあるが、これはスポーツをやっているときによく使う。
+
 例文：Booyah!I passed my exam! 
 　　　やったー！試験に合格したぜ！</string>
 		<key>question</key>
@@ -99,6 +108,7 @@ up「上に」という意味にbigをつけることで感謝や敬意を示し
 		<key>detail</key>
 		<string>Budはbuddyの略語で友達という意味。しかし、ただの友達ではなく打ち明けた話ができる相手という意味が含まれている。少し古臭い表現。
 飲み友達などにはdrinking budなどと使ったりもする。
+
  例文：Kim is my bud. 
 　　　キムは俺の仲間だぜ</string>
 		<key>question</key>
@@ -111,6 +121,7 @@ up「上に」という意味にbigをつけることで感謝や敬意を示し
 		<key>detail</key>
 		<string>awesomeは最高という意味で若者の間で使われているが、別の意味では神様に関してよく使われる「畏敬(いけい)の念に打たせる」という意味もある。
 「awesome」は「awe」と「some」という２つの単語から出来ている。「awe」は名詞で、「恐怖を起こさせる力」という意味になり、それに「some」がつくと「awesome」という形容詞になり、それを持つ者や事という意味になる。これは恐怖という意味だけでなく驚きや尊敬の意味も含まれている
+
 例文：She is awesome 
 　　　彼女は最高</string>
 		<key>question</key>
@@ -121,7 +132,8 @@ up「上に」という意味にbigをつけることで感謝や敬意を示し
 	<key>05</key>
 	<dict>
 		<key>detail</key>
-		<string>adorbsは形容詞として使われていて、とても可愛いの短縮系。＃adorbsとしても使われる。
+		<string>adorbsは形容詞として使われていて、とても可愛いの短縮系。＃adorbsとしてもインスタグラムなどでも使われる。
+
 例文：My dog pictures are so adorbs.
 　　  私の犬の写真めっちゃかわ！</string>
 		<key>question</key>
@@ -133,8 +145,10 @@ up「上に」という意味にbigをつけることで感謝や敬意を示し
 	<dict>
 		<key>detail</key>
 		<string>aceはカードトランプのエースから由来している。形容詞として使う場合は「一番」や「一番評価が高い」という意味になる。
+
 例文：He is ace baseball player 
 　　　彼は一番上手い野球選手
+
 動詞として使う場合は他人より勝ったという意味になる。最近では、セックスに興味がない人などの意味でも使われる。</string>
 		<key>question</key>
 		<string>ace</string>
@@ -145,8 +159,10 @@ up「上に」という意味にbigをつけることで感謝や敬意を示し
 	<dict>
 		<key>detail</key>
 		<string>swagは意味的に曖昧なところがあるが、名詞のswagではいいファッションなどを表している。
+
 例文：Those new shoes you&apos;re wearing are so swag ! 
 　　　お前が履いてるのそシューズめちゃめちゃイカしてる！
+
 ジャスティン・ビーバー曰くswagは自然に振舞うこと、自分らしくいることという定義がある。</string>
 		<key>question</key>
 		<string>swag</string>
@@ -157,8 +173,10 @@ up「上に」という意味にbigをつけることで感謝や敬意を示し
 	<dict>
 		<key>detail</key>
 		<string>on fleekは完璧やバッチリなどの意味で使われる。割と最近のスラングで数年前から使われるようになった。
+
 例文：Your makeup is on fleek 
          あたなの化粧は完璧
+
 Instagramなどでは#on fleekが使われていて、化粧がバッリチの時などに使われる。</string>
 		<key>question</key>
 		<string>on fleek</string>
@@ -169,8 +187,10 @@ Instagramなどでは#on fleekが使われていて、化粧がバッリチの�
 	<dict>
 		<key>detail</key>
 		<string>badはかっこいいなどの意味で、元の悪いという意味とは逆の意味で使われている。凄くなど強調の意味でも使われる。
+
 例文：This pen is bad!
 　　　 このペンちょーかっこいい！！
+
 例文2：I love you so bad!
 　　　 あなたのこと凄く愛してる！</string>
 		<key>question</key>

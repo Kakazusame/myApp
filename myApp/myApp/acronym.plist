@@ -52,7 +52,7 @@
 		<key>detail</key>
 		<string>&quot;boy friend&quot;（カレシ）の略語</string>
 		<key>question</key>
-		<string>bf</string>
+		<string>BF</string>
 		<key>answer</key>
 		<string>カレシ</string>
 	</dict>
@@ -88,7 +88,7 @@
 		<key>detail</key>
 		<string>&quot;Be Right Back&quot;の略語。</string>
 		<key>question</key>
-		<string>brb </string>
+		<string>BRB</string>
 		<key>answer</key>
 		<string>すぐ戻るよ</string>
 	</dict>
@@ -106,7 +106,7 @@
 		<key>detail</key>
 		<string>&quot;By The Way&quot;の略語。</string>
 		<key>question</key>
-		<string>btw</string>
+		<string>BTW</string>
 		<key>answer</key>
 		<string>ところで</string>
 	</dict>
@@ -151,7 +151,7 @@
 		<key>detail</key>
 		<string>&quot;don&apos;t know&quot;の略語。</string>
 		<key>question</key>
-		<string>dunno</string>
+		<string>DUNNO</string>
 		<key>answer</key>
 		<string>知らない</string>
 	</dict>
@@ -160,7 +160,7 @@
 		<key>detail</key>
 		<string>&quot;fabulous&quot;の略語。</string>
 		<key>question</key>
-		<string>fab</string>
+		<string>FAB</string>
 		<key>answer</key>
 		<string>素敵な</string>
 	</dict>
@@ -178,7 +178,7 @@
 		<key>detail</key>
 		<string>&quot;For The Win&quot;の略語。</string>
 		<key>question</key>
-		<string>fwd</string>
+		<string>FWD</string>
 		<key>answer</key>
 		<string> 転送する</string>
 	</dict>
@@ -196,7 +196,7 @@
 		<key>detail</key>
 		<string>&quot;girl friend&quot;（ガールフレンド）の略語。</string>
 		<key>question</key>
-		<string>gf</string>
+		<string>GF</string>
 		<key>answer</key>
 		<string>彼女</string>
 	</dict>
@@ -214,7 +214,7 @@
 		<key>detail</key>
 		<string>&quot;Got To Go&quot;の略語。g2gも同じ意味。</string>
 		<key>question</key>
-		<string>gtg</string>
+		<string>GTG</string>
 		<key>answer</key>
 		<string>もう行くね</string>
 	</dict>
@@ -223,7 +223,7 @@
 		<key>detail</key>
 		<string>&quot;Hit me up!の略語。ツイッター超頻出略語のひとつ。</string>
 		<key>question</key>
-		<string>hmu</string>
+		<string>HMN</string>
 		<key>answer</key>
 		<string>連絡ちょうだい</string>
 	</dict>
@@ -232,7 +232,7 @@
 		<key>detail</key>
 		<string>&quot;honey&quot;の略語。</string>
 		<key>question</key>
-		<string>hun</string>
+		<string>HUN</string>
 		<key>answer</key>
 		<string>ハニー</string>
 	</dict>

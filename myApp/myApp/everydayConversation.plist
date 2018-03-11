@@ -164,7 +164,7 @@ sをつけないとただの車輪という意味になるので注意。</strin
 何かを際の返答にも使える。
 断る理由がない場合などの「是非」という積極的な返答に使う。</string>
 		<key>question</key>
-		<string>Why not?</string>
+		<string>why not?</string>
 		<key>answer</key>
 		<string>どうして？</string>
 	</dict>
@@ -191,7 +191,7 @@ sをつけないとただの車輪という意味になるので注意。</strin
 		<key>detail</key>
 		<string>YESなど返事をするときに使うスラング。承諾するときに使う。</string>
 		<key>question</key>
-		<string>Yep</string>
+		<string>yep</string>
 		<key>answer</key>
 		<string>はい</string>
 	</dict>
