@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 class ResultViewController: UIViewController {
 
@@ -34,6 +35,8 @@ class ResultViewController: UIViewController {
         
         homeConstraint.constant = UIScreen.main.bounds.width * 90/414
         answerConstraint.constant = UIScreen.main.bounds.width * 260/414
+        
+        admobDisplay()
     }
     
     // MARK: サウンドファイル作成
@@ -50,6 +53,37 @@ class ResultViewController: UIViewController {
         }
         //出来たインスタンスをバッファに保持する。
         audioPlayerClear.prepareToPlay()
+    }
+    
+    //広告
+    let AdMobID = "ca-app-pub-1548033216312406/2523859590" //バナーのID
+    let  TEST_DEVICE_ID = "4bb3b480efde916314b75cca8d881f39" //個別のiphoneのID入れます
+    let AdMobTest:Bool = true //切り替えようのフラグ
+    let SimulatorTest:Bool = true //切り替えようのフラグ
+    
+    func admobDisplay(){
+        
+        var admobView: GADBannerView = GADBannerView()//初期化してる
+        admobView = GADBannerView(adSize: kGADAdSizeBanner)//kGADAdSizeBannerでバナーのサイズを
+        print("バナーのサイズ",admobView)
+        admobView.frame.origin = CGPoint(x:0, y:self.view.frame.size.height - admobView.frame.height)
+        
+        admobView.frame.size = CGSize(width: self.view.frame.width, height: admobView.frame.height)
+        
+        admobView.adUnitID = AdMobID
+        admobView.rootViewController = self
+        
+        let admobRequest:GADRequest = GADRequest()
+        
+        if AdMobTest{
+            if SimulatorTest{
+                admobRequest.testDevices = [kGADSimulatorID]
+            }else{
+                admobRequest.testDevices = [TEST_DEVICE_ID]
+            }
+        }
+        admobView.load(admobRequest)
+        self.view.addSubview(admobView)
     }
 
     

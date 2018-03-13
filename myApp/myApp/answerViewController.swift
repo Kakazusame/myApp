@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 class answerViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -36,6 +37,7 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
 
     //行数のカウント
@@ -97,6 +99,7 @@ class answerViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     @IBAction func goAnswer(_ segue:UIStoryboardSegue) {}
+
     
 
     /*

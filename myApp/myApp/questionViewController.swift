@@ -8,7 +8,8 @@
 
 import UIKit
 import AVFoundation
-import CoreData 
+import CoreData
+import GoogleMobileAds
 
 class questionViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate{
     
@@ -80,9 +81,6 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
         //音を鳴らす
         correctSound()
         mistakeSound()
-        
-//        qCountConstraint.constant = UIScreen.main.bounds.width * 90/414
-//        print(qCountConstraint)
     }
     
     @IBOutlet weak var qCountConstraint: NSLayoutConstraint!
@@ -577,28 +575,6 @@ extension Array where Element: Equatable {
         })
     }
 }
-
-//extension UIButton {
-//    func setBackgroundColor(_ color: UIColor, for state: UIControlState) {
-//        let image = color.image
-//        setBackgroundImage(image, for: state)
-//    }
-//}
-//
-//extension UIColor {
-//    var image: UIImage? {
-//        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
-//        UIGraphicsBeginImageContext(rect.size)
-//        guard let context = UIGraphicsGetCurrentContext() else {
-//            return nil
-//        }
-//        context.setFillColor(self.cgColor)
-//        context.fill(rect)
-//        let image = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        return image
-//    }
-//}
 
 /////ここまでボタン///////
 

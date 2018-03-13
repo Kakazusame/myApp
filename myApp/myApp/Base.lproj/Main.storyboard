@@ -119,10 +119,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="HKv-Sb-m5z">
-                                <rect key="frame" x="77.666666666666657" y="427" width="259.33333333333337" height="270"/>
+                                <rect key="frame" x="61.666666666666657" y="427" width="291.33333333333337" height="270"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRs-hM-rNi" customClass="CustomButton" customModule="myApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="259.33333333333331" height="58.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="291.33333333333331" height="58.666666666666664"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Button"/>
                                         <state key="highlighted">
@@ -144,7 +144,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vwx-vT-u4v" customClass="CustomButton" customModule="myApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="70.666666666666686" width="259.33333333333331" height="58.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="70.666666666666686" width="291.33333333333331" height="58.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Button"/>
                                         <userDefinedRuntimeAttributes>
@@ -163,7 +163,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXe-o6-0Du" customClass="CustomButton" customModule="myApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="141" width="259.33333333333331" height="58.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="141" width="291.33333333333331" height="58.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Button"/>
                                         <userDefinedRuntimeAttributes>
@@ -182,7 +182,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3l-i2-O1B" customClass="CustomButton" customModule="myApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="211.66666666666663" width="259.33333333333331" height="58.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="211.66666666666663" width="291.33333333333331" height="58.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Button"/>
                                         <userDefinedRuntimeAttributes>
@@ -225,7 +225,7 @@
                             <constraint firstItem="09a-lW-0mx" firstAttribute="centerX" secondItem="Kn4-Pc-WGy" secondAttribute="centerX" id="9Lg-kf-rW7"/>
                             <constraint firstItem="HKv-Sb-m5z" firstAttribute="centerX" secondItem="Rp3-f9-bjw" secondAttribute="centerX" id="Bs7-1D-Egl"/>
                             <constraint firstItem="09a-lW-0mx" firstAttribute="width" secondItem="Kn4-Pc-WGy" secondAttribute="width" multiplier="0.8" id="KGC-DQ-dKg"/>
-                            <constraint firstItem="HKv-Sb-m5z" firstAttribute="width" secondItem="Kn4-Pc-WGy" secondAttribute="width" multiplier="0.8" id="PFG-Z1-9HN"/>
+                            <constraint firstItem="HKv-Sb-m5z" firstAttribute="width" secondItem="Kn4-Pc-WGy" secondAttribute="width" multiplier="0.9" id="PFG-Z1-9HN"/>
                             <constraint firstItem="hCW-9g-pSQ" firstAttribute="width" secondItem="09a-lW-0mx" secondAttribute="width" multiplier="0.7" id="Viq-i7-gl3"/>
                             <constraint firstItem="09a-lW-0mx" firstAttribute="centerY" secondItem="Kn4-Pc-WGy" secondAttribute="centerY" id="ZSa-Db-bpR"/>
                             <constraint firstItem="hCW-9g-pSQ" firstAttribute="top" secondItem="Rp3-f9-bjw" secondAttribute="bottom" constant="75" id="axP-MB-qnL"/>
@@ -344,7 +344,7 @@
                                 <rect key="frame" x="0.0" y="84" width="414" height="652"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wordCell" rowHeight="77" id="ggz-1q-hWY" customClass="customWordCellTableViewCell" customModule="myApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="wordCell" rowHeight="77" id="ggz-1q-hWY" customClass="customWordCellTableViewCell" customModule="myApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ggz-1q-hWY" id="Ku3-QK-LwD">
@@ -356,13 +356,13 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="NFp-Lh-7fF"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhZ-Ho-lSa">
-                                                    <rect key="frame" x="15" y="42" width="327" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <rect key="frame" x="15" y="42" width="327" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -471,7 +471,7 @@
                             <constraint firstItem="YQX-Cj-ZNv" firstAttribute="leading" secondItem="Yfp-lZ-9V8" secondAttribute="leading" id="GCs-Xg-gYr"/>
                             <constraint firstItem="MMS-EG-7Dc" firstAttribute="top" secondItem="YQX-Cj-ZNv" secondAttribute="bottom" constant="39" id="Qg5-ii-lmB"/>
                             <constraint firstItem="YQX-Cj-ZNv" firstAttribute="centerX" secondItem="MMS-EG-7Dc" secondAttribute="centerX" id="a9F-vs-e9M"/>
-                            <constraint firstItem="MMS-EG-7Dc" firstAttribute="leading" secondItem="b01-hy-H5s" secondAttribute="leading" constant="49" id="dM7-cs-FVz"/>
+                            <constraint firstItem="MMS-EG-7Dc" firstAttribute="leading" secondItem="b01-hy-H5s" secondAttribute="leading" constant="10" id="dM7-cs-FVz"/>
                             <constraint firstAttribute="trailing" secondItem="YQX-Cj-ZNv" secondAttribute="trailing" id="gjj-aW-cZ5"/>
                             <constraint firstItem="b01-hy-H5s" firstAttribute="bottom" secondItem="MMS-EG-7Dc" secondAttribute="bottom" id="nLY-F2-iiY"/>
                             <constraint firstItem="YQX-Cj-ZNv" firstAttribute="top" secondItem="b01-hy-H5s" secondAttribute="top" id="sFk-t6-2OP"/>
