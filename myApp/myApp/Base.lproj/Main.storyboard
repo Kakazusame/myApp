@@ -12,8 +12,13 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HiraginoMaruGothProN.ttc">
+            <string>HiraMaruProN-W4</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--問題選択画面-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="myApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,23 +43,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Gv-Q6-dXC">
-                                                    <rect key="frame" x="10" y="120.66666666666667" width="140" height="33.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GFd-ZC-SAG">
-                                                    <rect key="frame" x="25" y="20" width="110" height="93"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GFd-ZC-SAG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="170"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Gv-Q6-dXC">
+                                                    <rect key="frame" x="2" y="113" width="156" height="33"/>
+                                                    <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="TJb-K4-KXm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="4Gv-Q6-dXC" firstAttribute="centerX" secondItem="gl4-rt-LP2" secondAttribute="centerX" id="Pls-tN-QTK"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="4Gv-Q6-dXC" secondAttribute="bottom" constant="8" id="TNo-xk-Q2i"/>
-                                            <constraint firstItem="4Gv-Q6-dXC" firstAttribute="leading" secondItem="gl4-rt-LP2" secondAttribute="leading" constant="10" id="bxO-oq-p9E"/>
-                                            <constraint firstItem="4Gv-Q6-dXC" firstAttribute="height" secondItem="gl4-rt-LP2" secondAttribute="height" multiplier="35/180" id="ndO-SA-T4Z"/>
+                                            <constraint firstAttribute="bottom" secondItem="GFd-ZC-SAG" secondAttribute="bottom" id="K2a-m6-Ysb"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="4Gv-Q6-dXC" secondAttribute="bottom" constant="16" id="K3s-wb-GI8"/>
+                                            <constraint firstAttribute="trailing" secondItem="GFd-ZC-SAG" secondAttribute="trailing" id="NbL-9W-9Il"/>
+                                            <constraint firstItem="GFd-ZC-SAG" firstAttribute="leading" secondItem="gl4-rt-LP2" secondAttribute="leading" id="WDh-I2-RAA"/>
+                                            <constraint firstItem="GFd-ZC-SAG" firstAttribute="top" secondItem="gl4-rt-LP2" secondAttribute="top" id="c7z-xE-dkd"/>
+                                            <constraint firstItem="4Gv-Q6-dXC" firstAttribute="leading" secondItem="gl4-rt-LP2" secondAttribute="leadingMargin" constant="-6" id="fpD-mc-GVm"/>
+                                            <constraint firstItem="GFd-ZC-SAG" firstAttribute="centerX" secondItem="4Gv-Q6-dXC" secondAttribute="centerX" id="jiT-9X-hnX"/>
                                         </constraints>
                                         <size key="customSize" width="160" height="170"/>
                                         <connections>
@@ -78,7 +89,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="問題選択画面" id="nGq-w5-Hna"/>
+                    <navigationItem key="navigationItem" id="nGq-w5-Hna"/>
                     <connections>
                         <outlet property="categoryCollectionView" destination="oKK-tE-opn" id="3cD-DS-TAo"/>
                         <segue destination="J4c-Ms-vXX" kind="show" identifier="nextSegue" id="voh-iR-bAB"/>
@@ -405,7 +416,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="BT6-u5-aQj"/>
                                 </constraints>
-                                <state key="normal" title="ホーム"/>
+                                <state key="normal" title="Home"/>
                                 <connections>
                                     <segue destination="Pje-nN-Y1O" kind="unwind" unwindAction="goBack:" id="knK-qa-YpU"/>
                                 </connections>
@@ -450,7 +461,7 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="例文" id="mfY-WN-EKz">
-                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="LuH-e9-wpR">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="LuH-e9-wpR">
                                             <connections>
                                                 <segue destination="JlM-E9-n6u" kind="unwind" unwindAction="goAnswer:" id="Nhg-mi-fF7"/>
                                             </connections>

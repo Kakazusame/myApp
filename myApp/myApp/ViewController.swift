@@ -27,6 +27,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     
     var testList:[NSDictionary] = []
     var category:[String] = []
+    var imageNames:[String] = []
 
     
     //単語一覧に送る値
@@ -62,9 +63,11 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
             }
             
             if testList.count == 0 {
-                category = ["褒めるスラング","使わない方がいいスラング","恋愛系","日常会話","  略語  ",]
+                category = ["Goodスラング","Badスラング","恋愛系","日常会話","略語",]
+                imageNames = ["goodwords.jpeg","badwords.jpg","couple.jpeg","talk.jpeg","words.jpeg"]
             }else{
-                category = ["褒めるスラング","使わない方がいいスラング","恋愛系","日常会話","  略語　　"," ミス問題 "]
+                category = ["Goodスラング","Badスラング","恋愛系","日常会話","略語","ミス問題"]
+                imageNames = ["goodwords.jpeg","badwords.jpg","couple.jpeg","talk.jpeg","words.jpeg","misswords.jpeg"]
             }
         }catch {
             print("エラーがあります")
@@ -89,13 +92,8 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! CustomCell
         
         
-        //セルの背景色をランダムに設定する。
-        cell.backgroundColor = UIColor(red: CGFloat(drand48()),
-                                       green: CGFloat(drand48()),
-                                       blue: CGFloat(drand48()),
-                                       alpha: 1.0)
-        
         cell.myLabel?.text = category[indexPath.row]
+        cell.categoryImage.image = UIImage(named: imageNames[indexPath.row])
 
         
         return cell
@@ -115,7 +113,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
         return CGSize(width: width, height: height)
     }
     
-    let margin:CGFloat = 20.0
+    let margin:CGFloat = 25.0
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
@@ -138,7 +136,7 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     }
     
     //広告
-    let AdMobID = "ca-app-pub-1548033216312406/2523859590" //バナーのID
+    let AdMobID = "ca-app-pub-3940256099942544/6300978111" //バナーのID
     let  TEST_DEVICE_ID = "4bb3b480efde916314b75cca8d881f39" //個別のiphoneのID入れます
     let AdMobTest:Bool = true //切り替えようのフラグ
     let SimulatorTest:Bool = true //切り替えようのフラグ

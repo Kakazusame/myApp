@@ -42,9 +42,15 @@
 		5E705C742050D3BB0051DA69 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E705C732050D3BB0051DA69 /* StoreKit.framework */; };
 		5E705C762050D3C70051DA69 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E705C752050D3C70051DA69 /* SystemConfiguration.framework */; };
 		5E7A8CEB204E233600FD72F7 /* everydayConversation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E7A8CEA204E233600FD72F7 /* everydayConversation.plist */; };
-		5EA31D742053AFCF00211240 /* bad.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5EA31D732053AFCF00211240 /* bad.svg */; };
-		5EA31D762053AFD800211240 /* good.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5EA31D752053AFD800211240 /* good.svg */; };
 		5ECDD4B92029DCB400FB5015 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDD4B82029DCB400FB5015 /* ResultViewController.swift */; };
+		5ECDE6782058B0F000A59258 /* dummy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDE6772058B0F000A59258 /* dummy.plist */; };
+		5ECDE6802058C12300A59258 /* talk.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDE6792058C12300A59258 /* talk.jpeg */; };
+		5ECDE6812058C12300A59258 /* couple02.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDE67A2058C12300A59258 /* couple02.jpeg */; };
+		5ECDE6822058C12300A59258 /* goodwords.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDE67B2058C12300A59258 /* goodwords.jpeg */; };
+		5ECDE6832058C12300A59258 /* badwords.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDE67C2058C12300A59258 /* badwords.jpg */; };
+		5ECDE6842058C12300A59258 /* misswords.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDE67D2058C12300A59258 /* misswords.jpeg */; };
+		5ECDE6852058C12300A59258 /* couple.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDE67E2058C12300A59258 /* couple.jpeg */; };
+		5ECDE6862058C12300A59258 /* words.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDE67F2058C12300A59258 /* words.jpeg */; };
 		5EEA4B33204288A2004B9CCD /* acronym.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5EEA4B32204288A2004B9CCD /* acronym.plist */; };
 		5EEA4B372042B116004B9CCD /* detailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEA4B362042B116004B9CCD /* detailsViewController.swift */; };
 		5EF300A3202C9FB1009B1173 /* answerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF300A2202C9FB1009B1173 /* answerViewController.swift */; };
@@ -89,9 +95,15 @@
 		5E705C732050D3BB0051DA69 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5E705C752050D3C70051DA69 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E7A8CEA204E233600FD72F7 /* everydayConversation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = everydayConversation.plist; sourceTree = "<group>"; };
-		5EA31D732053AFCF00211240 /* bad.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = bad.svg; path = ../../../../Downloads/bad.svg; sourceTree = "<group>"; };
-		5EA31D752053AFD800211240 /* good.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = good.svg; path = ../../../../Downloads/good.svg; sourceTree = "<group>"; };
 		5ECDD4B82029DCB400FB5015 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		5ECDE6772058B0F000A59258 /* dummy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = dummy.plist; sourceTree = "<group>"; };
+		5ECDE6792058C12300A59258 /* talk.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = talk.jpeg; path = ../../../../Downloads/iOS_categoryImage/talk.jpeg; sourceTree = "<group>"; };
+		5ECDE67A2058C12300A59258 /* couple02.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = couple02.jpeg; path = ../../../../Downloads/iOS_categoryImage/couple02.jpeg; sourceTree = "<group>"; };
+		5ECDE67B2058C12300A59258 /* goodwords.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = goodwords.jpeg; path = ../../../../Downloads/iOS_categoryImage/goodwords.jpeg; sourceTree = "<group>"; };
+		5ECDE67C2058C12300A59258 /* badwords.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badwords.jpg; path = ../../../../Downloads/iOS_categoryImage/badwords.jpg; sourceTree = "<group>"; };
+		5ECDE67D2058C12300A59258 /* misswords.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = misswords.jpeg; path = ../../../../Downloads/iOS_categoryImage/misswords.jpeg; sourceTree = "<group>"; };
+		5ECDE67E2058C12300A59258 /* couple.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = couple.jpeg; path = ../../../../Downloads/iOS_categoryImage/couple.jpeg; sourceTree = "<group>"; };
+		5ECDE67F2058C12300A59258 /* words.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = words.jpeg; path = ../../../../Downloads/iOS_categoryImage/words.jpeg; sourceTree = "<group>"; };
 		5EEA4B32204288A2004B9CCD /* acronym.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = acronym.plist; sourceTree = "<group>"; };
 		5EEA4B362042B116004B9CCD /* detailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsViewController.swift; sourceTree = "<group>"; };
 		5EF300A2202C9FB1009B1173 /* answerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = answerViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +175,7 @@
 				5E5E9F1620280BEA00FFA153 /* Test02List.plist */,
 				5E317F85204CF35200AD2952 /* PartnerList.plist */,
 				5EEA4B32204288A2004B9CCD /* acronym.plist */,
+				5ECDE6772058B0F000A59258 /* dummy.plist */,
 				5E02D47320351CEB0076DB81 /* mistakeWords.xcdatamodeld */,
 				5E317F7B204AAD9700AD2952 /* noQuestionViewController.swift */,
 			);
@@ -193,8 +206,13 @@
 				5E317F81204CD1F900AD2952 /* yes.jpg */,
 				5E317F7F204CD1E700AD2952 /* no.jpg */,
 				5E317F7D204AAF1D00AD2952 /* noQuestion.jpg */,
-				5EA31D732053AFCF00211240 /* bad.svg */,
-				5EA31D752053AFD800211240 /* good.svg */,
+				5ECDE67C2058C12300A59258 /* badwords.jpg */,
+				5ECDE67E2058C12300A59258 /* couple.jpeg */,
+				5ECDE67A2058C12300A59258 /* couple02.jpeg */,
+				5ECDE67B2058C12300A59258 /* goodwords.jpeg */,
+				5ECDE67D2058C12300A59258 /* misswords.jpeg */,
+				5ECDE6792058C12300A59258 /* talk.jpeg */,
+				5ECDE67F2058C12300A59258 /* words.jpeg */,
 			);
 			path = img;
 			sourceTree = "<group>";
@@ -270,24 +288,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E317F82204CD1F900AD2952 /* yes.jpg in Resources */,
+				5ECDE6862058C12300A59258 /* words.jpeg in Resources */,
+				5ECDE6782058B0F000A59258 /* dummy.plist in Resources */,
+				5ECDE6852058C12300A59258 /* couple.jpeg in Resources */,
 				5E028EA02033C56D00EA84BB /* correct_answer3.mp3 in Resources */,
 				5E317F84204CE07500AD2952 /* Slug.jpg in Resources */,
 				5E317F86204CF35200AD2952 /* PartnerList.plist in Resources */,
 				5E7A8CEB204E233600FD72F7 /* everydayConversation.plist in Resources */,
 				5E317F7E204AAF1D00AD2952 /* noQuestion.jpg in Resources */,
-				5EA31D742053AFCF00211240 /* bad.svg in Resources */,
+				5ECDE6802058C12300A59258 /* talk.jpeg in Resources */,
 				5E5E9F1720280BEA00FFA153 /* Test02List.plist in Resources */,
+				5ECDE6822058C12300A59258 /* goodwords.jpeg in Resources */,
 				5E1158EF2020068E0063640E /* LaunchScreen.storyboard in Resources */,
 				5E1158EC2020068E0063640E /* Assets.xcassets in Resources */,
 				5EF690DA203296DD00097B8C /* mistake_answer.mp3 in Resources */,
 				5E5E9F1520280B9300FFA153 /* Test01List.plist in Resources */,
-				5EA31D762053AFD800211240 /* good.svg in Resources */,
 				5EEA4B33204288A2004B9CCD /* acronym.plist in Resources */,
 				5E1158EA2020068E0063640E /* Main.storyboard in Resources */,
+				5ECDE6842058C12300A59258 /* misswords.jpeg in Resources */,
 				5E317F80204CD1E700AD2952 /* no.jpg in Resources */,
 				5E028EA42033D5DA00EA84BB /* result01.mp3 in Resources */,
 				5E07D4F52024152C00B6D423 /* category.xib in Resources */,
+				5ECDE6832058C12300A59258 /* badwords.jpg in Resources */,
 				5E028EA22033D5CD00EA84BB /* result02.mp3 in Resources */,
+				5ECDE6812058C12300A59258 /* couple02.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

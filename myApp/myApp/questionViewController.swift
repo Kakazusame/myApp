@@ -467,7 +467,7 @@ class questionViewController: UIViewController, UINavigationControllerDelegate, 
                 //リストを追加
                 testList.append(testinfo)
                 //plistを取得
-                 dummy = Bundle.main.path(forResource:"Test01List", ofType:"plist")!
+                 dummy = Bundle.main.path(forResource:"dummy", ofType:"plist")!
             }
             
         } catch {
