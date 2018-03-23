@@ -56,9 +56,9 @@ class ResultViewController: UIViewController {
     }
     
     //広告
-    let AdMobID = "ca-app-pub-3940256099942544/6300978111" //バナーのID
+    let AdMobID = "ca-app-pub-1548033216312406/2523859590" //バナーのID
     let  TEST_DEVICE_ID = "4bb3b480efde916314b75cca8d881f39" //個別のiphoneのID入れます
-    let AdMobTest:Bool = true //切り替えようのフラグ
+    let AdMobTest:Bool = false //切り替えようのフラグ
     let SimulatorTest:Bool = true //切り替えようのフラグ
     
     func admobDisplay(){

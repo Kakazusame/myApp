@@ -106,13 +106,13 @@ up「上に」という意味にbigをつけることで感謝や敬意を示し
 	<key>07</key>
 	<dict>
 		<key>detail</key>
-		<string>Budはbuddyの略語で友達という意味。しかし、ただの友達ではなく打ち明けた話ができる相手という意味が含まれている。少し古臭い表現。
+		<string>budはbuddyの略語で友達という意味。しかし、ただの友達ではなく打ち明けた話ができる相手という意味が含まれている。少し古臭い表現。
 飲み友達などにはdrinking budなどと使ったりもする。
 
  例文：Kim is my bud. 
 　　　キムは俺の仲間だぜ</string>
 		<key>question</key>
-		<string>Bud</string>
+		<string>bud</string>
 		<key>answer</key>
 		<string>友達</string>
 	</dict>

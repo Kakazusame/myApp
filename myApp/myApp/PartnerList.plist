@@ -44,7 +44,7 @@
 例文：Last night’s party was such a hot room!
 　　　昨日のパーティーは修羅場だったよ！</string>
 		<key>question</key>
-		<string>hot Room</string>
+		<string>hot room</string>
 		<key>answer</key>
 		<string>修羅場</string>
 	</dict>
@@ -83,7 +83,7 @@ cuffは「手錠をかける」という意味があり、何かに縛り付け�
 例文：He will be a good hubby material.
          彼はいい旦那さんになるだろう </string>
 		<key>question</key>
-		<string>hubby Material</string>
+		<string>hubby material</string>
 		<key>answer</key>
 		<string>花婿候補</string>
 	</dict>
